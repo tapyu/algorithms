@@ -15,4 +15,6 @@ Here you won't find:
 
 ----
 
-## About git-annex for Large files
+## Git-annex for Large files
+
+This repository uses `git-annex` to store any file larger than 50MB in my Google Drive.

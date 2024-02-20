@@ -1,0 +1,899 @@
+\documentclass[12pt,a4paper]{article}
+%\usepackage[utf8]{inputenc}
+%\usepackage[portuguese]{babel}
+\usepackage{amsmath, amsfonts, amssymb, mathrsfs}
+\usepackage{graphicx}
+\usepackage{newtxmath}
+\usepackage[utf8]{inputenc} % Permite utilizar caracteres especiais: Ex: ç á à...
+\usepackage[onehalfspacing]{setspace} % Espaçamento de 1,5
+\usepackage{cabecalho}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage[lmargin=3cm, tmargin=3cm, rmargin=2cm, bmargin=2cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+% \usepackage[caption=false]{subfig}
+\usepackage[skip=0.5ex]{subcaption}
+% \usepackage[brazilian]{babel} % Traduzir para PT-BR
+\usepackage{IEEEtrantools}
+\usepackage{xcolor}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\interfootnotelinepenalty=10000
+% Alguns comas
+\newcommand{\rxy}{{\mathit{\mathbf{R}}}_{\mathit{x\mathbf{y}}}}
+\newcommand{\ry}{{\mathit{\mathbf{R}}}_{\mathit{\mathbf{y}}}}
+\newcommand{\wo}{\mathit{\mathbf{w_o}}}
+\newcommand{\wn}{\mathit{\mathbf{w}}\left\lbrack n\right\rbrack}
+\newcommand{\vn}{\mathit{\mathbf{v}}\left\lbrack n\right\rbrack}
+\newcommand{\trans}{\mathsf{T}}
+\newcommand{\hermit}{\mathsf{H}}
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+\newcommand{\mbb}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\Natural}{\mathbb{N}}
+\newcommand{\Integer}{\mathbb{Z}}
+\newcommand{\Irrational}{\mathbb{I}}
+\newcommand{\Rational}{\mathbb{Q}}
+\newcommand{\Real}{\mathbb{R}}
+\newcommand{\Complex}{\mathbb{C}}
+
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+\SetKwInput{KwInput}{Input}                % Set the Input
+\SetKwInput{KwOutput}{Output}              % set the Output
+
+\begin{document}
+	\initcab{Universidade Federal do Ceará}{Inteligência Computacional Aplicada}{Guilherme Barreto and Ajalmar}{519024}{Junho/2022}{Neural network - Report}
+
+\section{Work 02 - Rosenblatt's perceptron}
+
+This work considers a binary classification problem of the iris flower dataset by using Rosenblatt's perceptron. The problem consists in classifying Setosa specie from the dataset.
+
+Rosenblatt's perceptron comprises a neuron mathematical model, introduced by McCulloch and Pitts in 1943, and a learning algorithm that adjusts the synaptic weights in a supervised fashion. The McCulloch and Pitts' activation function is a step function that triggers the output from 0 to 1 when the induced local field overpasses the threshold. This method is effective for binary classifications of linearly separable problems, where one can sketch a straight line that divides the classes without overlapping.
+
+At the instant \(n\), the induced local field is given by
+\begin{align}
+    v(n) = \mathbf{w}^\trans\left(n\right) \mathbf{x}\left(n\right),
+    \label{eq:induced-local-field}
+\end{align}
+where
+\begin{align}
+    \mathbf{w}\left(n\right) = \begin{bmatrix}
+        w_0(n) & w_1(n) & \cdots & w_{N_a}(n)
+    \end{bmatrix}^\trans
+\end{align}
+and
+\begin{align}
+    \mathbf{x}\left(n\right) = \begin{bmatrix}
+        x_0(n) & x_1(n) & \cdots & x_{N_a}(n)
+    \end{bmatrix}^\trans
+\end{align}
+are the synaptic weights of the perceptron and the input signal, respectively, and \(N_a\) indicates the number of attributes. The elements \(w_0(n)\) and\footnote{Depending on the author, it can the defined as \(-1\).} \(x_0(n) \triangleq +1\) are, respectively, the bias and its dummy input.
+
+Let us first derive the update equation for Rosenblatt's perceptron in batch processing and then we take the online processing as a special case of it. We can define the perceptron cost function as
+\begin{align}
+    \mathscr{E}\left( \mathbf{w} \left( n \right) \right) = - \sum_{\mathbf{x}(n) \in \mathscr{X}} \mathbf{w}^\top(n) \mathbf{x}(n) d(n)
+\end{align}
+
+Where \(\mathscr{X}\) is the set of all input signal \(\mathbf{x}(n)\) of the batch dataset that was misclassified by using \(\mathbf{w}(n)\), and \(d(n) \in \left\{ -1, 1 \right\}\) is the desired signal with antipodal encoding. Since \(\mathscr{E}\left( \mathbf{w} \left( n \right) \right)\) is differentiable, we can take this derivative with respect to \(\mathbf{w}(n)\), yielding the gradient vector, that is,
+\begin{align}
+    \mathbf{g} = \frac{\partial\mathscr{E} \left( \mathbf{w}(n) \right)}{\partial \mathbf{w}(n)} = - \sum_{\mathbf{x}(n) \in \mathscr{X}} \mathbf{x}(n) d(n)
+\end{align}
+
+The gradient (or steepest) descent method used the opposite direction of the gradient vector as the learning equation, i.e.,
+\begin{align}
+    \label{eq:update-batch}
+    \mathbf{w}(n+1) & = \mathbf{w}(n) - \eta \mathbf{g} \\
+                    & = \mathbf{w}(n) + \eta \sum_{\mathbf{x}(n) \in \mathscr{X}} \mathbf{x}(n) d(n)
+\end{align}
+where \(\eta\) is the learning rate hyperparameter. For the particular case of online processing, the set \(\mathscr{X}\) becomes the \(\mathbf{x}(n)\) only in case of error. Otherwise, \(\mathscr{X}\) is an empty set. Therefore, we can rewrite\footnote{Ignoring the double factor inserted by \(e(n) \in \left\{ -2,0,2 \right\}\)} \eqref{eq:update-batch} as
+\begin{align}
+    \mathbf{w}(n+1) = \mathbf{w}(n) + \eta e(n) \mathbf{x}(n),
+\end{align}
+where \(e(n) = d(n) - y(n) \in \left\{ -2, 0, 2 \right\}\) is the error signal.
+The Equation \eqref{eq:induced-local-field} passes through the step function, \(\varphi \left( \cdot \right)\), generating the perceptron output, \(y\left( n \right) = \varphi(v\left( n \right)) \in \left\{ -1,1 \right\}\). This signal is compared to the desired value and produces the error signal, which indicates whether the perceptron is misclassified or not.
+
+The Algorithm \ref{alg:rosenblatt-perceptron} summarizes the procedure utilized for Rosenblatt's perceptron. It includes data preparation techniques, such as hand-out, data shuffling, and data standardization. The method utilizes \(N_r=20\) independent realizations and passes through the training set by \(N_e=100\) epochs. At the end of each realization, it is stored the accuracy\footnote{Accuracy is defined as the ratio of the number of correct predictions by the total number of predictions.} reached by the test dataset, and the accuracy of all realizations is investigated in terms of mean and standard deviation. The iris dataset contains \(N=150\) instances with \(N_a=4\) attributes (petal length, petal width, sepal length, and sepal width) and \(K=2\) classes (Setosa and nonSetosa). It was chosen a ratio of \(80\%-20\%\) for the training and test datasets, respectively \footnote{The values of \(N_e\), \(N_r\), and the train-test ratio are maintained throughout this homework.}.
+
+\begin{algorithm}[!ht]
+    \DontPrintSemicolon
+      
+      \KwInput{\(\mathbf{X}, \mathbf{d}\) \tcp*{attributes and labels dataset}}
+      
+    %   \KwData{Testing set $x$}
+      \ForAll{\(\left\{ 1, 2, \cdots, N_r \right\}\)}{
+        \(\mathbf{w}(n) \leftarrow \text{initialize}\)
+
+        \(\mathbf{X}, \mathbf{d} \leftarrow \text{shuffle}\)
+
+        \(\mathbf{X}, \mathbf{d} \leftarrow \text{standardize}\)
+
+        \( \left( \mathbf{X}_{trn}, \mathbf{d}_{trn} \right), \left( \mathbf{X}_{tst}, \mathbf{d}_{tst} \right)  \leftarrow \text{hold-out}\) \tcp*[r]{training and test dataset}
+
+        \ForAll{\(\left\{ 1, 2, \cdots, N_e \right\}\)}{
+            \ForAll{Instancies in the training dataset}{
+                \(v(n) \leftarrow \mathbf{w}^\trans\left(n\right) \mathbf{x}\left(n\right)\)
+
+                \(y\left( n \right) \leftarrow \varphi(v\left( n \right))\)
+
+                \(e(n) \leftarrow d\left( n \right) - y\left( n \right)\)
+
+                \(\mathbf{w}(n+1) \leftarrow \mathbf{w}(n) + \eta \mathbf{x}(n) e(n)\)
+            }
+            \(\mathbf{X}_{trn}, \mathbf{d}_{trn} \leftarrow \text{shuffle}\)
+        }
+        
+        \(accuracy \leftarrow \text{test}(\mathbf{X}_{tst}, \mathbf{d}_{tst})\)
+      }
+      Compute the mean and the standard deviation of all accuracies.
+    
+    \caption{Rosenblatt's perceptron}
+    \label{alg:rosenblatt-perceptron}
+\end{algorithm}
+
+The process described in Algorithm \ref{alg:rosenblatt-perceptron} was repeated for each class and results are shown in Table \ref{tab:rosenblatt-results}. The setosa class clearly outperforms other classes since it is linearly separable for some attributes, as shown in the decision surface in Figure \ref{fig:rosenblatt-decision-surface}\footnote{Since the problem has four attributes, this plot would be impossible as we would get 2 degrees of freedom. Therefore, for this result, we considered only the two attributes shown in this figure.}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{../trab1 (single perceptron)/figs/decision-surface-for-setosa.png}
+    \caption{Decision surface of setosa class.}
+    \label{fig:rosenblatt-decision-surface}
+\end{figure}
+
+\begin{table}
+	\centering
+	\caption{Rosenblatt's perceptron performance for classification problem}
+	\footnotesize
+	\setlength{\tabcolsep}{5pt}
+	\begin{tabular}{ccccccccc}
+		% \toprule [1.3pt]	
+		% \multicolumn{4}{c}{ \textbf{Style} } \\
+		\hline
+		Classes & mean accuracy & standard deviation \\
+		\hline
+		Setosa & 98.33 & 0.01972 \\
+        \hline
+		Virginica & 54.16 & 0.1251 \\
+		\hline
+		Versicolor & 53.66 & 0.1591 \\
+		\hline
+	\end{tabular} \label{tab:rosenblatt-results}
+\end{table}
+
+The confusion matrix of the setosa class is shown in Figure \ref{fig:confusion-matrix-setosa} for the first realization. The main diagonal indicates that there were neither false negatives nor false positives.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{../trab1 (single perceptron)/figs/setosa-confusion-matrix.png}
+    \caption{confusion matrix for setosa class.}
+    \label{fig:confusion-matrix-setosa}
+\end{figure}
+
+The Figure \ref{fig:setosa-training-evolution} shows the evolution of the training dataset accuracy throughout the epochs for a given realization. One can notice the fast convergence to the accuracy of 100\%.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{../trab1 (single perceptron)/figs/accuracy-by-epochs-for-setosa.png}
+    \caption{Training dataset evolution for the setosa classification.}
+    \label{fig:setosa-training-evolution}
+\end{figure}
+
+For a dummy dataset with \(K=4\) classes, the Rosenblatt's perceptron achieved a mean accuracy of 100\%. The Figure \ref{fig:decision-surface-dummy-data} shows the decision surface of the desired class for the realization whose accuracy is the closest to the mean accuracy. All instances of all classes are samples drawn from a Gaussian distribution with a given mean and variance.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{../trab1 (single perceptron)/figs/decision-surface-for-dummy-data.png}
+    \caption{Decision surface for the desired class.}
+    \label{fig:decision-surface-dummy-data}
+\end{figure}
+
+\section{ADALINE}
+
+The Adaptive Linear Element (or ADALINE) is a variation of the Rosenblatt's perceptron, where the step function is replaced by a linear function, that is, \(y(n) = \varphi(u(n)) = u(n)\). One can combine a tapped delay line with an ADALINE, thus creating an adaptive filter, widely used in statistical signal processing.
+
+Consider a regression problem where the desired signal comes from a function \(f(x)\) corrupted with Gaussian noise. The ADALINE model tries to retrieve the original data using the same process described in Algorithm \ref{alg:rosenblatt-perceptron}. However, the performance analysis uses the MSE error instead the accuracy since it is now a regression problem.
+
+The Table \ref{tab:adaline-results} shows the performance of the mean MSE and its standard deviation obtained over independent realizations, in addition to the root mean squared error (RMSE). We consider scenarios where \(f(\cdot)\) is a function of one or two variables. In other words, for the first scenario, the input is the vector
+\begin{align}
+    \begin{bmatrix}
+        1 & x(n)
+    \end{bmatrix} \in \Real^2
+\end{align}
+and \(f_1(x) = ax(n)+b\), while the input vector for the second scenario is given by
+\begin{align}
+    \begin{bmatrix}
+        1 & x_1(n) & x_2(n)
+    \end{bmatrix} \in \Real^3
+\end{align}
+and \(f_2(x_1, x_2) = ax_1(n)+bx_2(n)+c\).
+
+\begin{table}[H]
+	\centering
+	\caption{ADALINE performance for regression problem}
+	\footnotesize
+	\setlength{\tabcolsep}{5pt}
+	\begin{tabular}{ccccccccc}
+		% \toprule [1.3pt]	
+		% \multicolumn{4}{c}{ \textbf{Style} } \\
+		\hline
+		\(f(\cdot)\) & MSE mean & MSE standard deviation & RMSE mean & RMSE standard deviation \\
+		\hline
+		\(5x(n)+8\) & 9.69 & 2.84 & 3.07 & 0.47 \\
+        \hline
+		\(5x_1(n)+3x_2(n)+6\) & 9.93 & 4.27 & 3.08 & 0.66 \\
+		\hline
+	\end{tabular} \label{tab:adaline-results}
+\end{table}
+
+Naturally, both curves could be properly estimated since they are linear functions. The Figure \ref{fig:ADALINE-regression} shows the regression for the ADALINE model.
+
+\begin{figure}[H]
+    \centering
+
+\subfloat[\centering ADALINE regression for \(5x+7\)]{%
+  \includegraphics[clip,scale=0.4]{../trab2 (ADALINE)/figs/predict-f1.png}%
+  \label{fig:itema}
+}
+
+\subfloat[\centering ADALINE regression for \(5x_1(n)+3x_2(n)+6\)]{%
+  \includegraphics[clip,scale=0.5]{../trab2 (ADALINE)/figs/predict-f2.png}%
+  \label{fig:itemb}
+}
+
+\caption{ADALINE regression.}
+\label{fig:ADALINE-regression}
+
+\end{figure}
+
+\section{Single Layer Perceptron}
+
+Although Rosenblatt's perceptron and ADALINE model can solve linear problems, it has only one output variable. A more sensible model for multiclass problems is a single-layer perceptron (SLP) consisting of \(J\) neurons, where each neuron receives the same input signal.
+
+The matrix of all coefficients is given by
+\begin{align}
+    \mathbf{W}(n) = \begin{bmatrix}
+        \mathbf{w}_1 (n) & \mathbf{w}_2 (n) & \cdots & \mathbf{w}_J (n)
+    \end{bmatrix}^\trans \in \Real^{J \times \left(N_a+1\right)},
+\end{align}
+where \(J\) is the number of classes (one neuron for each class), \(N_a\) is the number of attributes, and
+\begin{align}
+    \mathbf{w}_j (n) = \begin{bmatrix}
+        w_{j0} (n) & w_{j1} (n) & \cdots & w_{j N_a} (n)
+    \end{bmatrix}^\trans \in \Real^{N_a+1}
+\end{align}
+is the synaptic weight vector of the \(j\)th neuron, being \(w_{jk} (n)\) its \(k\)th weight. The induced local field for the \(j\)th neuron is given by
+\begin{align}
+    v_j(n) = \sum_{i=0}^{N_a} w_{ji}(n) x_i (i) = \mathbf{w}_j^\top (n) \mathbf{x}(n),
+\end{align}
+where
+\begin{align}
+    \mathbf{x}(n) = \begin{bmatrix}
+        x_0 (n) & x_1 (n) & \cdots & x_{N_a} (n)
+    \end{bmatrix} \in \mathbb{R}^{N_a+1},
+\end{align}
+is the input signal, being \(x_{0} (n) = +1\) the dummy input. Note that, if we define the vector of all induced local fields of the SLP as
+\begin{align}
+    \mathbf{v}(n) = \begin{bmatrix}
+        v_1(n) & v_2(n) & \cdots & v_J(n)
+    \end{bmatrix}^\trans \in \mathbb{R}^{J} ,
+\end{align}
+then it follows that \(\mathbf{v}(n) = \mathbf{W}(n) \mathbf{x}(n)\).
+
+\subsection{Learning algorithm}
+By using the stochastic approximation of the MSE (mean-squared error) as the cost function for the SLP, we have that
+\begin{align}
+    \label{eq:stochastic-cost-func}
+    \mathscr{E}(\mathbf{w}_j(n)) = \frac{1}{2} e^2_j(n),
+\end{align}
+where \(e_j(n) = d_j(n) - y_j(n)\) is the error signal of the \(j\)th neuron, being \(y_j(n)\) and \(d_j(n)\) its output and desired signal, respectively. The output signal \(y_j(n)\) is obtained after passing \(v_j(n)\) through a differentiable function \(\varphi(\cdot)\) called activation function, that is, \(y_j(n) = \varphi(v_j(n))\).
+
+The partial derivative of \(\mathscr{E}(\cdot)\) with respect to \(w_{ji}(n)\) reads
+\begin{align}
+    \frac{\partial \mathscr{E}(n)}{\partial w_{ji}(n)} & = \frac{\partial \mathscr{E}(n)}{\partial v_{j}(n)} \frac{\partial v_j(n)}{\partial w_{ji}(n)} \nonumber \\
+    & = - \delta_j (n) x_i(n),
+    \label{eq:cost-function}
+\end{align}
+where
+\begin{align}
+    \delta_j (n) \triangleq - \frac{\partial \mathscr{E}(n)}{\partial v_{j}(n)}
+\end{align}
+is called the local gradient of the \(j\)th neuron, and
+\begin{align}
+    \frac{\partial v_j(n)}{\partial w_{ji}(n)} = x_i(n).
+    \label{eq:chain4}
+\end{align}
+
+By using the chain rule, the local gradient can be rewritten as follows
+\begin{align}
+    \delta_j (n) = - \frac{\partial \mathscr{E}(n)}{\partial v_{j}(n)} = - \frac{\partial \mathscr{E}(n)}{\partial e_{j}(n)} \frac{\partial e_j(n)}{\partial y_j(n)} \frac{\partial y_j(n)}{\partial v_{j}(n)}.
+    \label{eq:local-gradient}
+\end{align}
+
+Note that
+\begin{align}
+    \frac{\partial \mathscr{E}(n)}{\partial e_{j}(n)} = e_{j}(n),
+    \label{eq:chain1}
+\end{align}
+\begin{align}
+    \frac{\partial e_j(n)}{\partial y_j(n)} = -1,
+    \label{eq:chain2}
+\end{align}
+and
+\begin{align}
+    \frac{\partial y_j(n)}{\partial v_{j}(n)} \triangleq \varphi'(v_{j}(n)).
+    \label{eq:chain3}
+\end{align}
+
+By substituting the equations \eqref{eq:chain1}, \eqref{eq:chain2}, and \eqref{eq:chain3} into \eqref{eq:local-gradient}, we get
+\begin{align}
+    \delta_j (n) = e_{j}(n) \varphi'(v_{j}(n)),
+\end{align}
+or in matrix notation,
+\begin{align}
+    \boldsymbol{\deltaup}(n) = \mathbf{e}(n) \odot \boldsymbol{\varphi}'(\mathbf{v}(n)),
+\end{align}
+where
+\begin{align}
+    \mathbf{e}(n) = \begin{bmatrix}
+        e_1 (n) & e_2 (n) & \cdots & e_J (n)
+    \end{bmatrix}^\top \in \mathbb{R}^{J},
+\end{align}
+\begin{align}
+    \boldsymbol{\deltaup}(n) = \begin{bmatrix}
+        \delta_1 (n) & \delta_2 (n) & \cdots & \delta_J (n)
+    \end{bmatrix}^\top \in \mathbb{R}^{J},
+\end{align}
+\begin{align}
+    \boldsymbol{\varphi}'(\mathbf{v}(n)) = \begin{bmatrix}
+        \varphi'(v_1(n)) & \varphi'(v_2(n)) & \cdots & \varphi'(v_J(n))
+    \end{bmatrix}^\trans \in \Real^{J},
+\end{align}
+and \(\odot\) denotes the Hadamard product.
+
+The algorithms that minimize \eqref{eq:stochastic-cost-func} are collectively called the family of Stochastic Descent Gradient (SGD) algorithms. The simplest algorithm is the LMS algorithm, which uses the opposite direction of the instantaneous approximation of the gradient vector to update the coefficient values. By using such a method, the synaptic weights update is given by
+\begin{align}
+    \Delta w_{ji}(n) = - \eta \frac{\partial \mathscr{E}(n)}{\partial w_{ji}(n)},
+    \label{eq:Delta_w_ji}
+\end{align}
+where \(\eta\) is the learning rate hyperparameter. Substituting the Equation \eqref{eq:cost-function} into \eqref{eq:Delta_w_ji} yields
+\begin{align}
+    \Delta w_{ji}(n) = \eta \delta_j (n) x_i(n),
+\end{align}
+or in matrix notation
+\begin{align}
+    \Delta \mathbf{W}(n) = \eta\boldsymbol{\deltaup}(n) \mathbf{x}^\trans(n).
+\end{align}
+By using matrix notation, the update function can be rewritten as
+\begin{align}
+    \mathbf{W}(n+1) & = \mathbf{W}(n) + \Delta \mathbf{W}(n) \\
+                    & = \mathbf{W}(n) + \eta \boldsymbol{\deltaup}(n) \mathbf{x}^\trans(n).
+\end{align}
+The Algorithm \ref{alg:single-layer-perceptron} summarizes the procedure of the SLP algorithm. In this pseudocode, the vectors
+\begin{align}
+    \mathbf{d}(n) = \begin{bmatrix}
+        d_1(n) & d_2 & \cdots & d_J(n)
+    \end{bmatrix}
+\end{align}
+and
+\begin{align}
+    \mathbf{y}(n) = \begin{bmatrix}
+        y_1(n) & y_2 & \cdots & y_J(n)
+    \end{bmatrix}
+\end{align}
+are the desired and output signals, respectively, and
+\begin{align}
+    \mathbf{X} = \begin{bmatrix}
+        \mathbf{x}(1) & \mathbf{x}(2) & \cdots & \mathbf{x}(N)
+    \end{bmatrix} \in \mathbf{R}^{(N_a+1) \times N}
+\end{align}
+and
+\begin{align}
+    \mathbf{D} = \begin{bmatrix}
+        \mathbf{d}(1) & \mathbf{d}(2) & \cdots & \mathbf{d}(N)
+    \end{bmatrix} \in \mathbf{R}^{(N_a+1) \times N}
+\end{align}
+denote the entire dataset of input and desired signals used to train, test, and validate the model.
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+      
+      \KwInput{\(\mathbf{X}, \mathbf{D}\) \tcp*{attributes and labels dataset}}
+      
+    %   \KwData{Testing set $x$}
+      \ForAll{\(\left\{ 1, 2, \cdots, N_r \right\}\)}{
+        \(\mathbf{W}(n) \leftarrow \text{initialize}\)
+
+        \(\mathbf{X}, \mathbf{D} \leftarrow \text{shuffle}\)
+
+        \(\mathbf{X}, \mathbf{D} \leftarrow \text{standardize}\)
+
+        \( \left( \mathbf{X}_{trn}, \mathbf{D}_{trn} \right), \left( \mathbf{X}_{tst}, \mathbf{D}_{tst} \right)  \leftarrow \text{hold-out}\) \tcp*{training and test dataset}
+
+        \ForAll{\(\left\{ 1, 2, \cdots, N_e \right\}\)}{
+            \ForAll{\(\mathbf{x}(n) \in \mathscr{T}\)}{
+                \(\mathbf{v}(n) \leftarrow \mathbf{W}(n) \mathbf{x}(n)\)
+
+                \(\mathbf{y}(n) \leftarrow \boldsymbol{\varphi}(\mathbf{v}(n))\)
+
+                \(\mathbf{e}(n) \leftarrow \mathbf{d}(n) - \mathbf{y}(n)\)
+            
+                \(\boldsymbol{\deltaup}(n) \leftarrow \mathbf{e}(n) \odot \boldsymbol{\varphi}'(\mathbf{v}(n))\)
+
+                \(\mathbf{W}(n+1) \leftarrow \mathbf{W}(n) + \eta\boldsymbol{\deltaup}(n) \mathbf{x}^\trans(n)\)
+            }
+            \(\mathbf{X}_{trn}, \mathbf{D}_{trn} \leftarrow \text{shuffle}\)
+        }
+        
+        \(accuracy \leftarrow \text{test}(\mathbf{X}_{tst}, \mathbf{D}_{tst})\)
+      }
+      Compute the mean and the standard deviation of all accuracies.
+    
+    \caption{Single-layer perceptron}
+    \label{alg:single-layer-perceptron}
+\end{algorithm}
+
+For the step function (MacCulloch and Pitts' activation function), its derivative does not exist, and the local gradient of the \(j\)th neuron is simply \(\delta_j(n) = e_j (n)\). For this classification problem, the labels were encoded using the one-hot method.
+
+The Figure \ref{fig:heatmap-dummy-dataset} shows the heatmap for a dummy dataset consisting of \(K=3\) classes, \(N_a=2\) attributes, and \(N=150\) instances. The classifier used the MacCulloch and Pitts' activation function and achieved a mean accuracy of 99.49\% and a standard deviation of 0.0218. The SLP is also used for the iris dataset (\(K=3\) classe, \(N_a=4\) attributes, and \(N=150\) attributes) and the column dataset (\(K=3\) classes, \(N_a=6\) attributes, and \(N=310\) instances). For the iris dataset, the classifier achieved a mean accuracy of 88\% with a standard deviation of \(0.14\), while for the column dataset the model achieved a mean accuracy of 77.66\% with a standard deviation of \(0.06\).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{../trab3 (single layer perceptron)/figs/dummy data - heatmap.png}
+    \caption{Heatmap of the dummy dataset.}
+    \label{fig:heatmap-dummy-dataset}
+\end{figure}
+
+Using the logistic function, the model achieved a mean accuracy of 100\% for the dummy data. The heatmap for this dataset is shown in Figure \ref{fig:dummy-data-heatmap}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{../trab4 (single layer perceptron with sigmoidal functions)/figs/dummy data - heatmap.png}%
+    
+    \caption{The dummy dataset for the SLP with logistic activation function.}
+    \label{fig:dummy-data-heatmap}
+\end{figure}
+
+For the iris dataset, the SLP with logistic function reached a mean and a standard deviation of 87\% and 0.16, respectively.  The surface of decision for each class of iris data is shown in Figure \ref{fig:iris-decision-surface}. It is possible to notice that the classifier can solve the problem for the setosa class as it is linearly separable from the other classes for the attributes considered (petal length and petal width).
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab4 (single layer perceptron with sigmoidal functions)/figs/decision-surface-for-setosa.png}
+        \subcaption{Setosa class.}
+        % \label{subfig:itema}
+    \end{subfigure}
+\end{figure}    
+\begin{figure}[H]\ContinuedFloat
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab4 (single layer perceptron with sigmoidal functions)/figs/decision-surface-for-virginica.png}
+        \subcaption{Verginica class.}
+        % \label{subfig:itemb}
+    \end{subfigure}
+\end{figure}
+\begin{figure}[H]\ContinuedFloat
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab4 (single layer perceptron with sigmoidal functions)/figs/decision-surface-for-versicolor.png}
+        \subcaption{Verginica class.}
+        % \label{subfig:itemb}
+    \end{subfigure}
+    \caption{The iris dataset for the SLP with logistic activation function.}
+    \label{fig:iris-decision-surface}
+\end{figure}
+
+\section{Multilayer Perceptron}
+
+The single-layer perceptron uses the LMS algorithm in the learning phase and yields reasonable results for many problems. However, this architecture is restricted to the classification of linearly separable patterns.
+
+To overcome this limitation, we introduce another neural network architecture, which employs \(L\) layers. This model is usually called Multilayer Perceptron (MLP). Each neuron uses a nonlinear\footnote{If activation function were linear, the final result would be equal to the SLP output since \(\mathbf{y}(n)\) would simply be in a linear combination of \(\mathbf{x}(n)\).} activation function that is differentiable, and the final output is able to solve nonlinear problems.
+
+The presence of hidden layers makes the learning phase more complicated to devise since one must decide how the signal error at the output layer should propagate toward the input layer. A popular learning method used for MLP is the backpropagation algorithm, which in turn, is rooted in the LMS algorithm.
+
+The backpropagation algorithm entails two phases:
+\begin{itemize}
+    \item The \emph{forward phase}: at the instant \(n\), the synaptic weights of the network are fixed and the input signal, \(\mathbf{x}(n)\), is propagated from the input to the output layer. At each neuron, the induced local field is computed and the output of the activation function is delivered to each neuron located on the layer at its right.
+    \item The \emph{backward phase}: signal error is produced at the output layer, where their weights are readily updated with the same procedure used in the SLP. Then, the synaptic weights of the hidden layers are updated, from the outmost hidden layer to the input layer, using the local gradients and the synaptic weights of the neurons on the layer at its right, in addition to the activation function derivative of the own neuron. 
+\end{itemize}
+
+Since the update equation for the output layer was already derived in the SLP\footnote{In the MLP, the unique difference is that the input signal is \(\mathbf{y}^{(L-1)}(n)\) instead of \(\mathbf{x}(n)\)}, we will focus on finding the update equation of the \(l\)th hidden layer. Furthermore, we will considerate a dense neural network structure, that is, all neurons on the layer \(l+1\) are connected through synaptic weights with all neurons on the layer \(l\), for \(1\leq l < L\).
+
+Beginning with the outmost hidden layer and recalling that the local gradient of the \(j\)th neuron on this layer is given by
+\begin{align}
+    \delta_j^{(L-1)} (n) & = - \frac{\partial \mathscr{E}(n)}{\partial v_{j}^{(L-1)}(n)} \nonumber \\
+    & = - \frac{\partial \mathscr{E}(n)}{\partial y_{j}^{(L-1)}(n)} \frac{\partial y_{j}^{(L-1)}(n)}{\partial v_{j}^{(L-1)}(n)} \nonumber \nonumber \\
+    & = - \frac{\partial \mathscr{E}(n)}{\partial y_{j}^{(L-1)}(n)} \varphi'(v_j^{(L-1)}(n)),
+    \label{eq:local-gradient2}
+\end{align}
+where the third equation follows that
+\begin{align}
+    \varphi'(v_j^{(L-1)}(n)) = \frac{\partial y_{j}^{(L-1)}(n)}{\partial v_{j}^{(L-1)}(n)}.
+\end{align}
+
+In these equations, \(v_{j}^{(l)}(n)\), \(y_{j}^{(l)} (n)\), and \(\delta_j^{(l)} (n)\) are the induced local field, the output signal, and the local gradient of \(j\)th neuron on the \(l\)th layer, being \(y_{0}^{(l)} (n) \triangleq -1\) the input bias for the neurons on the layer \(l+1\).
+
+We can derive the learning equation for the layer \(L-1\) and generalize it to all hidden layers. Remember that \(y_{j}^{(L-1)}(n)\) is the \(j\)th input signal for the output layer (\(L\)th layer), and that
+\begin{align}
+    \frac{\partial \mathscr{E}(n)}{\partial y_{j}^{(L-1)}(n)} = \sum_{k=1}^{m_L} e_k(n) \frac{\partial e_k(n)}{\partial y_{j}^{(L-1)}(n)},
+\end{align}
+where \(m_L\) is the number of neurons on the \(L\)th layer. By using the chain rule, we have that
+\begin{align}
+    \frac{\partial \mathscr{E}(n)}{\partial y_{j}^{(L-1)}(n)} = \sum_{k=1}^{m_L} e_k(n) \frac{\partial e_k(n)}{\partial v_{k}^{(L)}(n)} \frac{\partial v_{k}^{(L)}(n)}{\partial y_{j}^{(L-1)}(n)},
+    \label{eq:partial-mlp}
+\end{align}
+but since \(e_k(n) = d_k(n) - \varphi(v_k^{(L)}(n))\), it follows that
+\begin{align}
+    \frac{\partial e_k(n)}{\partial v_{k}^{(L)}(n)} = - \varphi'(v_k^{(L)}(n)).
+    \label{eq:chain12}
+\end{align}
+Note that
+\begin{align}
+    v_{k}^{(L)}(n) = \sum_{j=0}^{m_L} w_{kj}^{(L)}(n) y_{j}^{(L-1)}(n).
+\end{align}
+Therefore,
+\begin{align}
+    \frac{\partial v_{k}^{(L)}(n)}{\partial y_{j}^{(L-1)}(n)} = w_{kj}^{(L)}(n)
+    \label{eq:chain22}
+\end{align}
+Substituting the Equations \eqref{eq:chain12} and \eqref{eq:chain22} into \eqref{eq:partial-mlp}, we get
+\begin{align}
+    \frac{\partial \mathscr{E}(n)}{\partial y_{j}^{(L-1)}(n)}  & = - \sum_{k=1}^{m_L} e_k(n) \varphi'(v_k^{(L)}(n)) w_{kj}^{(L)}(n) \nonumber \\
+    & = - \sum_{k=1}^{m_L} \delta_k^{(L)} (n) w_{kj}^{(L)}(n),
+    \label{eq:mlp-partial-final}
+\end{align}
+where the second equation follows that \(\delta_k^{(L)} = e_k(n) \varphi'(v_k^{(L)}(n))\). Finally, substituting Equation \eqref{eq:mlp-partial-final} into \eqref{eq:local-gradient2}, the local gradient of the \(j\)th neuron on the \((L-1)\)th hidden layer is given by
+\begin{align}
+    \delta_j^{(L-1)} (n) = \varphi'(v_j^{(L-1)}(n)) \sum_{k=1}^{m_L} \delta_k^{(L)} (n) w_{kj}^{(L)}(n),
+\end{align}
+or in matrix notation
+\begin{align}
+    \boldsymbol{\deltaup}^{(L-1)} (n) = \boldsymbol{\varphi}'(\mathbf{v}^{(L-1)}(n)) \odot \left( \tilde{\mathbf{W}}^{(L)\trans}(n) \boldsymbol{\deltaup}^{(L)} (n) \right),
+    \label{eq:uptade-layer-L-1}
+\end{align}
+where
+\begin{align}
+    \tilde{\mathbf{W}}^{(L)}(n) = \begin{bmatrix}
+        w_{11}^{(L)} (n) & w_{12}^{(L)} (n) & \cdots & w_{1 m_{L-1}}^{(L)} (n) \\
+        w_{21}^{(L)} (n) & \ddots & \ddots & \vdots \\
+        \vdots & \ddots & \ddots & \vdots \\
+        w_{m_L1}^{(L)} (n) & w_{m_L2}^{(L)} (n) & \cdots & w_{m_Lm_{L-1}}^{(L)} (n)
+    \end{bmatrix} \in \Real^{m_L \times m_{L-1}}
+\end{align}
+is the synaptic weight matrix for the layer \(L\), but without the weights of the bias.
+
+The Equation \eqref{eq:uptade-layer-L-1} can be generalized to the \(l\)th layer:
+\begin{align}
+    \boldsymbol{\deltaup}^{(l)} (n) = \boldsymbol{\varphi}'(\mathbf{v}^{(l)}(n)) \odot \left( \tilde{\mathbf{W}}^{(l+1)\trans}(n) \boldsymbol{\deltaup}^{(l+1)} (n) \right)\text{ for } 1\leq l < L.
+    \label{eq:uptade-layer-l}
+\end{align}
+
+Following the same procedure for the SLP, we can derive the synaptic weights update, which is given by
+\begin{align}
+    \Delta \mathbf{W}^{(l)}(n) = \eta\boldsymbol{\deltaup}^{(l)}(n) \mathbf{y}^{(l-1)\trans}(n) \in \Real^{m_l \times (m_{l-1}+1)},
+\end{align}
+where
+\begin{align}
+    \mathbf{y}^{(l)}(n) = \begin{bmatrix}
+        +1 & y_1^{(l)}(n) & y_2^{(l)}(n) & \cdots & y_{m_{l}}^{(l)}(n)
+    \end{bmatrix}^\trans \in \Real^{m_{l}+1},
+\end{align}
+\(m_0\) is the length of the input vector without bias, and \(\mathbf{y}^{(0)}(n) \triangleq \mathbf{x}(n)\). Therefore, the learning equation of the hidden layer is given by
+\begin{align}
+    \mathbf{W}^{(l)}(n+1) & = \mathbf{W}^{(l)}(n) + \Delta \mathbf{W}^{(l)}(n) \nonumber \\
+    & = \mathbf{W}^{(l)}(n) + \eta\boldsymbol{\deltaup}^{(l)}(n) \mathbf{y}^{(l-1)\trans}(n) \in \Real^{m_l \times (m_{l-1}+1)}.
+\end{align}
+
+
+The Algorithm \ref{alg:multilayer-perceptron} shows how the MLP uses the backpropagation algorithm.
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+      
+      \KwInput{\(\mathbf{X}, \mathbf{D}\) \tcp*{attributes and labels dataset}}
+      
+    %   \KwData{Testing set $x$}
+      \ForAll{\(\left\{ 1, 2, \cdots, N_r \right\}\)}{
+        \(\mathbf{W}(n) \leftarrow \text{initialize}\)
+
+        \(\mathbf{X}, \mathbf{D} \leftarrow \text{shuffle}\)
+
+        \(\mathbf{X}, \mathbf{D} \leftarrow \text{standardize}\)
+
+        \( \left( \mathbf{X}_{trn}, \mathbf{D}_{trn} \right), \left( \mathbf{X}_{tst}, \mathbf{D}_{tst} \right)  \leftarrow \text{hold-out}\) \tcp*[f]{training and test dataset}
+
+        \ForAll{\(\left\{ 1, 2, \cdots, N_e \right\}\)}{
+            \ForAll{Instancies in the training dataset}{
+                \tcp*[l]{forward phase}
+                \For{\(l \in \left\{ 1, 2, ..., L \right\}\)}{
+                    \(\mathbf{v}^{(l)}(n) \leftarrow \mathbf{W}^{(l)}(n) \mathbf{y}^{(l-1)}(n)\)
+
+                    \(\mathbf{y}^{(l)}(n) \leftarrow \boldsymbol{\varphi}(\mathbf{v}^{(l)}(n))\)
+                }
+                
+                \tcp{backward phase}
+                
+                \(\mathbf{e}(n) \leftarrow \mathbf{d}(n) - \mathbf{y}^{(L)}(n)\) \tcp*{output layer}
+            
+                \(\boldsymbol{\deltaup}^{(L)}(n) \leftarrow \boldsymbol{\varphi}'(\mathbf{v}^{(L)}(n)) \odot \mathbf{e}(n)\)
+
+                \(\mathbf{W}^{(L)}(n+1) \leftarrow \mathbf{W}^{(L)}(n) + \eta\boldsymbol{\deltaup}^{(L)}(n) \mathbf{y}^{(L-1)\trans}(n)\)
+
+                \For(\tcp*[f]{hidden layers}){\(l \in \left\{ L-1, L-2, ..., 1 \right\}\)}{
+                    \(\boldsymbol{\deltaup}^{(l)} (n) \leftarrow \boldsymbol{\varphi}'(\mathbf{v}^{(l)}(n)) \odot \left( \tilde{\mathbf{W}}^{(l+1)\trans}(n) \boldsymbol{\deltaup}^{(l+1)} (n) \right)\)
+
+                    \(\mathbf{W}^{(l)}(n+1) \leftarrow \mathbf{W}^{(l)}(n) + \eta\boldsymbol{\deltaup}^{(l)}(n) \mathbf{y}^{(l-1)\trans}(n).\)
+                }
+            }
+            \(\mathbf{X}_{trn}, \mathbf{D}_{trn} \leftarrow \text{shuffle}\)
+        }
+        
+        \(accuracy \leftarrow \text{test}(\mathbf{X}_{tst}, \mathbf{D}_{tst})\)
+      }
+    Compute the mean and the standard deviation of all accuracies.
+    
+    \caption{Multilayer perceptron}
+    \label{alg:multilayer-perceptron}
+\end{algorithm}
+
+\subsection{Grid search with \(k\)-fold cross validation}
+
+For this homework, it is used an MLP with 2 layers, where the number of neurons in the hidden layers and the activation function (logistic function or hyperbolic tangent) are used in the grid search with \(k\)-fold cross-validation. The value of \(k\) varies with the size of the dataset, while the number of neurons on the output layer is always equal to 1 for regression problems or to the number of classes for classification problems\footnote{When the number of classes is equal to 2 (as in the XOR problem), it is used only one neuron instead since it is sufficient to classify the problem.}.
+
+At each realization, before starting the training phase, the training dataset is utilized in the grid search with \(k\)-fold cross-validation. For each split, \(k-1\) folds are used iteratively for \(N_e\) epochs for validating, while the \(k\)th fold is reserved for test dataset. The accuracy obtained in the test dataset is stored and the process repeats for a different validation and test split. At the end of all combinations of test and validation splits, the mean accuracy is computed for that set of hyperparameters. The best set, that is, the one that obtains the higher mean accuracy, is used as the selected model. Note that the hyperparameters of the select model might vary per realization. The Algorithm \ref{alg:grid-search-k-fold-cross-validation} shows how the method of model selection works.
+
+\begin{algorithm}[H]
+    \DontPrintSemicolon
+      
+      \KwInput{\(\mathbf{X}, K\) \tcp*{\(\mathbf{X}\) does not have the test instances}}
+      
+    %   \KwData{Testing set $x$}
+    \(\mathbf{X} \leftarrow\) shuffle
+    
+      \ForAll{Set of hyperparameters}{
+
+
+        \For{\(k \in \left\{ 1, 2, ..., K \right\}\)}{
+            \(\mathbf{W}^{(l)}(n) \leftarrow \text{initialize}\)
+
+            \(\mathbf{X}_{val}, \mathbf{X}_{tst} \leftarrow\) select the \(k\)th division of validation and test dataset.
+            
+
+            \ForAll(\tcp*[f]{for each epoch}){\(\left\{ 1, 2, ..., N_e \right\}\)}{
+                \(\mathbf{X}_{val} \leftarrow\) shuffle
+
+                \(\mathbf{W}^{(l)}(n) \leftarrow \) validate using \(\mathbf{X}_{val}\) for a given set of hyperparameters
+            }
+
+            Save the accuracy for the trained \(\mathbf{W}^{(l)}(n)\) for the dataset \(\mathbf{X}_{tst}\)
+
+
+        }
+        
+        Save the mean accuracy for this set of hyperparameters
+      }
+    \Return{The set of hyperparameters with the highest mean accuracy}
+
+    \caption{Grid search with \(k\)-fold cross validation}
+    \label{alg:grid-search-k-fold-cross-validation}
+\end{algorithm}
+
+\subsection{Classification problem}
+
+For the MLP described in the Algorithm \ref{alg:multilayer-perceptron}, the following datasets are analyzed for the classification problem:
+\begin{itemize}
+    \item Iris: \(N_a = 4\) attributes, \(N = 150\) instances, \(K =3\) classes.
+    \item Vertebral column: \(N_a = 6\) attributes, \(N = 310\) instances, \(K =3\) classes.
+    \item Dermatology: \(N_a = 33\) attributes, \(N = 366\) instances, \(K = 6\) classes.
+    \item Breast Cancer Wisconsin: \(N_a = 10\) attributes, \(N = 699\) instances, \(K = 2\) classes.
+    \item XOR problem: \(N_a = 2\) attributes, \(N = 200\) instances, \(K = 2\) classes.
+\end{itemize}
+
+The datasets with \(K=2\) classes use only one neuron at its output, while datasets with \(K>2\) use \(K\) neurons at the output layer.
+
+\subsubsection{XOR dataset}
+
+For this classification problem, it is generated a dataset with \(200\) instances of the XOR problem. The equation
+\begin{align}
+    y(n) = x_1 (n) \oplus x_2 (n),
+\end{align}
+where the symbol \(\oplus\) indicates the exclusive-OR Boolean operator, generates a nonseparable surface problem that Rosenblatt's Perceptron and the single-layer Perceptron cannot solve. This problem is a specific case for a broad category of classification pattern called \emph{unit hypercube}.
+
+Since this problem has only two classes (\(0\) or \(1\)), it is used only one neuron at the output layer. With the trained MLP, the problem could be solved with \(100\%\) of mean accuracy. The select models use a hidden layer with 2 or 3 neurons and the select activation function was the logistic function. The Figure \ref{fig:heatmap-mlp-xor} shows the heatmap for the XOR problem.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{../trab5 (MLP)/figs/XOR problem - heatmap - nr11.png}
+    \caption{Heatmap for the XOR problem.}
+    \label{fig:heatmap-mlp-xor}
+\end{figure}
+
+The Figure \ref{fig:heatmap-mlp-xor2} shows the heatmap (or decision surface in a 3-D perspective) for another realization. It is interesting to note that the MLP can generalize differently and still correctly for the same dataset.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{../trab5 (MLP)/figs/XOR problem - heatmap - nr1.png}
+    \caption{Heatmap for the XOR problem.}
+    \label{fig:heatmap-mlp-xor2}
+\end{figure}
+
+The confusion matrix is shown in Figure \ref{fig:confusion-matrix-mlp-xor}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{../trab5 (MLP)/figs/xor-confusion-matrix.png}
+    \caption{Confusion matrix for the XOR problem.}
+    \label{fig:confusion-matrix-mlp-xor}
+\end{figure}
+
+\subsubsection{Iris dataset}
+
+The iris dataset is used for an MLP with the same parameters as the XOR problem. However, the output layer now has 3 neurons since we have \(K=3\) classes: setosa, virginica, and versicolor.
+
+The number of neurons on the hidden layer varies around \(m_1=5\) and the activation function tends to the hyberbolic function for most realizations. The mean accuracy reached a value of \(95.83\%\) and a standard deviation of \(0.031\). These values overtake the performance achieved by the SLP architecture. The Figure \ref{fig:iris-mlp-confusion-matrix} shows the confusion matrix for the realization with highest accuracy. One can observe that the MLP could recognize all patterns from the test dataset.
+
+\begin{figure}[H]
+    \centering
+
+\subfloat[\centering Setosa.]{
+  \includegraphics[clip,scale=0.4]{../trab5 (MLP)/figs/iris-setosa-confusion-matrix.png}
+}
+
+\subfloat[\centering Virginica]{
+  \includegraphics[clip,scale=0.4]{../trab5 (MLP)/figs/iris-virginica-confusion-matrix.png}
+}
+
+\subfloat[\centering Versicolor]{
+  \includegraphics[clip,scale=0.4]{../trab5 (MLP)/figs/iris-versicolor-confusion-matrix.png}
+}
+
+\caption{Confusion matrix for all classes of the Iris dataset.}
+\label{fig:iris-mlp-confusion-matrix}
+
+\end{figure}
+
+\subsubsection*{Column dataset}
+
+The cancer dataset was applied to the column dataset. The MLP reached a mean accuracy of 86.66\%, with a standard deviation of 0.042. The Figure \ref{fig:column-mlp-confusion-matrix} shows the confusion matrix for each class.
+
+\begin{figure}[H]
+    \centering
+
+\subfloat[\centering Disk Hernia.]{
+  \includegraphics[clip,scale=0.4]{../trab5 (MLP)/figs/column-Disk Hernia-confusion-matrix.png}
+}
+
+\subfloat[\centering Normal.]{
+  \includegraphics[clip,scale=0.4]{../trab5 (MLP)/figs/column-Normal-confusion-matrix.png}
+}
+
+\subfloat[\centering Spondylolisthesis.]{
+  \includegraphics[clip,scale=0.4]{../trab5 (MLP)/figs/column-Spondylolisthesis-confusion-matrix.png}
+}
+
+\caption{Confusion matrix for all classes of the column dataset.}
+\label{fig:column-mlp-confusion-matrix}
+
+\end{figure}
+
+\subsubsection{Breast cancer dataset}
+
+For the breast cancer dataset, the MLP reached a mean accuracy of 96.44\% with a standard deviation of 0.0118. The Figure \ref{fig:cancer-mlp-confusion-matrix} show the confusion matrix for this case.
+\begin{figure}[H]
+    \centering
+    \includegraphics[clip,scale=0.4]{../trab5 (MLP)/figs/mama-cancer-confusion-matrix.png}
+    \caption{Confusion matrix for the cancer dataset.}
+    \label{fig:cancer-mlp-confusion-matrix}
+\end{figure}
+
+\subsubsection{Dermatology}
+
+For the dermatology dataset, the MLP reached an accuracy of 97.15\% with a standard deviation of 0.01836. The Figure \ref{fig:cancer-mlp-confusion-matrix} show the confusion matrix for this case.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab5 (MLP)/figs/dermatology-cronic dermatitis-confusion-matrix.png}
+        \subcaption{Cronic dermatitis.}
+        \label{subfig:itema}
+    \end{subfigure}
+\end{figure}    
+\begin{figure}[H]\ContinuedFloat
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab5 (MLP)/figs/dermatology-lichen planus-confusion-matrix.png}
+        \subcaption{Lichen planus.}
+        \label{subfig:itemb}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[H]\ContinuedFloat
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab5 (MLP)/figs/dermatology-pityriasis rosea-confusion-matrix.png}
+        \subcaption{Pityriasis rosea.}
+        \label{subfig:itemc}
+    \end{subfigure}
+\end{figure}    
+\begin{figure}[H]\ContinuedFloat
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab5 (MLP)/figs/dermatology-pityriasis rubra pilaris-confusion-matrix.png}
+        \subcaption{Pityriasis rubra pilaris.}
+        \label{subfig:itemd}
+    \end{subfigure}
+\end{figure}    
+\begin{figure}[H]\ContinuedFloat
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab5 (MLP)/figs/dermatology-psoriasis-confusion-matrix.png}
+        \subcaption{Psoriasis.}
+        \label{subfig:iteme}
+    \end{subfigure}
+\end{figure}    
+\begin{figure}[H]\ContinuedFloat
+    \centering
+    \begin{subfigure}{0.6\textwidth}
+        \includegraphics[scale=.4]{../trab5 (MLP)/figs/dermatology-seboreic dermatitis-confusion-matrix.png}
+        \subcaption{Seboreic dermatitis.}
+        \label{subfig:itemf}
+    \end{subfigure}
+
+    \caption{Confusion matrix for all classes of the dermatology dataset.}
+    \label{fig:dermatology-mlp-confusion-matrix}
+\end{figure}
+
+\section*{Regression problem}
+
+For the regression task, the following datasets are considered
+
+\begin{itemize}
+    \item Dummy dataset: Artificial dataset where the desired signal is \(d(n) = 3\sin\left( x(n) \right)+1\).
+    \item Electric Motor Temperature: The usage of a set of parameters of an electric motor (current and voltages in d/q coordinates, motor speed, torque, etc...) to estimate its temperature. In total, the neural network tries to estimate the electric motor temperature in five areas: stator tooth, stator winding, stator yoke, permanent magnet, and coolant.
+    \item Car Fuel Consumption: An attempt to estimate the car consumption based on a series of parameters, such as the gasoline type, the weather condition, the usage of the air conditioner, etc...
+\end{itemize}
+
+All datasets were normalized the of the range \([-1, 1]\). This makes the neural network output signal range suitable for the normalized desired signal when it is employed the hyperbolic tangent as the activation function. Moreover, the output layer has only one neuron since it is a regression problem. The unique exception is the Electric Motor Temperature dataset, in which the MLP estimates five features using five neurons on the output layer.
+
+The Figure \ref{fig:sine-regression} shows the regression for the sine function and the Table \ref{tab:rmse-regression-results} summarizes the results in terms of the mean RMSE and its standard deviation obtained for each dataset.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.4]{../trab5 (MLP)/figs/sine_regression.png}
+    \caption{Regression solution for the sine function problem.}
+    \label{fig:sine-regression}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{RMSE for several datasets of regression problem}
+	\footnotesize
+	\setlength{\tabcolsep}{5pt}
+	\begin{tabular}{ccc}
+		% \toprule [1.3pt]	
+		% \multicolumn{4}{c}{ \textbf{Style} } \\
+		\hline
+		Dataset & mean RMSE & standard deviation \\
+		\hline
+		Car fuel & 0.1417 & 0.022 \\
+        \hline
+		Electric Motor Temperature - Coolant & 0.3295 & 0.08 \\
+		\hline
+		Electric Motor Temperature - Stator winding & 0.0337 & 0.3378 \\
+		\hline
+        Electric Motor Temperature - Stator tooth & 0.033 & 0.3378 \\
+		\hline
+        Electric Motor Temperature - Permanent magnet & 0.0512 & 0.3355 \\
+		\hline
+        Electric Motor Temperature - Stator yoke & 0.03981 & 0.3371 \\
+		\hline
+	\end{tabular} \label{tab:rmse-regression-results}
+\end{table}
+
+As a regression example, the Figure shows the estimated stator winding temperature for one session\footnote{The data set is divided into several measurement sessions, in which one session consists of a six-hour test bench.}. It is possible to see that the trained neural network can successively estimate the stator winding temperature.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.4]{../trab5 (MLP)/figs/electric-motor-temp - Stator winding regression.png}
+    \caption{Regression solution for the sine function problem.}
+    \label{fig:sine-regression}
+\end{figure}
+
+\end{document}

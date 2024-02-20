@@ -1,0 +1,7 @@
+Added Component: Designator=H?(HOLE_M3)
+Add component. Clean all parameters for all variants
+Added Component: Designator=H?(HOLE_M3)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=H?-1
+Added Member To Class: ClassName=Main Member=Component H? Hole
+Added Member To Class: ClassName=Main Member=Component H? Hole

@@ -1,0 +1,55 @@
+Added Component: Designator=U3(TSSOP8)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Bandwidth"; Value = "700kHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "TSSOP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Common Mode Rejection Ratio"; Value = "65dB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.ti.com/lit/ds/symlink/lm358.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/lit/ds/symlink/lm358.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.produktinfo.conrad.com/datenblaetter/1000000-1099999/001072378-da-01-en-IC_OPAMP_GP_700KHZ_LM358PWR_TSSOP_8_TID.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.produktinfo.conrad.com/datenblaetter/1000000-1099999/001072378-da-01-en-IC_OPAMP_GP_700KHZ_LM358PWR_TSSOP_8_TID.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gain Bandwidth Product"; Value = "700kHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Input Bias Current"; Value = "250nA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Input Offset Voltage (Vos)"; Value = "7mV"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "LM358PWR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Dual Supply Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "70°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Supply Voltage"; Value = "32V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Dual Supply Voltage"; Value = "1.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "0°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Supply Voltage"; Value = "3V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nominal Supply Current"; Value = "1.2mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Amplifiers"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Channels"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Circuits"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Elements"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Current"; Value = "1mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Current"; Value = "30mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Output Current per Channel"; Value = "30mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.38, 10=0.284, 50=0.284, 100=0.154, 1000=0.116, 10000=0.093 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Quiescent Current"; Value = "600mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "REACH SVHC"; Value = "No SVHC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Slew Rate"; Value = "0.3V/µs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "5361"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Mouser"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "595-LM358PWR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unity Gain Bandwidth Product"; Value = "700kHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Gain"; Value = "100dB"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetR5_1 Pin=U3-1
+Added Pin To Net: NetName=NetR5_1 Pin=U3-2
+Added Pin To Net: NetName=D13_SCK Pin=U3-3
+Added Pin To Net: NetName=GND Pin=U3-4
+Added Pin To Net: NetName=NetC14_2 Pin=U3-5
+Added Pin To Net: NetName=+3V3D Pin=U3-6
+Added Pin To Net: NetName=NetQ1_1 Pin=U3-7
+Added Pin To Net: NetName=+5VD Pin=U3-8
+Added Member To Class: ClassName=U_Sheet1 Member=Component D4 LED
+Added Member To Class: ClassName=U_Sheet1 Member=Component R5 560R
+Added Member To Class: ClassName=U_Sheet1 Member=Component U3 Amp-Op

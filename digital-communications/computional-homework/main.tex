@@ -1,0 +1,154 @@
+\documentclass[12pt,a4paper]{article}
+\input{default_preamble.tex}
+\input{homework_commands.tex}
+\input{default_gossary_entries.tex}
+
+\usepackage{fontspec}
+\usepackage{minted}
+
+\begin{document}
+
+% \author{Student}
+\title{Computational homework}
+\date{\today}
+\maketitle
+
+%%--CABEÇALHO--%%
+\begin{center}
+    {\huge Simulink-based implementation of an \(M\)-QAM modem \par}
+    {\LARGE Digital communication systems \par}
+    {\Large Telecommunication Engineering \par}
+    {\Large André Lima Ferrer de Almeida \par}
+    % {\Large Opitional}
+\end{center}
+
+\problem \label{probone}
+Develop a Matlab function that calculates a bit sequence in Gray encoding. It must input the number of bits (an integer value) and output the bit sequence. For example, for a sequence of \(3\) bits, your function must return
+
+\begin{minted}[breaklines,escapeinside=||,mathescape=true, numbersep=3pt, gobble=2, frame=lines, fontsize=\small, framesep=2mm]{matlab}
+    >> get_gray_codes(3)
+
+ans =
+
+     0     1     1     0     0     1     1     0
+     0     0     1     1     1     1     0     0
+     0     0     0     0     1     1     1     1
+\end{minted}
+where each column corresponds to a sequence (from the left to the right) of 3 bits in Gray encoding. The first row is the \gls{lsb} and the last row is the \gls{msb}.
+
+Tips:
+\begin{enumerate}
+    \item Before generating the Gray encoding, first generate the bit sequence without any encoding, i.e.,
+    \begin{minted}[breaklines,escapeinside=||,mathescape=true, numbersep=3pt, gobble=2, frame=lines, fontsize=\small, framesep=2mm]{matlab}
+        >> original
+
+    original =
+
+     0     1     0     1     0     1     0     1
+     0     0     1     1     0     0     1     1
+     0     0     0     0     1     1     1     1
+    \end{minted}
+    \item Transforming the uncoded bit sequence into Gray encoding is easier if you use a recursive function. \href{https://en.wikipedia.org/wiki/Gray_code#Constructing_an_n-bit_Gray_code}{See here}.
+\end{enumerate}
+
+\textbf{Note:} For the following problems, use the Simulink template provided by the professor.
+
+\section{Baseband modulator}
+
+\problem \label{probtwo}
+Generate a bit stream with the following parameters:
+\begin{itemize}
+    \item Bit rate: \(R_b = \qty{10}{\mega\bit\per\second}\).
+    \item Equiprobable bits.
+\end{itemize}
+
+\problem \label{probthree}
+Use a block called ``Matlab function'' to create a function that maps a stream of \(N_b = \log_2\left( M \right)\) bits to a complex symbol from an alphabet of \(M=256\) symbols. The real and imaginary part of each constellation point must be spaced as Proakis suggests, i.e., \(\left\{ \pm1, \pm3, \dots, \pm\sqrt{M} \right\}\). Moreover, the mapping of the real/imaginary part of the complex symbol must be in the Gray encoding sequence (see \cite{proakisDigitalCommunications2007} for more info).
+
+\subproblem What is the operating rate at the output of ``Matlab function''? What is its relationship with \(N_b\) and \(R_b\)?
+\subproblem Use a block called ``Gain'' to apply a gain of \(\sqrt{E_g}\) to the complex symbol outputs, where \(E_g = 5\).
+\subproblem By using a block called ``Constellation Diagram'', show that each point in the constellation is now in the form \(\sqrt{E_g} A_m\), where \(A_m = A_{mi}+j A_{mq}\) is the constellation for the \(m\)th symbol and that \(A_{mi}, A_{mq} \in \left\{ \pm1, \pm3, \dots, \pm\sqrt{M} \right\}\). Note that the \(k\)th transmitted symbol can be represented by the vector
+\begin{align}
+    \mathbf{s}_m\left[ k \right] = \begin{bmatrix}
+        \sqrt{E_g}A_{mi} & \sqrt{E_g}A_{mq}
+    \end{bmatrix}^\top \in \mathbb{R}^{2}
+\end{align}
+
+Tips:
+\begin{enumerate}
+    \item Use the ``Buffer'' block to vectorize the bit stream into an \(N_b\)-bits frame and use it as input of the ``Matlab function''.
+    \item You can pass a Gray-encoded bit sequence to the ``Matlab function'' block. You can use your function developed in Problem 1 to generate this bit sequence.
+\end{enumerate}
+
+\problem Pass your symbol stream through the ``Raised Cosine Filter'' block with the following parameters
+\begin{itemize}
+    \item Roll-off factor: \(0.2\).
+    \item Filter span (in symbols): \(4\).
+    \item Number of samples per symbol: \(N=100\) samples.
+\end{itemize}
+The filter gain must be adjusted so that the energy of the impulse response is one. In the ``Raised Cosine Filter'' block, you can obtain the impulse response by exporting the filter coefficients to the workspace. You can use the \mintinline{matlab}{stem()} function to plot the impulse response samples. Use the function \mintinline{matlab}{trapz()} to perform a numerical integration via the \(1\)th-order Newton-Cotes formula (i.e., the trapezoidal method). By integrating the square of the impulse response, you obtain its energy. If the result is \(I\), you can normalize it by adjusting the filter gain to \(1/\sqrt{I}\).
+
+Note: In fact, the energy of the \gls{bb} pulse shaping has already been included separately in the ``Gain'' block (its energy is \(E_g\)).
+\subproblem What is the new operating rate of the system? Why has the operating rate changed to this value?
+\subproblem Check if the raised cosine filter obeys the Nyquist criterion for non-\gls{isi}. Use the ``scope'' block to prove your answer graphically.
+
+\section{Upconverter}
+
+\problem Use a block called ``sine wave'' (from the DSP system toolbox) with the following parameters
+\begin{itemize}
+    \item Amplitude: \(\sqrt{2}\);
+    \item Frequency: \(f_c = \frac{1}{4T_{samp}}\), where \(T_{samp}\) is the sampling interval of the baseband signal;
+    \item Sample mode: Discrete;
+    \item Output complexity: Complex;
+\end{itemize}
+
+The sampling rate must be consistent with the sampling rate of your system. Let us denote the \gls{bb} pulse shaping (i.e., the raised cosine filter impulse response) of your system as \(g\left( t \right) \in \mathbb{R}\), whose energy is denoted as \(E_g\). Then the pre-envelope (or analytic signal) of the \(m\)th symbol is
+\begin{align}
+    s_{m+}\left( t \right) = s_{ml}\left( t \right) e^{j 2\pi f_c t} \in \mathbb{C},
+\end{align}
+where \(s_{ml}\left( t \right) = A_m g\left( t \right) \in \mathbb{C}\) is the complex envelope (or lowpass equivalent) of the real-valued transmitted signal for the \(m\)th symbol,
+\begin{align}
+    \label{eq:s_m(t)}
+    s_{m}\left( t \right) = \sqrt{2} \Re{s_{ml}\left( t \right) e^{j 2\pi f_c t}}.
+\end{align}
+The pre-envelope has important properties concerning the spectrum of the transmitted signal. The output of the block named ``sine wave'' should exactly be the discrete-time version of the pre-envelope discussed in the literature.
+
+\subproblem Make a mathematical analysis of this signal and use the ``Spectrum Analyzer'' block to compare the spectrum obtained in Simulink with the theoretical spectrum. Good references can be found in \cite{mengaliSynchronizationTechniquesDigital1997,meyrDigitalCommunicationReceivers1998,proakisDigitalCommunications2007}
+\subproblem Repeat the item (a) for the spectrum of the complex envelope.
+\subproblem Use a block called ``Complex to real-imag'' to obtain the real part of the analytic signal and repeat the item (a) for the transmitted signal.
+\subproblem Based on \cite[Equation (3.2-42)]{proakisDigitalCommunications2007}, the average energy of the transmitted signal is\footnote{Proakis does not normalize the carrier energy by the \(\sqrt{2}\) factor. Therefore, the average energy in his book is half of what we are using here.}
+\begin{align}
+    \label{eq:E_s}
+    E_s = \frac{2\left( M-1 \right)}{3}E_g
+\end{align}
+For \(M = 256\) and \(E_g = 5\), we have that \(E_s = 850\).
+
+In reality, the transmitted signal is a stochastic process and therefore it is seen as a power signal since its energy is infinity. However, the concept of ``average energy'' expressed in \eqref{eq:E_s} does not refer to the energy in its original sense, i.e.,
+\begin{align}
+    \lim_{T \rightarrow \infty} \int_{-\frac{T}{2}}^{\frac{T}{2}} \abs{s_m \left( t \right)}^{2} \dd{t}.
+\end{align}
+
+Rather, the average energy is obtained from the product between the average power,
+\begin{align}
+    \label{eq:P_s}
+    P_s = \lim_{T \rightarrow \infty} \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} \abs{s_m \left( t \right)}^{2} \dd{t},
+\end{align}
+and the symbol interval, \(T_s\). Therefore,
+\begin{align}
+    P_s = \frac{E_s}{T_s}.
+\end{align}
+The equation \eqref{eq:P_s} converges and can be estimated in Simulink by using the blocks:
+\begin{enumerate}
+    \item ``Square'' to take the square absolute value of the transmitted signal.
+    \item ``Discrete-time integrator'' to numerically integrate \(\abs{s_m \left( t \right)}^{2}\).
+    \item ``Clock'' to obtain an input of the running simulation time.
+    \item ``Divide'' to divide the integration result by the running simulation time.
+\end{enumerate}
+
+Finally, use the block named ``gain'' to multiply the average power to \(T_s\) and show that, indeed, the average energy of the transmitted signal is approximately \(850\).
+
+%============================================
+\printbibliography
+
+
+\end{document}

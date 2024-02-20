@@ -1,0 +1,36 @@
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~144|Field=Description~String~Description~216|Field=Designator~String~Designator~126|Field=Footprint~String~Footprint~120|Field=Quantity~Integer~Quantity~21|Field=Supplier 1~String~Supplier 1~91|Field=Case/Package~String~Case/Package~100|Field=Manufacturer Part Number~String~Manufacturer Part Number~100|Field=Mount~String~Mount~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~Arduino Uno.PrjPCB|ReportField=ProjectFullPath~C:\Users\Rubem Pacelli\Google Drive\Programas\Trabalhos de programas\Altium\Arduino Uno Exemplo\Arduino Uno.PrjPCB|ReportField=Title~Bill of Materials For Project [Arduino Uno.PrjPCB] (No PCB Document Selected)|ReportField=ReportTime~09:29:27|ReportField=ReportDate~01/01/2019|ReportField=ReportDateTime~01/01/2019 09:29:27|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=TotalQuantity~60|ReportField=TotalActualPrice~0|ReportField=TotalTargetPrice~0|ReportField=VersionControl_RevNumber~|ReportField=VersionControl_ProjFolderRevNumber~|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~Rubem Vasconcelos Pacelli|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~01/01/2019|ReportField=CurrentTime~06:09:59|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\Rubem Pacelli\Google Drive\Programas\Trabalhos de programas\Altium\Arduino Uno Exemplo\Main.SchDoc|ReportField=DocumentName~Main.SchDoc|ReportField=DocumentNumber~1|ReportField=DrawnBy~|ReportField=Engineer~Engenheiro Eletrônico|ReportField=ImagePath~|ReportField=ModifiedDate~01/01/2019|ReportField=Organization~|ReportField=ProjectName~Arduino Uno.PrjPCB|ReportField=Revision~1.0|ReportField=Rule~|ReportField=SheetNumber~1|ReportField=SheetTotal~3|ReportField=Time~|ReportField=Title~Arduino Uno|ReportField=DataSourceFileName~Arduino Uno.PrjPCB|ReportField=DataSourceFullPath~C:\Users\Rubem Pacelli\Google Drive\Programas\Trabalhos de programas\Altium\Arduino Uno Exemplo\Arduino Uno.PrjPCB|ReportField=PCBConfigurationName~Sources|ReportField=Item~|ReportField=ItemRevision~|ReportField=ItemAndRevision~|ReportField=ItemRevisionBase~|ReportField=ItemRevisionLevel1~|ReportField=ItemRevisionLevel2~|ReportField=ItemRevisionLevel1AndBase~|ReportField=ItemRevisionLevel2AndLevel1~
+1|Linear Regulator|5V supplier, 3V3 supplier|U2, U4|SOT223_N|2|Digi-Key|SOT-223|NCP1117ST50T3G, NCP1117ST33T3G|Surface Mount
+2|ATmega328P-PU|8-bit AVR Microcontroller, 32KB Flash, 1KB EEPROM, 2KB SRAM, 28-pin PDIP, Industrial Grade (-40°C to 85°C)|U1|DIP28|1|Digi-Key|PDIP|ATMEGA328P-PU|Through Hole
+3|20pF|Capacitor Crystal|C5, C6|C1608[0603]|2|Digi-Key|0603|CL10C200JB8NNNC|Surface Mount
+4|10uF 10V|Capacitor Decoupling|C9|C2012[0805]|1|Digi-Key|0603|C1608JB1A106K080AC|Surface Mount
+5|1uF 25V|Capacitor Decoupling|C11|C2012[0805]|1|Digi-Key|0805|C2012X7R1E105K125AB|Surface Mount
+6|0.1uF 25V|Capacitor Decoupling, Decoupling Capacitor, Capacitor Coupling|C1, C2, C7, C10, C12, C13, C14, C15, C16, C17, C18|C1608[0603]|11|Digi-Key|0603|GCM188R71E104KA57D|Surface Mount
+7|16MHz|Crystal Oscillator|Y1|CRYSTAL-HC49/4H_SMX|1|Digi-Key|HC-49/US|ECS-160-20-3X-TR|Surface Mount
+8|0.1uF 50V|Decoupling Capacitor, Capacitor Decoupling|C4, C8|C0603[0201]|2|Digi-Key|0603|C1608X7R1H104M080AA|Surface Mount
+9|B160-13-F|Diode|D1|DO214AC|1|Digi-Key|SMA|B160-13-F|Surface Mount
+10|ICSP|Header, 3-Pin, Dual row|P3|HDR2X3M|1|Digi-Key||M20-9720345|Through Hole
+11|AD|Header, 6-Pin|P4|HDR1X8F|1|Digi-Key||PPPC061LFBN-RC|Through Hole
+12|PROG|Header, 6-Pin|P8|HDR1X6m|1|Digi-Key||68000-406HLF|Through Hole
+13|Header 8|Header, 8-Pin|P1|HDR1X8F|1|Digi-Key||PPTC081LFBN-RC|Through Hole
+14|IOL|Header, 8-Pin|P5|HDR1X8F|1|Digi-Key||PPTC081LFBN-RC|Through Hole
+15|I/O|Header, 10-Pin|P6|HDR1X10|1|Digi-Key||PPTC101LFBN-RC|Through Hole
+16|LED|LED|D4|LED-0603-R|1|Digi-Key|0603|LTST-C191KRKT|Surface Mount
+17|LED|LED indicador visual|D2|LED-0603-G|1|Mouser|0603|APT1608QBC/D|Surface Mount
+18|RX|LED visual indicator|D5|LED-0603-R|1|Digi-Key|0603|LTST-C190KSKT|Surface Mount
+19|TX|LED visual indicator|D6|LED-0603-R|1|Digi-Key|0603|LTST-C190KSKT|Surface Mount
+20|Barrel Jack|Low Voltage Power Supply Connector|P2|BARREL2.5|1|Digi-Key||EJ503A|Through Hole
+21|BSS138|N-Channel MOSFET|Q2, Q3|SOT23|2|Digi-Key|SOT-23|BSS138|Surface Mount
+22|FDN340P|P-Channel MOSFET|Q1|SOT23|1|Digi-Key|SOT-23|FDN340P|Surface Mount
+23|47uF 25V|Polarized Capacitor - Power Entry|C3|Cap_Al_SMD_C6_6.6x6.6mm|1|Digi-Key|Radial|EEE-HA1E470WP|Surface Mount
+24||Resettable Fuse|F1|MF-MSMF050|1|Digi-Key|1812|MF-MSMF050-2|Surface Mount
+25|1M|Resistor|R2|R2012[0805]|1|Digi-Key|0805|ERA-6AEB105V|Surface Mount
+26|270R|Resistor|R1|R1608[0603]|1|Mouser|0603|ESR03EZPJ271|Surface Mount
+27|560R|Resistor|R5|R1608[0603]|1|Digi-Key|0603|AC0603FR-07560RL|Surface Mount
+28|1k|Resistor LED|R12, R13|R1608[0603]|2|Digi-Key|0603|ESR03EZPJ102|Surface Mount
+29|100k|Resistor pull-up|R3|R1608[0603]|1|Digi-Key|0603|MCT06030C1003FP500|Surface Mount
+30|10k|Resistor pull-up, Resistor voltage divider, Resistor USB, Resistor amp-op, Resistor MOSFET|R4, R6, R7, R8, R9, R10, R11, R14, R15, R16, R17|R1608[0603]|11|Digi-Key|0603|MCT06030C1002FP500|Surface Mount
+31|Amp-Op|Schmitt trigger|U3|TSSOP8|1|Mouser|TSSOP|LM358PWR|Surface Mount
+32||Tactile Switch|S1|PB-SW-SMT|1|Digi-Key|SMD/SMT|PTS645SM43SMTR92LFS|Surface Mount
+33||USB - B Receptacle|P7|USBB1HSB6|1|Digi-Key||USB-B1HSB6|Through Hole
+34|FT231XS-R|USB to Full-Handshake UART Interface Chip, UHCI/OHCI/EHCI Compatible, USB 2.0 Compatible, -40 to +85 degC, 20-Pin SSOP, Pb-Free, Tape and Reel|U5|NSSOP-20_N|1|Digi-Key|SSOP|FT231XS-R|Surface Mount
+35|GLL4748A|Zener Diode Protection|D3|DO-213AB|1|Mouser|MELF|GLL4748A-E3/96|Surface Mount

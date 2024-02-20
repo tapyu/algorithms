@@ -11,3 +11,8 @@ Here you will find:
 Here you won't find:
 - [ ] Book PDFs or theoretical lectures slides.
 - [ ] Software
+- [ ] Code solution of Book's computer exercises
+
+----
+
+## About git-annex for Large files

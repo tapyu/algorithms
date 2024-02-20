@@ -1,0 +1,74 @@
+\usepackage{pgffor} % Pacote para laço condicional
+\usepackage{textgreek}
+
+% Comando para iniciar o cabeçao
+\newcommand{\initcab}[2]{
+
+\begin{tabular}{lllll}
+	\multirow{4}*{\includegraphics[width=50px]{figs/logo_ufc.png}}    &			\multicolumn{4}{l}{\Large{\textbf{Universidade Federal do Ceará}}} \\
+																	&			Disciplina:&\multicolumn{2}{l}{Processamento Estatístico de Sinais}\\
+																	&			Professor:&Charles Casimiro Cavalcante \\
+																	&			Estudante:&Rubem Vasceconcelos Pacelli & Matrícula: 474725 &
+\end{tabular}
+
+\begin{flushright}
+\footnotesize{#1 de 2019}
+\end{flushright}
+
+{\Large Lista #2}
+
+}
+
+% Comando para a craiação de Rx
+\newcommand{\RxTres}{
+\begin{bmatrix}
+ R_{dx}(0)  & R_{dx}(1)  & R_{dx}(2)\\
+ R_{dx}(-1) & R_{dx}(0)  & R_{dx}(1)\\
+ R_{dx}(-2) & R_{dx}(-1) & R_{dx}(0)\\
+\end{bmatrix}
+}
+
+\newcommand{\RxTresE}{
+\begin{bmatrix}
+ \textEpsilon\left[ x^{2}\left[ n\right] \right] & 
+ \textEpsilon\left[ x\left[ n\right] x\left[ n-1\right] \right] &
+ \textEpsilon\left[ x\left[ n\right] x\left[ n-2\right] \right] \\
+ \textEpsilon\left[ x\left[ n-1\right] x\left[ n\right] \right] &
+ \textEpsilon\left[ x^{2}\left[ n-1\right] \right] &
+ \textEpsilon\left[ x\left[ n-1\right] x\left[ n-2\right] \right] \\
+ \textEpsilon\left[ x\left[ n-2\right] x\left[ n\right] \right] &
+ \textEpsilon\left[ x\left[ n-2\right] x\left[ n-1\right] \right] &
+ \textEpsilon\left[ x^{2}\left[ n-2\right] \right]
+\end{bmatrix}
+}
+
+
+\newcommand{\RxDois}{
+\begin{bmatrix}
+ R_x(0)  & R_x(1)\\
+ R_x(-1) & R_x(0)\\
+\end{bmatrix}
+}
+
+\newcommand{\RxDoisE}{
+\begin{bmatrix}
+ \textEpsilon\left[ x^{2}\left[ n\right] \right] & 
+ \textEpsilon\left[ x\left[ n\right] x\left[ n-1\right] \right] \\
+ \textEpsilon\left[ x\left[ n-1\right] x\left[ n\right] \right] &
+ \textEpsilon\left[ x^{2}\left[ n-1\right] \right]
+\end{bmatrix}
+}
+
+\newcommand{\RdxDois}{
+\begin{bmatrix}
+ R_{dx}(0)\\
+ R_{dx}(-1)\\
+\end{bmatrix}
+}
+
+\newcommand{\RdxDoisE}{
+\begin{bmatrix}
+ \textEpsilon\left[ x\left[ n\right]d\left[ n\right] \right] &  \\
+ \textEpsilon\left[ x\left[ n-1\right] d\left[ n\right] \right]
+\end{bmatrix}
+}

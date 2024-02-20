@@ -1,0 +1,7 @@
+Added Component: Designator=H?(HOLE_M3)
+Add component. Clean all parameters for all variants
+Added Component: Designator=H?(HOLE_M3)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=H?-1
+Added Class: Name=Main
+Added Room: Name=U_Sheet2

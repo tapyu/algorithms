@@ -1,0 +1,196 @@
+%%% important comment keywords %%%
+% WARNING: -> a warning concerning some compilation issues that may break your system in some situation
+% ADJUST: -> manual tweaks that you may want to change
+
+%%%%%%%%% new commands %%%%%%%%%
+\usepackage{xparse} % make command behave differently depending on the number of arguments
+\usepackage{xstring} % testing a string's contents, extracting substrings, substitution of substrings
+
+%%%%%%%%% items, tables and figs %%%%%%%%%
+\makeatletter
+\@ifclassloaded{beamer}{}{\usepackage{enumitem}}
+\makeatother
+\usepackage{xltabular}
+\usepackage{float} % use the [H] option
+\usepackage{tikz}
+\usepackage{graphicx} % extends the basic LaTeX graphic capabilities: placement, scaling, rotation, file formats
+\usepackage{standalone} % place tikz environments or other material in own source files
+
+%%%%%%%%% references %%%%%%%%%
+\usepackage{glossaries} % \newglossaryentry{} entries. ADJUST: If you want to make the entries nonclickable, load this package before hyperref
+\makeatletter
+\@ifclassloaded{beamer}{}{
+  \usepackage[colorlinks=true]{hyperref} % make references blue and clickable
+  \hypersetup{ % you can use allcolors=blue in hyperref options instead this setup. Colour it black to disable it
+      linkcolor=blue,          % For \gls{} entries
+      citecolor=blue,          % For \cite{} entries
+  }
+}
+\makeatother
+%%%%%%%%% bibliography %%%%%%%%%
+\usepackage[style=numeric-comp,backend=biber]{biblatex} % tells LaTeX to use the biber tool instead of the traditional bibtex tool for sorting and formatting your bibliography. Biber is a more advanced and powerful tool than bibtex and it provides more features, such as advanced sorting, Unicode support and support for various data sources.
+\addbibresource{/home/tapyu/.cache/zotero/refs.bib} % add reference file, in the document, add \printbibliography to print bibliography
+
+%%%%%%%%% math %%%%%%%%%
+\usepackage{amsmath}
+\usepackage{mathtools} % is an extension package to amsmath to use \DeclarePairedDelimiter
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{esint} % for \oiint
+\usepackage{newtxmath} % for Greek variants (bold, nonitalic, etc...)
+\usepackage{stmaryrd} % provides new symbols, such as \llbracket \rrbracket
+\usepackage{bm} % for writing tensor, e.g., $\bm{\mathcal{A}}$
+\usepackage{IEEEtrantools} % provides the IEEEeqnarray environment. WARNING: This package may crash your build if the \documentclass is IEEE-like, e.g., IEEEtran. In this case, delete this line!
+\usepackage{siunitx} % typesetting units and unitless numbers SI (Système International d’Unités) units (PS: use \SI{} instead \qty{} to avoid conflicts with the same command from the package physics)
+% use \SI for number and unit, e.g., \SI{10}{\meter\per\second}
+% use \si for unit only, e.g., \si{\meter\per\second}
+% use \SIrange[options]{value1}{value2}{unit commands} for a range of values, possible options:
+% 1. "range-phrase=-" ->  change the word "to" to "--"
+% 2. range-units=single -> chage "1m to 10m" to "1 to 10m"
+% 3. mode=text % writes the unit in full
+% 4. quantity-product={-} to create a compound adjective with quantities, e.g. "the 50-Hz signal..."
+% use the [per-mode=symbol] option in the \si or \SI command to change the writing of \per, or change the line below to set it globally
+\sisetup{per-mode=symbol} % print the symbol "/" in "25/100"
+\sisetup{tight-spacing=true} % makes the spacing in "5 x 10²" closer
+% \squared -> ^2
+
+\usepackage{physics} % several math macros, such as
+\AtBeginDocument{\RenewCommandCopy\qty\SI} % avoid incompatibilities between physics and siunitx packages when using the \qty{}{} command. The conflict happens because it is defined in both packages. Although physics has \SI{}{} as an alternative, it is deprecated and therefore you should use \unit{} and \qty{}{} instead of \si{} and \SI{}{}, respectively. See here (https://tex.stackexchange.com/questions/628183/how-to-avoid-qty-conflict-with-physics-and-siunitx) for more info.
+% \tr -> trace
+% \rank -> rank
+% \expval -> angle brackets to inner product,〈a,b〉, or ensemble average〈s(t)〉
+% \abs -> |x|
+% \norm -> ||x||
+% \eval -> evaluated bar x|_y=a
+% \order -> Big-O notation
+% \Re -> real
+% \Im -> imaginary
+% \dd[]{} -> differential
+% \dv -> derivative
+% \pdv -> partial derivative
+
+%%%%%%%%% operators %%%%%%%%%
+\let\oldemptyset\emptyset % change empty set
+\let\emptyset\varnothing
+% circular convolution a lá Oppenheim (if possible, prefer \circledast)
+\newcommand*\circconv[1]{%
+  \begin{tikzpicture}
+    \node[draw,circle,inner sep=1pt] {#1};
+  \end{tikzpicture}}
+\newcommand{\intersection}{\bigcap\limits} % intersection operator
+
+%%%%%%%%% delimiters %%%%%%%%%
+\makeatletter % changes the catcode of @ to 11
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil} % ⌈x⌉
+\let\oldceil\ceil
+\def\ceil{\@ifstar{\oldceil}{\oldceil*}} % swap the asterisk and the nonasterisk behaviors
+
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor} % ⌊x⌋
+\let\oldfloor\floor
+\def\floor{\@ifstar{\oldfloor}{\oldfloor*}}
+\makeatother % changes the catcode of @ back to 12
+
+%%%%%%%%% simple functions %%%%%%%%%
+\newcommand{\adj}[1]{\ensuremath{\operatorname{adj}\left(#1\right)}} % adjugate matrix
+\newcommand{\cof}[1]{\ensuremath{\operatorname{cof}\left(#1\right)}} % cofactor matrix
+\newcommand{\eig}[1]{\ensuremath{\operatorname{eig}\left(#1\right)}} % eigenvalues
+\newcommand{\nullspace}[1]{\ensuremath{\operatorname{N}\left(#1\right)}} % nullspace or kernel of the matrix
+\newcommand{\nullity}[1]{\ensuremath{\operatorname{nullity}\left(#1\right)}} % nullity=dim(N(A))
+\newcommand{\spn}[1]{\ensuremath{\operatorname{span}\left\{#1\right\}}} % span of a set of vectors, \span is a reserved word
+\newcommand{\range}[1]{\ensuremath{\operatorname{C}\left(#1\right)}} % range or columnspace of a matrix=span(a1,a2, ..., an), where ai is the ith column vector of the matrix A
+\newcommand{\unvec}[1]{\ensuremath{\operatorname{unvec}\left(#1\right)}} % unvectorize operator
+\newcommand{\diag}[1]{\ensuremath{\operatorname{diag}\left(#1\right)}} % diagonal operator
+\newcommand{\dom}[1]{\ensuremath{\operatorname{dom}\left(#1\right)}} % domain of the function
+\newcommand{\frob}[1]{\ensuremath{\norm{#1}_\textrm{F}}} % Frobenius norm
+\renewcommand{\dim}[1]{\ensuremath{\operatorname{dim}\left(#1\right)}} % dimension of a set
+
+%%%%%%%%% complex functions %%%%%%%%%
+\NewDocumentCommand{\argmin}{ e{_} m }{% \argmin_{x ∈ A}{f(x)} or \argmin{f(x)}
+    \ensuremath{%
+        \IfValueTF{#1}{%
+            \underset{#1}{\operatorname{arg\,min}\;#2}
+        }{% else
+            \operatorname{arg\,min}\;#2
+        }
+    }
+}
+\NewDocumentCommand{\argmax}{ e{_} m }{% \argmax_{x ∈ A}{f(x)} or \argmax{f(x)}
+    \ensuremath{%
+        \IfValueTF{#1}{%
+            \underset{#1}{\operatorname{arg\,max}\;#2}
+        }{% else
+            \operatorname{arg\,max}\;#2
+        }
+    }
+}
+% limit in the mean (see Van Tress, chapter 6)
+\NewDocumentCommand{\limean}{ E{_}{{}} m }{ % \limean_{x ∈ A}{f(x)} or \limean{f(x)}
+    \ensuremath{
+        \IfValueTF{#1}{%
+            \underset{#1}{\operatorname{l.i.m.}\;#2}
+        }{% else
+            \operatorname{l.i.m.}\;#2
+        }
+    }
+}
+% \E{A}, \E_{u}{A}
+% if you want only the left or right part of \E (useful for breaking line) you can use \E_{u}[left-only]{A} or \E_{u}[right-only]{A}, respectively
+\NewDocumentCommand{\E}{ E{_}{{}} o m }{%
+    \ensuremath{%
+        \IfValueTF{#2}{%
+            \IfStrEq{#2}{left-only}{%
+              \operatorname{E}_{#1}\left[#3\right.%
+            }{% right-only
+              \left.#3\right]%
+            }%
+          }{%
+            \operatorname{E}_{#1}\left[#3\right]%
+          }%
+    }
+}
+\NewDocumentCommand{\cov}{O{} m}{\ensuremath{\operatorname{cov}_{#1}\left[#2\right]}} % covariance, e.g., \cov[u]{x} or \cov{x}
+\let\var\undefined\NewDocumentCommand{\var}{O{} m}{\ensuremath{\operatorname{var}_{#1}\left[#2\right]}} % variance, e.g., \var[u]{x} or \var{x}
+\let\vec\undefined\NewDocumentCommand{\vec}{O{} m}{\ensuremath{\operatorname{vec}_{#1}\left[#2\right]}} % vectorize operator, e.g., \vec[u]{\mathbf{A}}, [u] is optional
+% normalize all trigonometry functions (new and predefined) to put a parenthesis around the input argument
+\RenewDocumentCommand{\sin}{s m}{% \sin{x} -> sin(x) \sin*{x} -> sin x
+    \ensuremath{
+    \IfBooleanTF{#1}{\operatorname{sin} #2}{\operatorname{sin}\left(#2\right)}%
+    }
+}
+\RenewDocumentCommand{\cos}{s m}{% \cos{x} -> cos(x) \cos*{x} -> cos x
+    \ensuremath{
+    \IfBooleanTF{#1}{\operatorname{cos} #2}{\operatorname{cos}\left(#2\right)}%
+    }
+}
+\RenewDocumentCommand{\tan}{s m}{% \tan{x} -> tan(x) \tan*{x} -> tan x
+    \ensuremath{
+    \IfBooleanTF{#1}{\operatorname{tan} #2}{\operatorname{tan}\left(#2\right)}%
+    }
+}
+\NewDocumentCommand{\sinc}{s m}{% \sin{x} -> sinc(x) \sinc*{x} -> sinc x
+    \ensuremath{
+    \IfBooleanTF{#1}{\operatorname{sinc} #2}{\operatorname{sinc}\left(#2\right)}%
+    }
+}
+\NewDocumentCommand{\sgn}{s m}{% \sgn{x} -> sgn(x) \sng*{x} -> sgn x
+    \ensuremath{
+    \IfBooleanTF{#1}{\operatorname{sng} #2}{\operatorname{sgn}\left(#2\right)}%
+    }
+}
+\RenewDocumentCommand{\sec}{s m}{% \sec{x} -> sin(x) \sec*{x} -> sec x
+    \ensuremath{
+    \IfBooleanTF{#1}{\operatorname{sec} #2}{\operatorname{sec}\left(#2\right)}%
+    }
+}
+
+%%%%%%%%% minor adjusts in some mathematical symbols %%%%%%%%%
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n} % newtxmath changes the font style of \mathcal. It prevents \mathcal from being changed
+\let\oldforall\forall % put some spaces between the \forall command
+\renewcommand{\forall}{\;\oldforall\;}
+
+%%%%%%%%% comments, corrections, or revisions %%%%%%%%%
+\usepackage{luacolor} % colour support based on LuaTEX’s
+\usepackage[soul]{lua-ul} % provide underlining, strikethrough, and highlighting using features in LuaLATEX which avoid the restrictions imposed by other methods
+\newcommand{\obs}[1]{\textcolor{red}{(#1)}} % comment
+\newcommand{\sizecorr}[1]{\makebox[0cm]{\phantom{$\displaystyle #1$}}} % Used to seize the height of equation
+\newcommand{\ensureoperation}{\negmedspace {}} % To ensure that a new line symbol is an operation instead of a sign

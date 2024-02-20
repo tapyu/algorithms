@@ -1,0 +1,4 @@
+// make vscode use the recipe contained in the Makefile instead using the internal recipes mechanism of latex-workshop
+{
+    "latex-workshop.latex.external.build.command": "make"
+}

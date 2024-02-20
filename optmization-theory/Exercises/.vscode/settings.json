@@ -1,0 +1,24 @@
+{
+    "latex-workshop.latex.recipe.default": "latexmk recipe with minted",
+    "latex-workshop.view.pdf.invert": 0,
+    "latex-workshop.latex.recipes": [
+        {
+          "name": "latexmk recipe with minted",
+          "tools": [
+            "latexmk with minted"
+          ]
+        }
+      ],
+    "latex-workshop.latex.tools": [{
+        "name": "latexmk with minted",
+        "command": "latexmk",
+        "args": [
+            "--shell-escape",
+            "-xelatex",
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ]
+    }],
+}

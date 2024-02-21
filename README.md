@@ -17,4 +17,6 @@ Here you won't find:
 
 ## Git-annex for Large files
 
-This repository uses `git-annex` to store any file larger than 50MB in my Google Drive.
+This repository uses `git-annex` to store any file larger than 50MB in my Google Drive. Any new file larger than that should be stored in `git-annex`. For more info, see [here].
+
+[here]: https://gist.github.com/tapyu/0427afb25df969c1972942d945284ba2#git-annex

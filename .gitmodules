@@ -1,9 +1,9 @@
-[submodule "optmization-theory/Homeworks - Computational/ref"]
-	path = optmization-theory/Homeworks - Computational/ref
+[submodule "optimization-theory/Homeworks - Computational/ref"]
+	path = optimization-theory/Homeworks - Computational/ref
 	url = https://github.com/tapyu/algorithms_private
 	branch = opt
-[submodule "optmization-theory/additional-exercises"]
-	path = optmization-theory/additional-exercises
+[submodule "optimization-theory/additional-exercises"]
+	path = optimization-theory/additional-exercises
 	url = https://github.com/cvxgrp/cvxbook_additional_exercises
 [submodule "digital-communications/homework_solution"]
 	path = digital-communications/homework_solution

@@ -42,3 +42,6 @@
 [submodule "multilinear-algebra/other_solutions/LauraMMelo"]
 	path = multilinear-algebra/other_solutions/LauraMMelo
 	url = https://github.com/tapyu/ref-tensor_algebra_course
+[submodule "multilinear-algebra/other_solutions/ezequiasjunior"]
+	path = multilinear-algebra/other_solutions/ezequiasjunior
+	url = https://github.com/tapyu/ref-tensor-alg

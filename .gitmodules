@@ -60,3 +60,6 @@
 [submodule "radio-link/other_solutions/ezequiasjunior"]
 	path = radio-link/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-via-rad
+[submodule "digital-communications/other_solutions/ezequiasjunior"]
+	path = digital-communications/other_solutions/ezequiasjunior
+	url = https://github.com/tapyu/ref-pds_lab2019-1

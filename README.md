@@ -5,7 +5,7 @@ Here you will find:
 - [x] Further information about the events from where these algorithms were developed.
 - [x] Reference book and other resource materials (videos, online courses, software links, etc) for further study of each algorithm.
 - [x] Laboratory or computational homework slides, if the implemented algorithms come from these materials. Some of these materials (slides+algorithm) might be in a private [git submodules] as they might contain sensitive Professors' computational solutions, which aren't supposed to be available online. In these cases, you cannot access these algorithms as it is restricted to personal consultation.
-- [x] Code references developed by others, possibly during the same event where I've built mine. Such references will be in the form of [git submodules]. Such submodules are within the direcory named `other_solutions/`.
+- [x] Code references developed by others, possibly during the same event where I've built mine. Such references will be in public [git submodules]. Such submodules are within the direcory named `other_solutions/`.
 - [x] Package references that implement such algorithms.
 
 Here you won't find:

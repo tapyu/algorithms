@@ -25,3 +25,7 @@
 [submodule "computational-intelligence/other_solutions/ezequiasjunior"]
 	path = computational-intelligence/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-ica2019.2
+[submodule "computational-intelligence/other_solutions/filipepfarias"]
+	path = computational-intelligence/other_solutions/filipepfarias
+	url = https://github.com/tapyu/ref-Applied-Computational-Intelligence-2021.1
+	branch = main

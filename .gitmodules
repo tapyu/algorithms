@@ -12,3 +12,7 @@
 [submodule "adaptive-filtering/other_solutions/KennethBenicio"]
 	path = adaptive-filtering/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-Msc-Filtragem-Adaptativa
+[submodule "adaptive-filtering/other_solutions/lucasabdalah"]
+	path = adaptive-filtering/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = TIP7188-FILTRAGEM_ADAPTATIVA

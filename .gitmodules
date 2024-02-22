@@ -57,3 +57,6 @@
 	path = numerical-methods/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TI0117-COMPUTACAO_NUMERICA
+[submodule "radio-link/other_solutions/ezequiasjunior"]
+	path = radio-link/other_solutions/ezequiasjunior
+	url = https://github.com/tapyu/ref-via-rad

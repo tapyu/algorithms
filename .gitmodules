@@ -53,3 +53,7 @@
 	path = digital-signal-processing/other_solutions/lucasabdalah_polytech_nice_sophia
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = Filtrage-Numerique
+[submodule "numerical-methods/other_solutions/lucasabdalah"]
+	path = numerical-methods/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = TI0117-COMPUTACAO_NUMERICA

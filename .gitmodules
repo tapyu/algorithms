@@ -9,3 +9,6 @@
 	path = digital-communications/homework_solution
 	url = https://github.com/tapyu/algorithms_private
 	branch = dig-comm
+[submodule "adaptive-filtering/other_solutions/KennethBenicio"]
+	path = adaptive-filtering/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-Msc-Filtragem-Adaptativa

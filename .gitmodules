@@ -49,3 +49,7 @@
 	path = multilinear-algebra/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TIP8419-ALGEBRA_LINEAR_E_MULTILINEAR
+[submodule "digital-signal-processing/other_solutions/lucasabdalah_polytech_nice_sophia"]
+	path = digital-signal-processing/other_solutions/lucasabdalah_polytech_nice_sophia
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = Filtrage-Numerique

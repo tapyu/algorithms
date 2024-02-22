@@ -63,3 +63,6 @@
 [submodule "digital-communications/other_solutions/ezequiasjunior"]
 	path = digital-communications/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-pds_lab2019-1
+[submodule "pattern-recognition/other_solutions/KennethBenicio"]
+	path = pattern-recognition/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-MSc-Reconhecimento-de-Padroes

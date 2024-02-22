@@ -29,3 +29,7 @@
 	path = computational-intelligence/other_solutions/filipepfarias
 	url = https://github.com/tapyu/ref-Applied-Computational-Intelligence-2021.1
 	branch = main
+[submodule "digital-signal-processing/other_solutions/lucasabdalah"]
+	path = digital-signal-processing/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = PROCESSAMENTO_DIGITAL_DE_SINAIS

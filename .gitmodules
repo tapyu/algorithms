@@ -36,3 +36,6 @@
 [submodule "linear-algebra/other_solutions/KennethBenicio"]
 	path = linear-algebra/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-BSc-Linear-Algebra
+[submodule "multilinear-algebra/other_solutions/KennethBenicio"]
+	path = multilinear-algebra/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-MSc-Multilinear-Algebra

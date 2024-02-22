@@ -19,3 +19,6 @@
 [submodule "computational-intelligence/other_solutions/Kayannsoarez"]
 	path = computational-intelligence/other_solutions/Kayannsoarez
 	url = https://github.com/tapyu/ref-Inteligencia_Computacional
+[submodule "computational-intelligence/other_solutions/LauraMMelo"]
+	path = computational-intelligence/other_solutions/LauraMMelo
+	url = https://github.com/tapyu/ref-comp_intelligence_couse

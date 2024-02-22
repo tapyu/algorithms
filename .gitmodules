@@ -39,3 +39,6 @@
 [submodule "multilinear-algebra/other_solutions/KennethBenicio"]
 	path = multilinear-algebra/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-MSc-Multilinear-Algebra
+[submodule "multilinear-algebra/other_solutions/LauraMMelo"]
+	path = multilinear-algebra/other_solutions/LauraMMelo
+	url = https://github.com/tapyu/ref-tensor_algebra_course

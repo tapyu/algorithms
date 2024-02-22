@@ -16,3 +16,6 @@
 	path = adaptive-filtering/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TIP7188-FILTRAGEM_ADAPTATIVA
+[submodule "computational-intelligence/other_solutions/Kayannsoarez"]
+	path = computational-intelligence/other_solutions/Kayannsoarez
+	url = https://github.com/tapyu/ref-Inteligencia_Computacional

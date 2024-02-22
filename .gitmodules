@@ -66,3 +66,7 @@
 [submodule "pattern-recognition/other_solutions/KennethBenicio"]
 	path = pattern-recognition/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-MSc-Reconhecimento-de-Padroes
+[submodule "statistical-signal-processing/other_solutions/lucasabdalah"]
+	path = statistical-signal-processing/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = TI0124-PROCESSAMENTO_ESTATISTICO_DE_SINAIS

@@ -33,3 +33,6 @@
 	path = digital-signal-processing/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = PROCESSAMENTO_DIGITAL_DE_SINAIS
+[submodule "linear-algebra/other_solutions/KennethBenicio"]
+	path = linear-algebra/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-BSc-Linear-Algebra

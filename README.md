@@ -9,6 +9,7 @@ Here you will find:
   - Such submodules are within the direcory `other_solutions/`, with the name of the code author.
   - These submodules reference my fork of the original author repo. This ensure that we don't lose the reference if the original author deletes his/her repo.
   - These materials might be written in a language other than English.
+  - If a submodule fits in different topics, then it is symlinked to these topics.
 - [x] Package references that implement such algorithms.
 
 Here you won't find:

@@ -22,3 +22,6 @@
 [submodule "computational-intelligence/other_solutions/LauraMMelo"]
 	path = computational-intelligence/other_solutions/LauraMMelo
 	url = https://github.com/tapyu/ref-comp_intelligence_couse
+[submodule "computational-intelligence/other_solutions/ezequiasjunior"]
+	path = computational-intelligence/other_solutions/ezequiasjunior
+	url = https://github.com/tapyu/ref-ica2019.2

@@ -45,3 +45,7 @@
 [submodule "multilinear-algebra/other_solutions/ezequiasjunior"]
 	path = multilinear-algebra/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-tensor-alg
+[submodule "multilinear-algebra/other_solutions/lucasabdalah"]
+	path = multilinear-algebra/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = TIP8419-ALGEBRA_LINEAR_E_MULTILINEAR

@@ -41,4 +41,4 @@ This directory contains:
 - Another System identification [course](http://mocha-java.uccs.edu/ECE5560/index.html), from Colorado University and taught by Gregory Plett. It seems a much more organized course than Guilherme's course.
     - It uses [1] extensively
     - The `Matlab` toolbox is also extensively used in this course.
-    - His slides can be found in `Signal Processing and Machine Learning/System Identification/Colorado's slides`
+    - His slides can be found in [`Signal Processing and Machine Learning/System Identification/Colorado's slides`](https://drive.google.com/drive/folders/1CpVOSYmcbwPrMXsJcpOq-4WFjBhq8Tit?usp=drive_link)

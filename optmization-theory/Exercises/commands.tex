@@ -1,0 +1,27 @@
+\newcounter{prob}
+\newcounter{subprob}
+\renewcommand{\thesubprob}{\alph{subprob}}
+
+\newcommand{\problem}{\setcounter{subprob}{0} \stepcounter{prob} \par \medskip \noindent \textbf{Problem~\theprob \ }}
+
+\newcommand{\answer}{\par \medskip \noindent \textit{Answer \ }}
+
+\newcommand{\finalanswer}[1]{
+	\begin{center} 
+    	{\renewcommand{\arraystretch}{1.5}
+		\renewcommand{\tabcolsep}{0.2cm} 
+    	\begin{tabular}{|c|} 
+    		\hline 
+        	$ \displaystyle #1 $  \\ 
+        	\hline 
+    	\end{tabular}} 
+   	\end{center}}
+
+\newcommand{\subproblem}{\stepcounter{subprob} \par \smallskip \noindent \quad \textit{(\thesubprob) \ }}
+
+\newcommand{\subanswer}{\par \smallskip \noindent \quad \textit{Answer \ }}
+
+\newcommand{\option}{\item[$\square$]}
+\newcommand{\thisone}{\item[$\blacksquare$]}
+
+\newenvironment{subitemize}{\begin{itemize}}{\end{itemize}}

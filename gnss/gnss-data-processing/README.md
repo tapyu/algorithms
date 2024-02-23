@@ -25,6 +25,7 @@ Others:
 - [GNSS Format Descriptions]: RINEX, ANTEX, IONEX, etc.
 - [GNSS Format Descriptions (gFD) Quiz prepared by gAGE.][5]
 - [gLAB]
+  - **Caveat**: I used the version 5.5.1, and I needed to change the `CXXFLAGS` line to `CXXFLAGS += -O3 -fno-stack-protector -fcommon`, in order to make it work.
 
 [Jaume Sanz Subirana]: https://gage.upc.edu/en/personnel/permanent-staff/jaume.sanz
 [Guillermo Gonzalez Casado]: https://gage.upc.edu/en/personnel/permanent-staff/dr-guillermo-gonzalez-casado

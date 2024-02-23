@@ -70,14 +70,3 @@
 	path = statistical-signal-processing/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TI0124-PROCESSAMENTO_ESTATISTICO_DE_SINAIS
-[submodule "optmization-theory/Homeworks - Computational/ref"]
-	path = optmization-theory/Homeworks - Computational/ref
-	url = https://github.com/tapyu/algorithms_private
-	branch = opt
-[submodule "optmization-theory/additional-exercises"]
-	path = optmization-theory/additional-exercises
-	url = https://github.com/cvxgrp/cvxbook_additional_exercises
-[submodule "digital-communications/homework_solution"]
-	path = digital-communications/homework_solution
-	url = https://github.com/tapyu/algorithms_private
-	branch = dig-comm

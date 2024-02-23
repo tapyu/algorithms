@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Algorithms implemented throughout my academic life
 
 Here you will find:
@@ -27,28 +26,3 @@ This repository uses [`git-annex`] to store any file larger than 50MB in my Goog
 [here]: https://gist.github.com/tapyu/0427afb25df969c1972942d945284ba2#git-annex
 [git submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [`git-annex`]: https://git-annex.branchable.com
-||||||| empty tree
-=======
-# Algorithms implemented throughout my academic life
-
-Here you will find:
-- [x] Algorithms implemented by me during courses, workshops, webinars, etc.
-- [x] Further information about the events from where these algorithms were developed.
-- [x] Book and other resource materials (videos, online courses, etc) for a more in-depth study of each algorithm.
-- [x] Laboratory or computational homework slides, if the implemented algorithms come from these materials.
-- [x] Code references developed by others, possibly during the same event where I've built mine.
-- [x] Package references that implement such algorithms.
-
-Here you won't find:
-- [ ] Book PDFs or theoretical lectures slides.
-- [ ] Software
-- [ ] Code solution of Book's computational exercises
-
-----
-
-## Git-annex for Large files
-
-This repository uses `git-annex` to store any file larger than 50MB in my Google Drive. Any new file larger than that should be stored in `git-annex`. For more info, see [here].
-
-[here]: https://gist.github.com/tapyu/0427afb25df969c1972942d945284ba2#git-annex
->>>>>>> refs/remotes/origin/synced/main

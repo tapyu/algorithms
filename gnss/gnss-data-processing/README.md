@@ -23,7 +23,8 @@ Others:
 ## Other resources
 
 - [GNSS Format Descriptions]: RINEX, ANTEX, IONEX, etc.
-- [GNSS Format Descriptions (gFD) Quiz prepared by gAGE.][5]
+- [The Receiver Independent Exchange Format - Rinex]
+- [GNSS Format Descriptions (gFD) Quiz prepared by gAGE][5]
 - [gLAB]
   - **Caveat**: I used the version 5.5.1, and I needed to change the `CXXFLAGS` line to `CXXFLAGS += -O3 -fno-stack-protector -fcommon`, in order to make it work.
 
@@ -37,3 +38,4 @@ Others:
 [GNSS Format Descriptions]: https://gage.upc.edu/en/learning-materials/library/gnss-format-descriptions
 [5]: https://server.gage.upc.edu/gLAB/HTML/GNSS_standard_format_files.pdf
 [gLAB]: https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite
+[The Receiver Independent Exchange Format - Rinex]: https://files.igs.org/pub/data/format/rinex_4.00.pdf?_ga=2.189936815.567175650.1708691301-1982200360.1707403568

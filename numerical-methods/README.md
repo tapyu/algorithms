@@ -10,6 +10,7 @@ Others:
 - **Kreyszig, E., Stroud, K. and Stephenson, G., 2008. Advanced engineering mathematics** - For analytical solutions of ODEs (Part A, chap 1-6) and PDE (chapter 12).
 - **Hoffman, J.D. and Frankel, S., 2018. Numerical methods for engineers and scientists. CRC press** - It seems to be a more advanced book, with a special focus on algorithms for ODEs and PDEs problems. More advanced algorithms that aren't found on Chapra might be found here.
 - **Press, W.H., 2007. Numerical recipes 3rd edition: The art of scientific computing. Cambridge university press** - A good reference for implementation of Numerical Methods in C. It is also a good reference for the theoretical aspects.
+- **Kochenderfer, M.J. and Wheeler, T.A., 2019. Algorithms for optimization. Mit Press** - A good reference for code implementations in Julia. It also contains a brief introduction to Automatic Differentiation
 
 ---
 
@@ -159,7 +160,7 @@ Finite difference methods approximate derivatives using the differences between 
 - [FiniteDifferences.jl][10] and [FiniteDiff.jl][11] are similar libraries: both calculate approximate derivatives numerically.
     - Backward, forward, and central numerical differentiations.
 
-#### [Automatic differentiation][13] (auto-differentiation, autodiff, or AD) (6.5.9 on Goodfellow, Deep learning)
+#### [Automatic differentiation][13] (auto-differentiation, autodiff, or AD) (6.5.9 on Goodfellow, Deep learning; 2.4 on Kochenderfer and Wheeler)
 
 Automatic differentiation is a computational technique that automatically evaluates derivatives of a function, combining aspects of symbolic and numerical differentiation. AD is more efficient and accurate than traditional numerical differentiation for functions represented as computer programs.
 

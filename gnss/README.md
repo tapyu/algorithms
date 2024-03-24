@@ -4,7 +4,7 @@ This directory contains a compendium of algorithms for Global Navigation Satelli
 - [GNSS Signal Processing](gnss-signal-processing)
 - [GNSS Data Processing](gnss-data-processing)
 
-- These algorithms implemented here come from three sources:
+- The algorithms implemented here come from three sources:
    1. [Galileo Masterclass Brazil (GMB) 2022: ​​​​​​From Fundamentals to Signal and Data Processing][2] - taught at Federal University of Ceará, Brazil, by [Professors from group of Astronomy and GEomatics (gAGE)][1], from Universitat Politècnica de Catalunya, UPC; Prof. Dr. Felix Antreich, from Aeronautics Institute of Technology, ITA, Brazil; and Prof. Dr. Antônio Macilio Pereira de Lucena, from National Institute for Space Research, INPE, Brazil. This 7-days course was promoted by the Galileo Information Centre ([GIC]) in Brazil.
   2. The course on "GNSS Data Processing", taught in Barcelona, Spain, by Professors Prof. Dr. [Jaume Sanz Subirana] and [Guillermo Gonzalez Casado] in 2024.1.
   3. The course on "GNSS Signal Processing", taught by Prof. Dr. [Felix Antreich], at Aeronautics Institute of Technology, ITA, Brazil.

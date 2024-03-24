@@ -25,8 +25,11 @@ Others:
 - [GNSS Format Descriptions]: RINEX, ANTEX, IONEX, etc.
 - [The Receiver Independent Exchange Format - Rinex]
 - [GNSS Format Descriptions (gFD) Quiz prepared by gAGE][5]
+- [GNSS Tutorials][6]
 - [gLAB]
-  - **Caveat**: I used the version 5.5.1, and I needed to change the `CXXFLAGS` line to `CXXFLAGS += -O3 -fno-stack-protector -fcommon`, in order to make it work.
+  - **Caveat**: The gLAB installation process is not an easy task. On the one hand, the GUI part of [the gLAB version availabe along with the GNSS tutorial material (v5.2.0)][1] didn't work on Linux, but it contains the computational homeworks. On the other hand, the latest version of gLAB at the time of writing it (v5.5.1) worked perfectly on Linux, but it didn't have the computational homeworks, only the source code. Moreover, the directory structure of both versions is completely different. You can find the download link for all gLAB versions [here][6].
+  
+    Therefore, in order to create a straightfoward path to use gLAB with this tutoral, I've created a git submodule at `./gLAB/`, which contains both the version v5.5.1 for Linux and the tutorial material. In the future, newer versions may be easier to install it and `./gLAB/` will no longer be necessary.
 
 [Jaume Sanz Subirana]: https://gage.upc.edu/en/personnel/permanent-staff/jaume.sanz
 [Guillermo Gonzalez Casado]: https://gage.upc.edu/en/personnel/permanent-staff/dr-guillermo-gonzalez-casado
@@ -37,5 +40,6 @@ Others:
 [4]: https://gage.upc.edu/en/learning-materials/library/gnss-books/gnss-data-processing-book
 [GNSS Format Descriptions]: https://gage.upc.edu/en/learning-materials/library/gnss-format-descriptions
 [5]: https://server.gage.upc.edu/gLAB/HTML/GNSS_standard_format_files.pdf
+[6]: https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download
 [gLAB]: https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite
 [The Receiver Independent Exchange Format - Rinex]: https://files.igs.org/pub/data/format/rinex_4.00.pdf?_ga=2.189936815.567175650.1708691301-1982200360.1707403568

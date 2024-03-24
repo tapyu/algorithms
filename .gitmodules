@@ -70,3 +70,6 @@
 	path = statistical-signal-processing/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TI0124-PROCESSAMENTO_ESTATISTICO_DE_SINAIS
+[submodule "gnss/gnss-data-processing/gLAB"]
+	path = gnss/gnss-data-processing/gLAB
+	url = https://github.com/tapyu/glab

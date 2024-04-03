@@ -26,10 +26,16 @@ Others:
 - [The Receiver Independent Exchange Format - Rinex]
 - [GNSS Format Descriptions (gFD) Quiz prepared by gAGE][5]
 - [GNSS Tutorials][6]
-- [gLAB]
-  - **Caveat**: Any version of the gLAB software can be downloaded [here][6]. However, in none of these links you will obtain the tutorial datafiles. Such a material is packaged in the [GNSS tutoral link][1], together with the gLAB source code in a tarball file (see `Software and Data Files [Linux]` for Linux). On the one hand, at the time I am writing it (April 2024) , the gLAB source code packaged in this tarball is the version 5.2, which didn't work on Linux. On the other hand, the latest version of gLAB at the time of writing it (v5.5.1) worked perfectly on Linux.
+- [gLAB]: a GNSS Positioning simulator
+  - **Caveat**: any version of the gLAB software can be downloaded [here][6]. However, in none of these links you will obtain the tutorial datafiles. Such a material is packaged in the [GNSS tutoral link][1], together with the gLAB source code in a tarball file (see `Software and Data Files [Linux]` for Linux). On the one hand, at the time I am writing it (April 2024) , the gLAB source code packaged in this tarball is the version 5.2, which didn't work on Linux. On the other hand, the latest version of gLAB at the time of writing it (v5.5.1) worked perfectly on Linux.
   
     Therefore, in order to create a straightfoward path to use any gLAB version with the computation homeworks, I've created a git submodule at `./gLAB/`, which contains both the version v5.5.1 for Linux and the tutorial material.
+
+## Extra material
+
+The following material are related to GNSS data processing but aren't used during this course:
+
+- [RTKLIB](https://www.rtklib.com/): another GNSS positioning simulator, i.e., another open source program package for GNSS positioning. It is basically an alternative to gLAB since both compute the GNSS positioning based on the a RINEX file.
 
 [Jaume Sanz Subirana]: https://gage.upc.edu/en/personnel/permanent-staff/jaume.sanz
 [Guillermo Gonzalez Casado]: https://gage.upc.edu/en/personnel/permanent-staff/dr-guillermo-gonzalez-casado

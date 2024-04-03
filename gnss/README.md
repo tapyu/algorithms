@@ -62,3 +62,18 @@ Presentations:
   - [E06. Ignacio Fernández Galileo High Accuracy Service](https://www.youtube.com/watch?v=Q6RFvlMzZJM)
   - [L14. Precise Point Positioning](https://www.youtube.com/watch?v=BF1VBCxtfVw)
 
+## Extra material
+
+Although these materials are not related to the aforementioned GNSS courses, they are useful for GNSS in general:
+
+- [GNU Radio]
+- [GNSS-SDR]
+- [Awesome STEM]
+- [awesome-gnss]
+
+For materials specific for either signal or data processing part, see the `## Extra material` in the `README.md` file of their directories.
+
+[Awesome STEM]: https://github.com/tapyu/awesome-stem-academy?tab=readme-ov-file#gnss
+[awesome-gnss]: https://github.com/barbeau/awesome-gnss
+[GNU Radio]: https://www.gnuradio.org/
+[GNSS-SDR]: https://gnss-sdr.org/

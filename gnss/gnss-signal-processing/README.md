@@ -14,5 +14,9 @@ This directory contains algorithm solutions for computational exercises on GNSS 
 - Felix's course slides on "GNSS Signal Processing"
 - GMB 2022 slides.
 
+## Extra material
+
+- RINEX simulator: generates the code pseudorange, carrier pseudorange, Doppler measurements, C/N_0 estimates, and navigation message. It basically performs the tasks of the GNSS signal processing part and generates the RINEX file, which is used in the GNSS data processing part. You can use any GNSS positioning simulator to process such a RINEX file.
+
 [Felix Antreich]: https://ieeexplore.ieee.org/author/37394570200
 [algorithms]: https://server.gage.upc.edu/TEACHING_MATERIAL/GMB2022/SOFTWARE/

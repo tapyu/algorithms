@@ -31,6 +31,8 @@ This directory contains:
 
 1. [Optimization Problem Types][16]
 
+1. [JuMP.jl][21]: Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear). 
+
 1. [What is DCP(disciplined convex programming)][13]
 
 1. [Auxiliary variables and extended formulation][14]
@@ -59,3 +61,4 @@ This directory contains:
 [18]: https://github.com/cvxgrp/ncvx
 [19]: https://github.com/cvxgrp/cvx_short_course/
 [20]: https://github.com/cvxgrp/cvxbook_additional_exercises/
+[21]: https://github.com/jump-dev/JuMP.jl

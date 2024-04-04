@@ -1,0 +1,128 @@
+#!/bin/csh -f
+       
+# -----------------------------------------------------------------------
+#  Previous:
+#  ---------
+#     ./gLAB_linux -input:cfg meas.cfg -input:obs PLAN0520.13O |gawk '{print "plan",$6,$3,$4,$13,$14,$15,$16}' > plan.meas
+#     ./gLAB_linux -input:obs PLAN0520.13O -input:nav EPH.dat -pre:dec 1 | grep MODEL | grep C1C | gawk '{print "plan",$6,$3,$4,$17,$24,$25,$29,$30}' > plan.mod
+#     cat plan.meas  plan.mod | gawk '{i=$2*1" "$3*1" "$4*1;if (length(v[i])==0) {v[i]=$0} else{print v[i],$5,$6,$7,$8,$9}}'  > obs.dat
+#   
+#     ./gLAB_linux -input:cfg meas.cfg -input:obs GARR0520.13O |gawk '{print "garr",$6,$3,$4,$13,$14,$15,$16}' > garr.meas
+#     ./gLAB_linux -input:obs GARR0520.13O -input:nav EPH.dat -pre:dec 1 | grep MODEL | grep C1C | gawk '{print "garr",$6,$3,$4,$17,$24,$25,$29,$30}' > garr.mod
+#     cat garr.meas  garr.mod | gawk '{i=$2*1" "$3*1" "$4*1;if (length(v[i])==0) {v[i]=$0} else{print v[i],$5,$6,$7,$8,$9}}' >> obs.dat
+#  ...............................................................
+#
+#  Execute:  
+#  --------
+#
+#  ./DDobs.scr obs.dat plan garr 06 30
+#
+#
+# ====================================================================================
+#  Input file:
+#  --------------
+#               1   2   3   4   5  6  7  8  9   10   11  12   13
+#   # select: [sta sat DoY sec P1 L1 P2 L2 rho Trop Ion Elev Azim]
+#
+#
+#
+#  OUTPUT:   
+#  ------
+#
+#==>
+#    ---------------   D_${sta}_${sat1}_${sat2}.dat ------------------
+#      1   2    3    4   5   6   7   8    9    10   11  12   13   14
+#    [sta sat1 sat2  DoY sec DP1 DL1 DP2 DL2 Drho DTrop DIon Elev Azim]
+#                                                            sta  sta
+#    ------------------------------------------------------------------
+#
+#==>
+#    ---------------   D_${sta1}_${sta2}_${sat}.dat ------------------
+#      1   2    3    4   5   6   7   8    9    10   11  12   13   14
+#    [sta1 sta2 sat  DoY sec DP1 DL1 DP2 DL2 Drho DTrop DIon elev azim]
+#                                                            sta2 sta2
+#    ------------------------------------------------------------------
+#
+#==>
+#     ------------------- DD_${sta1}_${sta2}_${sat1}_${sat2}.dat -------------------------
+#         1    2    3    4   5   6    7    8    9   10    11   12    13    14  15  16  17
+#     [sta1 sta2 sat1 sat2 DoY sec DDP1 DDL1 DDP2 DDL2 DDrho DDTrop DDIon El1 Az1 El2 Az2]
+#                                                                         <--- sta2 --->
+#     ------------------------------------------------------------------------------------
+#
+#==> 
+#     ------------------- DD_${sta1}_${sta2}_${sat1}_${sat2}.datN -------------------------
+#         1    2    3    4   5   6    7    8    9   10    11   12    13    14  15  16  17
+#     [sta1 sta2 sat1 sat2 DoY sec DDP1 DDL1 DDP2 DDL2 DDrho DDTrop DDIon El1 Az1 El2 Az2]
+#                                                                           sta1    sta2
+#     ------------------------------------------------------------------------------------
+#
+#   @gAGE (Research group of Astronomy and GEomatics).  
+# ----------------------------------------------------------------------------------------------
+
+
+
+set file = $1
+set sta1 = $2
+set sta2 = $3
+set sat1 = $4
+set sat2 = $5
+
+
+# select station: 
+grep ${sta1} ${file}| gawk '{if ($2=="'$sat1'"*1) print $0}' > ${sta1}_${sat1}.tmp
+grep ${sta1} ${file}| gawk '{if ($2=="'$sat2'"*1) print $0}' > ${sta1}_${sat2}.tmp
+grep ${sta2} ${file}| gawk '{if ($2=="'$sat1'"*1) print $0}' > ${sta2}_${sat1}.tmp
+grep ${sta2} ${file}| gawk '{if ($2=="'$sat2'"*1) print $0}' > ${sta2}_${sat2}.tmp
+
+#==>   1   2   3   4   5  6  7  8  9   10   11  12   13
+#    [sta sat DoY sec P1 L1 P2 L2 rho Trop Ion Elev Azim]
+
+
+# Compute Single-difference between satellites: 
+cat ${sta1}_${sat1}.tmp ${sta1}_${sat2}.tmp | gawk '{i=$3" "$4*1;if ($2=="'$sat1'"*1){sat1=$2;P1[i]=$5;L1[i]=$6;P2[i]=$7;L2[i]=$8;R[i]=$9;T[i]=$10;I[i]=$11;}else{if (length(P1[i])!=0) {printf "%s %02i %02i %s %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f \n", $1,sat1,$2,i,$5-P1[i],$6-L1[i],$7-P2[i],$8-L2[i],$9-R[i],$10-T[i],$11-I[i],$12,$13}}}' > D_${sta1}_${sat1}_${sat2}.dat
+cat ${sta2}_${sat1}.tmp ${sta2}_${sat2}.tmp | gawk '{i=$3" "$4*1;if ($2=="'$sat1'"*1){sat1=$2;P1[i]=$5;L1[i]=$6;P2[i]=$7;L2[i]=$8;R[i]=$9;T[i]=$10;I[i]=$11;}else{if (length(P1[i])!=0) {printf "%s %02i %02i %s %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f \n", $1,sat1,$2,i,$5-P1[i],$6-L1[i],$7-P2[i],$8-L2[i],$9-R[i],$10-T[i],$11-I[i],$12,$13}}}' > D_${sta2}_${sat1}_${sat2}.dat
+
+#    ---------------   D_${sta}_${sat1}_${sat2}.dat ------------------
+#==>    1   2    3    4   5   6   7   8    9    10   11  12   13   14
+#    [sta sat1 sat2  DoY sec DP1 DL1 DP2 DL2 Drho DTrop DIon Elev Azim]
+#                                                            sta  sta
+#    ------------------------------------------------------------------
+
+##########################################
+# Compute Single-difference between stations
+cat ${sta1}_${sat1}.tmp ${sta2}_${sat1}.tmp | gawk '{i=$3" "$4*1;if ($1=="'$sta1'"){sta1=$1;P1[i]=$5;L1[i]=$6;P2[i]=$7;L2[i]=$8;R[i]=$9;T[i]=$10;I[i]=$11;}else{if (length(P1[i])!=0) {printf "%s %s %02i %s %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f \n", sta1,$1,$2,i,$5-P1[i],$6-L1[i],$7-P2[i],$8-L2[i],$9-R[i],$10-T[i],$11-I[i],$12,$13}}}' > D_${sta1}_${sta2}_${sat1}.dat
+cat ${sta1}_${sat2}.tmp ${sta2}_${sat2}.tmp | gawk '{i=$3" "$4*1;if ($1=="'$sta1'"){sta1=$1;P1[i]=$5;L1[i]=$6;P2[i]=$7;L2[i]=$8;R[i]=$9;T[i]=$10;I[i]=$11;}else{if (length(P1[i])!=0) {printf "%s %s %02i %s %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f \n", sta1,$1,$2,i,$5-P1[i],$6-L1[i],$7-P2[i],$8-L2[i],$9-R[i],$10-T[i],$11-I[i],$12,$13}}}' > D_${sta1}_${sta2}_${sat2}.dat
+
+#    ---------------   D_${sta1}_${sta2}_${sat}.dat ------------------
+#==>    1   2    3    4   5   6   7   8    9    10   11  12   13   14
+#    [sta1 sta2 sat  DoY sec DP1 DL1 DP2 DL2 Drho DTrop DIon elev azim]
+#                                                            sta2 sta2
+#    ------------------------------------------------------------------
+
+# Compute Doble-difference between stations and satelltes
+cat D_${sta1}_${sta2}_${sat1}.dat D_${sta1}_${sta2}_${sat2}.dat | gawk '{i=$4" "$5*1;if ($3=="'$sat1'"){sat1=$3;P1[i]=$6;L1[i]=$7;P2[i]=$8;L2[i]=$9;R[i]=$10;T[i]=$11;I[i]=$12;E[i]=$13i;A[i]=$14}else{if (length(P1[i])!=0) {printf "%s %s %02i %02i %s %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f \n",$1,$2,"'$sat1'",$3,i,$6-P1[i],$7-L1[i],$8-P2[i],$9-L2[i],$10-R[i],$11-T[i],$12-I[i],E[i],A[i],$13,$14}}}' > DD_${sta1}_${sta2}_${sat1}_${sat2}.dat
+
+#     ------------------- DD_${sta1}_${sta2}_${sat1}_${sat2}.dat -------------------------
+#         1    2    3    4   5   6    7    8    9   10    11   12    13    14  15  16  17
+#     [sta1 sta2 sat1 sat2 DoY sec DDP1 DDL1 DDP2 DDL2 DDrho DDTrop DDIon El1 Az1 El2 Az2]
+#                                                                         <--- sta2 --->
+#     ------------------------------------------------------------------------------------
+
+##########################################
+
+
+
+# Compute Doble-difference between stations and satelltes
+cat D_${sta1}_${sat1}_${sat2}.dat D_${sta2}_${sat1}_${sat2}.dat | gawk '{i=$4" "$5*1;if ($1=="'$sta1'"){sta1=$1;P1[i]=$6;L1[i]=$7;P2[i]=$8;L2[i]=$9;R[i]=$10;T[i]=$11;I[i]=$12;E[i]=$13i;A[i]=$14}else{if (length(P1[i])!=0) {printf "%s %s %02i %02i %s %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f %14.4f \n", "'$sta1'",$1,$2,$3,i,$6-P1[i],$7-L1[i],$8-P2[i],$9-L2[i],$10-R[i],$11-T[i],$12-I[i],E[i],A[i],$13,$14}}}' > DD_${sta1}_${sta2}_${sat1}_${sat2}.datN
+
+#     ------------------- DD_${sta1}_${sta2}_${sat1}_${sat2}.datN -------------------------
+#         1    2    3    4   5   6    7    8    9   10    11   12    13    14  15  16  17
+#     [sta1 sta2 sat1 sat2 DoY sec DDP1 DDL1 DDP2 DDL2 DDrho DDTrop DDIon El1 Az1 El2 Az2]
+#                                                                           sta1    sta2
+#     ------------------------------------------------------------------------------------
+
+# Cleaning files:
+
+rm -f ${sta1}_${sat1}.tmp ${sta1}_${sat2}.tmp ${sta2}_${sat1}.tmp ${sta2}_${sat2}.tmp  D_${sta1}_${sat1}_${sat2}.dat D_${sta2}_${sat1}_${sat2}.dat  D_${sta1}_${sta2}_${sat1}.dat D_${sta1}_${sta2}_${sat2}.dat DD_${sta1}_${sta2}_${sat1}_${sat2}.datN 
+

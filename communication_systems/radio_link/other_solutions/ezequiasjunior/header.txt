@@ -1,0 +1,25 @@
+Radio Mobile para Windows
+Versão 11.6
+** Dados da esquerda **
+ Nome
+ Altura da antena (m)
+** Dados da direita **
+ Nome
+ Altura da antena (m)
+** Dados do enlace **
+ Freqüência (GHz)
+ Fator de curvatura da Terra
+** Perfil da trajetória **
+ Registros: Distância(km) Altitude(m) Cor(0-15) Altura(m) Perda(dB) [ Latitude(°) Longitude(°) Xmap Ymap AltitudeEnlace(m) EspaçoLivre(m) PrimeiroFresnel(m) Taxa ]
+Start
+Iguatemi Empresarial
+38,000
+Farol do Mucuripe
+38,000
+1,000000
+1,333316759
+------------------------------------------------------------------------------
+Alterações:
+Distância(km) Altitude(m) Cor(0-15) Altura(m) Perda(dB) [ Latitude(°) Longitude(°) Xmap Ymap AltitudeEnlace(m) EspaçoLivre(m) PrimeiroFresnel(m) Taxa ]
+
+, -> .

@@ -1,0 +1,74 @@
+#!/usr/bin/tcsh
+
+#  -----------------------
+#  Execute:
+#
+#     ./MakeL1BslMat.scr DD_IND2_IND3_06_ALL.dat 14500 14515
+#
+#    .........................................................
+#
+#     This script generates vector and matrices associated to
+#     the equations system to estimate the baseline vector with
+#     the double differenced L1 measurements.
+#
+# 
+#          [DDL1]=[Los_k-Los_06]*[baseline] + [ A ]*[lambda1*DDN1]
+#
+#     Only observations of "two epochs" are considered. The output
+#     are the files M1.dat and M2.dat associated to each epoch.
+#      
+# 
+#     Example: 
+#
+#          [DDL1]      [  Los_k-Los_REF]     [     A     ]
+#          ------    --------------------    -------------
+#         -3.3762    0.3398 -0.1028 0.0714   1 0 0 0 0 0 0
+#         -7.1131    0.1725  0.5972 0.0691   0 1 0 0 0 0 0
+#          4.3881   -0.6374  0.0227 0.2725   0 0 1 0 0 0 0         t=t1
+#         -5.6982    0.6811 -0.1762 0.3022   0 0 0 1 0 0 0   <===> M1.dat
+#          9.4853   -0.6876 -0.2881 0.5093   0 0 0 0 1 0 0
+#         -5.2016   -0.4148  0.6119 0.1935   0 0 0 0 0 1 0
+#        -16.8894   -0.0264  1.0181 0.4078   0 0 0 0 0 0 1
+#
+#
+#         -3.3709    0.3398 -0.1031 0.0707   1 0 0 0 0 0 0
+#         -7.1438    0.1739  0.5982 0.0701   0 1 0 0 0 0 0
+#          4.4156   -0.6356  0.0199 0.2729   0 0 1 0 0 0 0         t=t2
+#         -5.6819    0.6814 -0.1776 0.3012   0 0 0 1 0 0 0   <===> M2.dat
+#          9.4911   -0.6868 -0.2891 0.5109   0 0 0 0 1 0 0
+#         -5.1689   -0.4133  0.6090 0.1927   0 0 0 0 0 1 0
+#        -16.9101   -0.0248  1.0183 0.4097   0 0 0 0 0 0 1
+#
+#
+#  -----------------------
+
+set file = $1
+set t1 = $2
+set t2 = $3
+
+
+#     INPUT FILE: 
+#
+#     ------------------- DD_${sta1}_${sta2}_${sat1}_${sat2}.dat -------------------------
+#         1    2    3    4   5   6    7    8    9   10    11   12    13    14  15  16  17
+#     [sta1 sta2 sat1 sat2 DoY sec DDP1 DDL1 DDP2 DDL2 DDrho DDTrop DDIon El1 Az1 El2 Az2]
+#                                                                         <--- sta2 --->
+#     ------------------------------------------------------------------------------------
+
+
+# i) Selecting the two epochs:
+cat ${file} |gawk '{if ($6=="'$t1'"||$6=="'$t2'") print $0}' > tmp.dat
+
+# ii) Selecting the two epochs and building the Equations system:
+
+cat tmp.dat| gawk '{print $4}' | sort -nu | gawk '{print $1,NR}' > sat.lst
+
+set n = `wc -l sat.lst|gawk '{print $1}'`
+
+cat tmp.dat|gawk '{if ($6=="'$t1'") print $0}'| gawk 'BEGIN{g2r=atan2(1,1)/45}{e1=$14*g2r;a1=$15*g2r;e2=$16*g2r;a2=$17*g2r;printf "%s %14.4f %8.4f %8.4f %8.4f \n",$4,$8,-cos(e2)*sin(a2)+cos(e1)*sin(a1),-cos(e2)*cos(a2)+cos(e1)*cos(a1),-sin(e2)+sin(e1)}' > L1.tmp
+cat L1.tmp | gawk 'BEGIN{for (i=1;i<1000;i++) {getline <"sat.lst";s[$1]=$2;N[i]=0}}{for (i=1;i<="'$n'"*1;i++) $(i+5)=0;$(s[$1]+5)=1;$1="";print $0}' > M1.dat
+
+cat tmp.dat|gawk '{if ($6=="'$t2'") print $0}'| gawk 'BEGIN{g2r=atan2(1,1)/45}{e1=$14*g2r;a1=$15*g2r;e2=$16*g2r;a2=$17*g2r;printf "%s %14.4f %8.4f %8.4f %8.4f \n",$4,$8,-cos(e2)*sin(a2)+cos(e1)*sin(a1),-cos(e2)*cos(a2)+cos(e1)*cos(a1),-sin(e2)+sin(e1)}' > L2.tmp
+cat L2.tmp | gawk 'BEGIN{for (i=1;i<1000;i++) {getline <"sat.lst";s[$1]=$2;N[i]=0}}{for (i=1;i<="'$n'"*1;i++) $(i+5)=0;$(s[$1]+5)=1;$1="";print $0}' > M2.dat
+
+rm -f sat.lst L1.tmp L2.tmp tmp.dat

@@ -1,0 +1,14 @@
+$parameters
+  Pxx=1.d+8
+  Pyy=1.d+8
+  Pzz=1.d+8
+  Ptt=9.d+16
+  fi_x=1.d0  
+  fi_y=1.d0   
+  fi_z=1.d0    
+  fi_t=0.d0
+  Qxx=0.d+0        
+  Qyy=0.d+0        
+  Qzz=0.d+0        
+  Qtt=9.d+16
+$end                             

@@ -1,0 +1,72 @@
+[submodule "optimization_theory/Homeworks_Computational/ref"]
+	path = optimization_theory/Homeworks_Computational/ref
+	url = https://github.com/tapyu/algorithms_private
+	branch = opt
+[submodule "optimization_theory/additional_exercises"]
+	path = optimization_theory/additional_exercises
+	url = https://github.com/cvxgrp/cvxbook_additional_exercises
+[submodule "digital_communications/homework_solution"]
+	path = digital_communications/homework_solution
+	url = https://github.com/tapyu/algorithms_private
+	branch = dig-comm
+[submodule "adaptive_filtering/other_solutions/KennethBenicio"]
+	path = adaptive_filtering/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-Msc-Filtragem-Adaptativa
+[submodule "adaptive_filtering/other_solutions/lucasabdalah"]
+	path = adaptive_filtering/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = TIP7188-FILTRAGEM_ADAPTATIVA
+[submodule "computational_intelligence/other_solutions/Kayannsoarez"]
+	path = computational_intelligence/other_solutions/Kayannsoarez
+	url = https://github.com/tapyu/ref-Inteligencia_Computacional
+[submodule "computational_intelligence/other_solutions/LauraMMelo"]
+	path = computational_intelligence/other_solutions/LauraMMelo
+	url = https://github.com/tapyu/ref-comp_intelligence_couse
+[submodule "computational_intelligence/other_solutions/ezequiasjunior"]
+	path = computational_intelligence/other_solutions/ezequiasjunior
+	url = https://github.com/tapyu/ref-ica2019.2
+[submodule "computational_intelligence/other_solutions/filipepfarias"]
+	path = computational_intelligence/other_solutions/filipepfarias
+	url = https://github.com/tapyu/ref-Applied-Computational-Intelligence-2021.1
+	branch = main
+[submodule "digital_signal_processing/other_solutions/lucasabdalah"]
+	path = digital_signal_processing/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = PROCESSAMENTO_DIGITAL_DE_SINAIS
+[submodule "linear_algebra/other_solutions/KennethBenicio"]
+	path = linear_algebra/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-BSc-Linear-Algebra
+[submodule "multilinear_algebra/other_solutions/KennethBenicio"]
+	path = multilinear_algebra/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-MSc-Multilinear-Algebra
+[submodule "multilinear_algebra/other_solutions/LauraMMelo"]
+	path = multilinear_algebra/other_solutions/LauraMMelo
+	url = https://github.com/tapyu/ref-tensor_algebra_course
+[submodule "multilinear_algebra/other_solutions/ezequiasjunior"]
+	path = multilinear_algebra/other_solutions/ezequiasjunior
+	url = https://github.com/tapyu/ref-tensor-alg
+[submodule "multilinear_algebra/other_solutions/lucasabdalah"]
+	path = multilinear_algebra/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = TIP8419-ALGEBRA_LINEAR_E_MULTILINEAR
+[submodule "digital_signal_processing/other_solutions/lucasabdalah_polytech_nice_sophia"]
+	path = digital_signal_processing/other_solutions/lucasabdalah_polytech_nice_sophia
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = Filtrage-Numerique
+[submodule "numerical_methods/other_solutions/lucasabdalah"]
+	path = numerical_methods/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = TI0117-COMPUTACAO_NUMERICA
+[submodule "radio_link/other_solutions/ezequiasjunior"]
+	path = radio_link/other_solutions/ezequiasjunior
+	url = https://github.com/tapyu/ref-via-rad
+[submodule "digital_communications/other_solutions/ezequiasjunior"]
+	path = digital_communications/other_solutions/ezequiasjunior
+	url = https://github.com/tapyu/ref-pds_lab2019-1
+[submodule "pattern_recognition/other_solutions/KennethBenicio"]
+	path = pattern_recognition/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-MSc-Reconhecimento-de-Padroes
+[submodule "statistical_signal_processing/other_solutions/lucasabdalah"]
+	path = statistical_signal_processing/other_solutions/lucasabdalah
+	url = https://github.com/tapyu/ref-Courses-HWs
+	branch = TI0124-PROCESSAMENTO_ESTATISTICO_DE_SINAIS

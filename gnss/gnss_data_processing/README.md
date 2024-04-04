@@ -10,7 +10,7 @@ This directory contains algorithm solutions for computational exercises on GNSS 
   - Model Component Analysis.
   - Navigation equation solution.
 
-## References
+## Theoretical references
 Main:
 - [GNSS DATA PROCESSING Volume I: Fundamentals and Algorithms][4]. J. Sanz Subirana, J.M. Juan Zornoza and M. Hernández-Pajares. European Space Agency
 - [GNSS DATA PROCESSING Volume II: Laboratory Exercises][4]. J. Sanz Subirana, J.M. Juan Zornoza and M. Hernández-Pajares. European Space Agency.
@@ -31,7 +31,7 @@ Others:
   
     Therefore, in order to create a straightfoward path to use any gLAB version with the computation homeworks, I've created a git submodule at `./gLAB/`, which contains both the version v5.5.1 for Linux and the tutorial material.
 
-## Extra material
+## Technical references
 
 The following material are related to GNSS data processing but aren't used during this course:
 

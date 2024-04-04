@@ -1,75 +1,75 @@
-[submodule "optimization-theory/Homeworks - Computational/ref"]
-	path = optimization-theory/Homeworks - Computational/ref
+[submodule "optimization_theory/Homeworks _ Computational/ref"]
+	path = optimization_theory/Homeworks _ Computational/ref
 	url = https://github.com/tapyu/algorithms_private
 	branch = opt
-[submodule "optimization-theory/additional-exercises"]
-	path = optimization-theory/additional-exercises
+[submodule "optimization_theory/additional_exercises"]
+	path = optimization_theory/additional_exercises
 	url = https://github.com/cvxgrp/cvxbook_additional_exercises
-[submodule "digital-communications/homework_solution"]
-	path = digital-communications/homework_solution
+[submodule "digital_communications/homework_solution"]
+	path = digital_communications/homework_solution
 	url = https://github.com/tapyu/algorithms_private
 	branch = dig-comm
-[submodule "adaptive-filtering/other_solutions/KennethBenicio"]
-	path = adaptive-filtering/other_solutions/KennethBenicio
+[submodule "adaptive_filtering/other_solutions/KennethBenicio"]
+	path = adaptive_filtering/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-Msc-Filtragem-Adaptativa
-[submodule "adaptive-filtering/other_solutions/lucasabdalah"]
-	path = adaptive-filtering/other_solutions/lucasabdalah
+[submodule "adaptive_filtering/other_solutions/lucasabdalah"]
+	path = adaptive_filtering/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TIP7188-FILTRAGEM_ADAPTATIVA
-[submodule "computational-intelligence/other_solutions/Kayannsoarez"]
-	path = computational-intelligence/other_solutions/Kayannsoarez
+[submodule "computational_intelligence/other_solutions/Kayannsoarez"]
+	path = computational_intelligence/other_solutions/Kayannsoarez
 	url = https://github.com/tapyu/ref-Inteligencia_Computacional
-[submodule "computational-intelligence/other_solutions/LauraMMelo"]
-	path = computational-intelligence/other_solutions/LauraMMelo
+[submodule "computational_intelligence/other_solutions/LauraMMelo"]
+	path = computational_intelligence/other_solutions/LauraMMelo
 	url = https://github.com/tapyu/ref-comp_intelligence_couse
-[submodule "computational-intelligence/other_solutions/ezequiasjunior"]
-	path = computational-intelligence/other_solutions/ezequiasjunior
+[submodule "computational_intelligence/other_solutions/ezequiasjunior"]
+	path = computational_intelligence/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-ica2019.2
-[submodule "computational-intelligence/other_solutions/filipepfarias"]
-	path = computational-intelligence/other_solutions/filipepfarias
+[submodule "computational_intelligence/other_solutions/filipepfarias"]
+	path = computational_intelligence/other_solutions/filipepfarias
 	url = https://github.com/tapyu/ref-Applied-Computational-Intelligence-2021.1
 	branch = main
-[submodule "digital-signal-processing/other_solutions/lucasabdalah"]
-	path = digital-signal-processing/other_solutions/lucasabdalah
+[submodule "digital_signal_processing/other_solutions/lucasabdalah"]
+	path = digital_signal_processing/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = PROCESSAMENTO_DIGITAL_DE_SINAIS
-[submodule "linear-algebra/other_solutions/KennethBenicio"]
-	path = linear-algebra/other_solutions/KennethBenicio
+[submodule "linear_algebra/other_solutions/KennethBenicio"]
+	path = linear_algebra/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-BSc-Linear-Algebra
-[submodule "multilinear-algebra/other_solutions/KennethBenicio"]
-	path = multilinear-algebra/other_solutions/KennethBenicio
+[submodule "multilinear_algebra/other_solutions/KennethBenicio"]
+	path = multilinear_algebra/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-MSc-Multilinear-Algebra
-[submodule "multilinear-algebra/other_solutions/LauraMMelo"]
-	path = multilinear-algebra/other_solutions/LauraMMelo
+[submodule "multilinear_algebra/other_solutions/LauraMMelo"]
+	path = multilinear_algebra/other_solutions/LauraMMelo
 	url = https://github.com/tapyu/ref-tensor_algebra_course
-[submodule "multilinear-algebra/other_solutions/ezequiasjunior"]
-	path = multilinear-algebra/other_solutions/ezequiasjunior
+[submodule "multilinear_algebra/other_solutions/ezequiasjunior"]
+	path = multilinear_algebra/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-tensor-alg
-[submodule "multilinear-algebra/other_solutions/lucasabdalah"]
-	path = multilinear-algebra/other_solutions/lucasabdalah
+[submodule "multilinear_algebra/other_solutions/lucasabdalah"]
+	path = multilinear_algebra/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TIP8419-ALGEBRA_LINEAR_E_MULTILINEAR
-[submodule "digital-signal-processing/other_solutions/lucasabdalah_polytech_nice_sophia"]
-	path = digital-signal-processing/other_solutions/lucasabdalah_polytech_nice_sophia
+[submodule "digital_signal_processing/other_solutions/lucasabdalah_polytech_nice_sophia"]
+	path = digital_signal_processing/other_solutions/lucasabdalah_polytech_nice_sophia
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = Filtrage-Numerique
-[submodule "numerical-methods/other_solutions/lucasabdalah"]
-	path = numerical-methods/other_solutions/lucasabdalah
+[submodule "numerical_methods/other_solutions/lucasabdalah"]
+	path = numerical_methods/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TI0117-COMPUTACAO_NUMERICA
-[submodule "radio-link/other_solutions/ezequiasjunior"]
-	path = radio-link/other_solutions/ezequiasjunior
+[submodule "radio_link/other_solutions/ezequiasjunior"]
+	path = radio_link/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-via-rad
-[submodule "digital-communications/other_solutions/ezequiasjunior"]
-	path = digital-communications/other_solutions/ezequiasjunior
+[submodule "digital_communications/other_solutions/ezequiasjunior"]
+	path = digital_communications/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-pds_lab2019-1
-[submodule "pattern-recognition/other_solutions/KennethBenicio"]
-	path = pattern-recognition/other_solutions/KennethBenicio
+[submodule "pattern_recognition/other_solutions/KennethBenicio"]
+	path = pattern_recognition/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-MSc-Reconhecimento-de-Padroes
-[submodule "statistical-signal-processing/other_solutions/lucasabdalah"]
-	path = statistical-signal-processing/other_solutions/lucasabdalah
+[submodule "statistical_signal_processing/other_solutions/lucasabdalah"]
+	path = statistical_signal_processing/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TI0124-PROCESSAMENTO_ESTATISTICO_DE_SINAIS
-[submodule "gnss/gnss-data-processing/gLAB"]
-	path = gnss/gnss-data-processing/gLAB
+[submodule "gnss/gnss_data_processing/gLAB"]
+	path = gnss/gnss_data_processing/gLAB
 	url = https://github.com/tapyu/glab

@@ -1,16 +1,16 @@
 # Algorithms implemented throughout my academic life
 
 Here you will find:
-- [x] Algorithms implemented by me during courses, workshops, webinars, etc.
-- [x] Further information about the events from where these algorithms were developed.
-- [x] Reference book and other resource materials (videos, online courses, software links, etc) for further study of each algorithm.
-- [x] Laboratory or computational homework slides, if the implemented algorithms come from such materials. Some of these materials (slides+algorithm) might be in private [git submodules] as they might contain sensitive Professors' computational solutions, which aren't supposed to be available online. In these cases, you cannot access these algorithms as it is restricted to personal consultation.
-- [x] Code references developed by others, possibly during the same event where I've built mine. Such references will be in public [git submodules].
+- [x] Information about the courses, workshops, webinars, etc from where these algorithms were developed.
+- [x] Algorithms implemented by me during such events.
+- [x] Algorithms implemented by others, possibly during the same event where I've built mine. Such references will be in public [git submodules].
   - Such submodules are within the direcory `other_solutions/`, with the name of the code author.
-  - These submodules reference my fork of the original author repo. This ensure that we don't lose the reference if the original author deletes his/her repo.
+  - These submodules reference my fork of the original author repo. This ensure that we don't lose the reference if the original author deletes their repo.
   - These materials might be written in a language other than English.
   - If a submodule fits in different topics, then it is symlinked to these topics.
-- [x] Package references that implement such algorithms.
+- [x] Theoretical references (books, videos, online courses, etc) for further study of each algorithm.
+- [x] Technical references (software, packages that implement such algorithms, tools, etc) that are important for each topic.
+- [x] Laboratory or computational homework slides, if the implemented algorithms come from such materials. Some of these materials (slides+algorithm) might be in private [git submodules] as they might contain sensitive Professors' computational solutions, which aren't supposed to be available online. In these cases, you cannot access these algorithms as it is restricted to personal consultation.
 
 Here you won't find:
 - [ ] Book PDFs or theoretical lectures slides.

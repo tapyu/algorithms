@@ -1,5 +1,5 @@
-[submodule "optimization_theory/Homeworks _ Computational/ref"]
-	path = optimization_theory/Homeworks _ Computational/ref
+[submodule "optimization_theory/Homeworks_Computational/ref"]
+	path = optimization_theory/Homeworks_Computational/ref
 	url = https://github.com/tapyu/algorithms_private
 	branch = opt
 [submodule "optimization_theory/additional_exercises"]

@@ -62,7 +62,7 @@ Presentations:
   - [E06. Ignacio Fernández Galileo High Accuracy Service](https://www.youtube.com/watch?v=Q6RFvlMzZJM)
   - [L14. Precise Point Positioning](https://www.youtube.com/watch?v=BF1VBCxtfVw)
 
-## Extra material
+## Technical references
 
 Although these materials are not related to the aforementioned GNSS courses, they are useful for GNSS in general:
 

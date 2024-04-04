@@ -4,7 +4,7 @@ Here you will find:
 - [x] Information about the courses, workshops, webinars, etc from where these algorithms were developed.
 - [x] Algorithms implemented by me during such events.
 - [x] Algorithms implemented by others, possibly during the same event where I've built mine. Such references will be in public [git submodules].
-  - Such submodules are within the direcory `other_solutions/`, with the name of the code author.
+  - Such submodules are within the `other_solutions/` directory, with the name of the code author.
   - These submodules reference my fork of the original author repo. This ensure that we don't lose the reference if the original author deletes their repo.
   - These materials might be written in a language other than English.
   - If a submodule fits in different topics, then it is symlinked to these topics.

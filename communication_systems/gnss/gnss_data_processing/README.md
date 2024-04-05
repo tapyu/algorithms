@@ -20,7 +20,7 @@ Others:
 - [GMB 2022 slides][3].
 - [GPS data processing - code and phase Algorithms, Techniques and Recipes][2] (?)
 
-## Other resources
+## Technical references
 
 - [GNSS Format Descriptions]: RINEX, ANTEX, IONEX, etc.
 - [The Receiver Independent Exchange Format - Rinex]
@@ -31,7 +31,7 @@ Others:
   
     Therefore, in order to create a straightfoward path to use any gLAB version with the computation homeworks, I've created a git submodule at `./gLAB/`, which contains both the version v5.5.1 for Linux and the tutorial material.
 
-## Technical references
+## Extra references
 
 The following material are related to GNSS data processing but aren't used during this course:
 

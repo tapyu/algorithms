@@ -7,33 +7,39 @@ This is an umbrella directory which contains all sort of algorithms related to A
 
 ## Technical references
 
-### MLOps
+### MLOps tools
+
+Landscape:
 - [MLOps Landscape in 2024: Top Tools and Platforms](https://neptune.ai/blog/mlops-tools-platforms-landscape)
+
+Data storage
+- [DVC](https://github.com/iterative/dvc) - ML Experiments Management with Git.
 
 ### ML project template
 
 - [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science) - A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
 
 ### Datasets
+
 - [UCI](https://archive.ics.uci.edu) - UC Irvine Machine Learning Repository.
 - [`dataset`](https://www.timeseriesclassification.com/) [`dataset`](http://tseregression.org/) [`dataset`](https://www.cs.ucr.edu/%7Eeamonn/time_series_data_2018/) [`reading`](https://arxiv.org/pdf/2006.10996.pdf) [`reading`](https://arxiv.org/pdf/1810.07758.pdf) [`reading`](https://www.cs.ucr.edu/%7Eeamonn/time_series_data_2018/BriefingDocument2018.pdf) [`reading`](https://arxiv.org/pdf/1811.00075.pdf) **UEA & UCR Time Series Datasets** - Two widely used time series datasets, which are frequently used toghether for Time Series Classification (TSC), Time Series Clustering (TSCL) and Time Series Extrinsic Regression (TSER).
 - [kaggle](https://www.kaggle.com/) - A data science competition platform enables users to find and publish open datasets, explore and build models in a web-based data science environment, work with other data scientists and machine learning engineers.
 
+### Packages
 
-### Machine Learning & Neural Networks packages
+Machine Learning & Neural Networks:
 
-- [`software`](https://github.com/alan-turing-institute/MLJ.jl) **MLJ.jl** - A Julia machine learning framework.
-- [`software`](https://pytorch.org/) **pytorch** - Tensors and Dynamic neural networks in Python with strong GPU acceleration.
-- [`software`](https://github.com/tensorflow/tensorflow) **Tensorflow** - An Python Open Source Machine Learning Framework for Everyone.
-- [`software`](https://github.com/sktime/sktime) [`video`](https://youtube.com/watch?v=ODspi8-uWgo) [`code`](https://github.com/sktime/sktime-tutorial-pydata-global-2021) [`code`](https://github.com/sktime/sktime/tree/main/examples) **sktime** - A unified framework for machine learning with time series.
-- [`software`](https://github.com/aeon-toolkit/aeon) **aeon** - A toolkit for conducting machine learning tasks with time series data.
+- [MLJ.jl](https://github.com/alan-turing-institute/MLJ.jl) - A Julia machine learning framework.
+- [pytorch](https://pytorch.org/) - Tensors and Dynamic neural networks in Python with strong GPU acceleration.
+- [Tensorflow](https://github.com/tensorflow/tensorflow) - An Python Open Source Machine Learning Framework for Everyone.
+- [sktime](https://github.com/sktime/sktime) - A unified framework for machine learning with time series.
+  - [PyData Global 2021](https://youtube.com/watch?v=ODspi8-uWgo) and its [code](https://github.com/sktime/sktime-tutorial-pydata-global-2021)
+  - [Some examples](https://github.com/sktime/sktime/tree/main/examples)
+- [aeon](https://github.com/aeon-toolkit/aeon) - A toolkit for conducting machine learning tasks with time series data.
 
-### Big Data packages
+Natural Language Processing:
 
-- [`software`](https://github.com/iterative/dvc) **DVC - Data Version Control** - ML Experiments Management with Git.
-
-### Natural Language Processing pakcages
-- [`software`](https://fasttext.cc/) **fastText** - Library for efficient text classification and representation learning.
+- [fastText](https://fasttext.cc/) - Library for efficient text classification and representation learning.
 
 ### Amazon AWS
 

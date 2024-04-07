@@ -1,6 +1,9 @@
 # Artificial Intelligence
 
-This is an umbrella directory which containsall sort of algorithms related to Artificial Intelligence (AI). While each subdirectory contains algorithms implemented in a event (courses, workshops, webinars, etc) with their respective references, this `README.md` file contains technical references which might be common to all courses.
+This is an umbrella directory which contains all sort of algorithms related to Artificial Intelligence (AI). While each subdirectory contains algorithms implemented in a event (courses, workshops, webinars, etc) and their respective theoretical and technical references, this directory's `README.md` file contains:
+
+- Technical references (software, packages, frameworks) which might be common to all courses.
+- Extra references on the AI/ML career.
 
 ## Technical references
 
@@ -22,3 +25,24 @@ This is an umbrella directory which containsall sort of algorithms related to Ar
 ### Natural Language Processing
 - [`software`](https://fasttext.cc/) **fastText** - Library for efficient text classification and representation learning.
 - [`code`](https://github.com/rasbt/LLMs-from-scratch) **LLMs-from-scratch** - Implementing a ChatGPT-like LLM from scratch, step by step.
+
+## Extra references
+
+### MLops
+
+- [MLOps Landscape in 2024: Top Tools and Platforms](https://neptune.ai/blog/mlops-tools-platforms-landscape)
+
+### Amazon AWS
+
+- [Amazon AWS Certification](https://aws.amazon.com/certification/)
+  - [AWS certification paths](https://d1.awsstatic.com/training-and-certification/docs/AWS_certification_paths.pdf)
+
+- AI/ML certification paths
+  ![image](https://github.com/tapyu/algorithms/assets/22801918/0e53196e-ef36-4e9c-a9a7-eb581dcb6963)
+
+  - [Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+  - [Solutions Architect](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
+  - [Developer](https://aws.amazon.com/certification/certified-developer-associate/)
+  - [Data Engineer](https://aws.amazon.com/certification/certified-data-engineer-associate/)
+  - [Machine Learning - Specialty](https://aws.amazon.com/certification/certified-machine-learning-specialty/)
+

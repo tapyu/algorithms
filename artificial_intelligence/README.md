@@ -41,6 +41,7 @@ This is an umbrella directory which contains all sort of algorithms related to A
   ![image](https://github.com/tapyu/algorithms/assets/22801918/0e53196e-ef36-4e9c-a9a7-eb581dcb6963)
 
   - [Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+    - [AWS Cloud Practitioner Essentials](https://explore.skillbuilder.aws/learn/course/external/view/elearning/134/aws-cloud-practitioner-essentials)
   - [Solutions Architect](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
   - [Developer](https://aws.amazon.com/certification/certified-developer-associate/)
   - [Data Engineer](https://aws.amazon.com/certification/certified-data-engineer-associate/)

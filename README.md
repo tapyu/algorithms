@@ -8,9 +8,10 @@ Here you will find:
   - These submodules reference my fork of the original author repo. This ensure that we don't lose the reference if the original author deletes their repo.
   - These materials might be written in a language other than English.
   - If a submodule fits in different topics, then it is symlinked to these topics.
+  - Some submodules might be private as they might contain sensitive Professors' computational solutions, which aren't supposed to be available online. In these cases, you cannot access these algorithms as it is restricted to personal consultation.
 - [x] Theoretical references (books, videos, online courses, etc) for further study of each algorithm.
 - [x] Technical references (software, packages that implement such algorithms, tools, etc) that are important for each topic.
-- [x] Laboratory or computational homework slides, if the implemented algorithms come from such materials. Some of these materials (slides+algorithm) might be in private [git submodules] as they might contain sensitive Professors' computational solutions, which aren't supposed to be available online. In these cases, you cannot access these algorithms as it is restricted to personal consultation.
+- [x] Laboratory or computational homework slides, if the implemented algorithms come from such materials.
 
 Here you won't find:
 - [ ] Book PDFs or theoretical lectures slides.

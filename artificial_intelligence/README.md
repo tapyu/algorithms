@@ -18,6 +18,12 @@ Logging:
   - [Data Science Simplified video - Loguru: Simple as Print, Flexible as Logging](https://www.youtube.com/watch?v=XY_OrUoR-HU&ab_channel=DataScienceSimplified)
   - [Data Science Simplified post - Loguru: Simple as Print, Flexible as Logging](https://mathdatasimplified.com/simplify-your-python-logging-with-loguru/)
 
+Configuration Management:
+
+- [Hydra](https://hydra.cc/): allows you to separate configuration from code, enabling greater flexibility and maintainability in your projects
+  - [Data Science Simplified video - Stop Hard Coding in a Data Science Project — Use Config Files Instead](https://www.youtube.com/watch?v=jaX9zrC7y4Y&ab_channel=DataScienceSimplified)
+  - [Khuyen Tran post - Stop Hard Coding in a Data Science Project — Use Config Files Instead](https://towardsdatascience.com/stop-hard-coding-in-a-data-science-project-use-config-files-instead-479ac8ffc76f)
+
 Data storage
 
 - [DVC](https://github.com/iterative/dvc) - ML Experiments Management with Git.

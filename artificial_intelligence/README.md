@@ -28,7 +28,9 @@ Data storage
 
 - [DVC](https://github.com/iterative/dvc) - ML Experiments Management with Git.
 - [joblib](https://joblib.readthedocs.io/en/stable/): Python library that provides utilities for saving and loading Python objects, particularly those that are computationally intensive to create. It is commonly used for serializing and deserializing machine learning models, NumPy arrays, and other Python objects to and from disk.
-- HDF5
+- HDF5: Hierarchial Data File Format Version 5 is a flexible and efficient format when it comes to storing large amounts of data and works well for saving large models. Use it fo save raw, preprocessed, and postprocess data. For storing ML models, [it might not be always suitable](https://stackoverflow.com/questions/78294583/which-ml-models-can-be-saved-using-hdf5)
+
+You can enhance your learning about saving a machine learning model by working on industry-grade projects.
   - [7 Different Ways to Save a Machine Learning Model](https://www.projectpro.io/article/how-to-save-a-machine-learning-model/776) (see item 7)
 
 Data Science project template:

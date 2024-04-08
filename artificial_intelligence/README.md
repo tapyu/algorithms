@@ -1,9 +1,9 @@
 # Artificial Intelligence
 
-This is an umbrella directory which contains all sort of algorithms related to Artificial Intelligence (AI). While each subdirectory contains algorithms implemented in a event (courses, workshops, webinars, etc) and their respective theoretical and technical references, this directory's `README.md` file contains:
+This is an umbrella directory which contains all sort of algorithms related to Artificial Intelligence (AI) and Data Science. While each subdirectory contains algorithms implemented in a event (courses, workshops, webinars, etc) with their respective theoretical and technical references, this directory's `README.md` file contains:
 
 - Technical references (software, packages, frameworks, datasets) which might be common to all courses.
-- Extra references on the AI and MLOps career.
+- Extra references about the Data Science career and MLOps tools.
 
 ## Technical references
 
@@ -12,11 +12,18 @@ This is an umbrella directory which contains all sort of algorithms related to A
 Landscape:
 - [MLOps Landscape in 2024: Top Tools and Platforms](https://neptune.ai/blog/mlops-tools-platforms-landscape)
 
+Logging:
+
+- [Loguru](https://github.com/Delgan/loguru): Python logging made (stupidly) simple
+  - [Data Science Simplified video - Loguru: Simple as Print, Flexible as Logging](https://www.youtube.com/watch?v=XY_OrUoR-HU&ab_channel=DataScienceSimplified)
+  - [Data Science Simplified post - Loguru: Simple as Print, Flexible as Logging](https://mathdatasimplified.com/simplify-your-python-logging-with-loguru/)
+
 Data storage
+
 - [DVC](https://github.com/iterative/dvc) - ML Experiments Management with Git.
 - [joblib](https://joblib.readthedocs.io/en/stable/): Python library that provides utilities for saving and loading Python objects, particularly those that are computationally intensive to create. It is commonly used for serializing and deserializing machine learning models, NumPy arrays, and other Python objects to and from disk.
 
-### ML project template
+Data Science project template:
 
 - [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science) - A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
 

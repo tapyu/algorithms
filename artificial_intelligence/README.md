@@ -28,6 +28,8 @@ Data storage
 
 - [DVC](https://github.com/iterative/dvc) - ML Experiments Management with Git.
 - [joblib](https://joblib.readthedocs.io/en/stable/): Python library that provides utilities for saving and loading Python objects, particularly those that are computationally intensive to create. It is commonly used for serializing and deserializing machine learning models, NumPy arrays, and other Python objects to and from disk.
+- HDF5
+  - [7 Different Ways to Save a Machine Learning Model](https://www.projectpro.io/article/how-to-save-a-machine-learning-model/776) (see item 7)
 
 Data Science project template:
 

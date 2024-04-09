@@ -1,6 +1,6 @@
 # Artificial Intelligence
 
-This is an umbrella directory which contains all sort of algorithms related to Artificial Intelligence (AI) and Data Science. While each subdirectory contains algorithms implemented in a event (courses, workshops, webinars, etc) with their respective theoretical and technical references, this directory's `README.md` file contains:
+This is an umbrella directory which contains all sort of algorithms related to Artificial Intelligence (AI). While each subdirectory contains algorithms implemented in a event (courses, workshops, webinars, etc) with their respective theoretical and technical references, this directory's `README.md` file contains:
 
 - Technical references (software, packages, frameworks, datasets) which might be common to all courses.
 - Extra references about the Data Science career and MLOps tools.
@@ -29,6 +29,7 @@ Data storage
 - [DVC](https://github.com/iterative/dvc) - ML Experiments Management with Git.
 - [joblib](https://joblib.readthedocs.io/en/stable/): Python library that provides utilities for saving and loading Python objects, particularly those that are computationally intensive to create. It is commonly used for serializing and deserializing machine learning models, NumPy arrays, and other Python objects to and from disk.
 - HDF5: Hierarchial Data File Format Version 5 is a flexible and efficient format when it comes to storing large amounts of data and works well for saving large models. Use it fo save raw, preprocessed, and postprocess data. For storing ML models, [it might not be always suitable](https://stackoverflow.com/questions/78294583/which-ml-models-can-be-saved-using-hdf5)
+- [picke](https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/) - A standard package way to save generic variables in Python. Although it is also used to save ML models, it is not considered the best practice.
 
 You can enhance your learning about saving a machine learning model by working on industry-grade projects.
   - [7 Different Ways to Save a Machine Learning Model](https://www.projectpro.io/article/how-to-save-a-machine-learning-model/776) (see item 7)

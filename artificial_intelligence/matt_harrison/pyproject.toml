@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "titanic-dataset"
+version = "0.1.0"
+description = "Chapter 3 in \"Machine Learning Working with Structured Data in Python Pocket Reference\""
+authors = ["tapyu <rubem.engenharia@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+matplotlib = "^3.8.4"
+scikit-learn = "^1.4.2"
+pandas = "^2.2.2"
+yellowbrick = "^1.5"
+xlrd = "^2.0.1"
+ipykernel = "^6.29.4"
+ydata-profiling = "^4.7.0"
+ipywidgets = "^8.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -40,9 +40,12 @@ Data Science project template:
 
 - [cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science) - A logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
 
-Data visualization
+Data visualization:
 
 - [ydata-profiling](https://github.com/ydataai/ydata-profiling) - Get summary of pandas dataframes
+- [pretty-print-confusion-matrix](https://github.com/wcipriano/pretty-print-confusion-matrix) - Confusion Matrix in Python: plot a pretty confusion matrix (like Matlab) in python using seaborn and matplotlib.
+- [searborn](https://github.com/mwaskom/seaborn) - Statistical data visualization in Python.
+- [yellowbrick](https://github.com/DistrictDataLabs/yellowbrick) - Visual analysis and diagnostic tools to facilitate machine learning model selection.
 
 ### Datasets
 

@@ -20,10 +20,10 @@ This directory contains a compendium of algorithms for Global Navigation Satelli
 
 ---
 
-## [GMB 2022 schedule][2]
+## [Galileo Masterclass Brazil (GMB) 2022 schedule][2]
 
 <p align="center">
-  <img src="https://github.com/tapyu/courses/assets/22801918/51d0cfdb-badd-4d25-bca3-b41f9ff8216b" height="700pt" />
+  <img src="https://github.com/tapyu/algorithms/assets/22801918/b156f4a7-8b95-4609-8f45-e469fa535eeb" height="700pt" alt="GMB 2022 Programme"/>
 </p>
 
 

@@ -36,6 +36,8 @@ Others:
 The following material are related to GNSS data processing but aren't used during this course:
 
 - [RTKLIB](https://www.rtklib.com/): another GNSS positioning simulator, i.e., another open source program package for GNSS positioning. It is basically an alternative to gLAB since both compute the GNSS positioning based on the a RINEX file.
+- [android_rinex]: Android GNSS Logger to RINEX converter. This repository contains a python script that converts logs from Google's GNSS measurement tools to RINEX.
+- [`reading`](https://rokubun.github.io/gnss_tutorials/README.html) [`code`](https://github.com/rokubun/gnss_tutorials) - **GNSS data processing with Python** - Hands-on tutorials for GNSS data processing using Python and Jupyter Notebooks/book.
 
 [Jaume Sanz Subirana]: https://gage.upc.edu/en/personnel/permanent-staff/jaume.sanz
 [Guillermo Gonzalez Casado]: https://gage.upc.edu/en/personnel/permanent-staff/dr-guillermo-gonzalez-casado
@@ -49,3 +51,4 @@ The following material are related to GNSS data processing but aren't used durin
 [6]: https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite-links/glab-download
 [gLAB]: https://gage.upc.edu/en/learning-materials/software-tools/glab-tool-suite
 [The Receiver Independent Exchange Format - Rinex]: https://files.igs.org/pub/data/format/rinex_4.00.pdf?_ga=2.189936815.567175650.1708691301-1982200360.1707403568
+[android_rinex]: https://github.com/rokubun/android_rinex

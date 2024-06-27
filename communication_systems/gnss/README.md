@@ -75,3 +75,20 @@ For materials specific for either signal or data processing part, see the `## Ex
 [awesome-gnss]: https://github.com/barbeau/awesome-gnss
 [GNSS-SDR]: https://gnss-sdr.org/
 [GPS Toolbox]: https://geodesy.noaa.gov/gps-toolbox/
+
+
+---
+
+## Important companies
+
+- [Trimble Inc.] (United States of America)
+- [Hexagon AB] (Sweden)
+- [NovAtel Inc.] (Canada)
+- [Septentrio] (Belgium)
+- [u-blox AG] (Switzerland)
+
+[Trimble Inc.]: https://www.trimble.com/en
+[Hexagon AB]: https://hexagon.com/
+[NovAtel Inc.]: https://novatel.com/
+[Septentrio]: https://www.septentrio.com/en
+[u-blox AG]: https://www.u-blox.com/en

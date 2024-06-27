@@ -87,6 +87,8 @@ For materials specific for either signal or data processing part, see the `## Ex
 - [Septentrio] (Belgium)
 - [u-blox AG] (Switzerland)
 - [Elecnor Deimos] (Portugal)
+- [Thales Group] (France)
+- [Airbus Defence and Space] (France, Germany, Spain)
 
 [Trimble Inc.]: https://www.trimble.com/en
 [Hexagon AB]: https://hexagon.com/
@@ -94,3 +96,5 @@ For materials specific for either signal or data processing part, see the `## Ex
 [Septentrio]: https://www.septentrio.com/en
 [u-blox AG]: https://www.u-blox.com/en
 [Elecnor Deimos]: https://elecnor-deimos.com/
+[Thales Group]: https://www.thalesgroup.com/en
+[Airbus Defence and Space]: https://www.airbus.com/en/defence

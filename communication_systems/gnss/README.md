@@ -68,7 +68,7 @@ Although these materials are not related to the aforementioned GNSS courses, the
 
 - [GNSS-SDR]
 - [awesome-gnss]
-- [GPS Toolbox]: GPS Toolbox topical collection of the journal GPS Solutions. It provides a means for distributing the source code and algorithms discussed in the GPS Toolbox topical collection.
+- [`code`](https://geodesy.noaa.gov/gps-toolbox/) **GPS Toolbox** - GPS Toolbox topical collection of the journal GPS Solutions. It provides a means for distributing the source code and algorithms discussed in the GPS Toolbox topical collection.
 
 For materials specific for either signal or data processing part, see the `## Extra material` in the `README.md` file of their directories.
 

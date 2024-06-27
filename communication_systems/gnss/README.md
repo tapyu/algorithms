@@ -79,16 +79,18 @@ For materials specific for either signal or data processing part, see the `## Ex
 
 ---
 
-## Important companies
+## Important companies (see Trello for saved job description)
 
 - [Trimble Inc.] (United States of America)
 - [Hexagon AB] (Sweden)
 - [NovAtel Inc.] (Canada)
 - [Septentrio] (Belgium)
 - [u-blox AG] (Switzerland)
+- [Elecnor Deimos] (Portugal)
 
 [Trimble Inc.]: https://www.trimble.com/en
 [Hexagon AB]: https://hexagon.com/
 [NovAtel Inc.]: https://novatel.com/
 [Septentrio]: https://www.septentrio.com/en
 [u-blox AG]: https://www.u-blox.com/en
+[Elecnor Deimos]: https://elecnor-deimos.com/

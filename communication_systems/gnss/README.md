@@ -89,6 +89,7 @@ For materials specific for either signal or data processing part, see the `## Ex
 - [Elecnor Deimos] (Portugal)
 - [Thales Group] (France)
 - [Airbus Defence and Space] (France, Germany, Spain)
+- [Rokubun] (Spain - Catalonia). PS: This one seems more like a startup. It contains open [repositories][1] on Github.
 
 [Trimble Inc.]: https://www.trimble.com/en
 [Hexagon AB]: https://hexagon.com/
@@ -98,3 +99,5 @@ For materials specific for either signal or data processing part, see the `## Ex
 [Elecnor Deimos]: https://elecnor-deimos.com/
 [Thales Group]: https://www.thalesgroup.com/en
 [Airbus Defence and Space]: https://www.airbus.com/en/defence
+[Rokubun]: https://www.rokubun.cat/
+[1]: https://github.com/rokubun

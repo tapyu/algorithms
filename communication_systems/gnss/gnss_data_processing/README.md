@@ -39,6 +39,7 @@ The following material are related to GNSS data processing but aren't used durin
 - [android_rinex]: Android GNSS Logger to RINEX converter. This repository contains a python script that converts logs from Google's GNSS measurement tools to RINEX.
 - [jason-sdk-python]: Jason GNSS Cloud PPK Service is a cloud-based positioning engine that uses GNSS data. One of the main features of this service is that offers an API so that users can automatize the GNSS data processing without the need to access the front-end. See its [documentation](https://jason.docs.rokubun.cat/) and [website](https://jason.rokubun.cat/)
 - [`reading`](https://rokubun.github.io/gnss_tutorials/README.html) [`code`](https://github.com/rokubun/gnss_tutorials) - **GNSS data processing with Python** - Hands-on tutorials for GNSS data processing using Python and Jupyter Notebooks/book.
+- [GNSSpy]: Python Toolkit for GNSS Data.
 
 [Jaume Sanz Subirana]: https://gage.upc.edu/en/personnel/permanent-staff/jaume.sanz
 [Guillermo Gonzalez Casado]: https://gage.upc.edu/en/personnel/permanent-staff/dr-guillermo-gonzalez-casado
@@ -54,3 +55,4 @@ The following material are related to GNSS data processing but aren't used durin
 [The Receiver Independent Exchange Format - Rinex]: https://files.igs.org/pub/data/format/rinex_4.00.pdf?_ga=2.189936815.567175650.1708691301-1982200360.1707403568
 [android_rinex]: https://github.com/rokubun/android_rinex
 [jason-sdk-python]: https://github.com/rokubun/jason-sdk-python
+[GNSSpy]: https://github.com/GNSSpy-Project/gnsspy

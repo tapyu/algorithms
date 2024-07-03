@@ -2,44 +2,44 @@
 
 This directory contains:
 - The homework from my PhD. course "Otimização não-linear de sistemas", taught by Yuri Carvalho Barbosa Silva and Tarcisio Ferreira Maciel at UFC.
+- [Optimization theory cheat sheet](./opt_cheatsheet) - A cheat sheet of the main concepts about optmization theory. This optimization was initially created during the course taught by Yuri Carvalho Barbosa Silva and Tarcísio Ferreira Maciel. However, the cheat sheet is mainly linked to the core conceps in the main theoretical references.
 - All the computation homework descriptions are in the Jupyter Notebooks files (`OtimizacaoRelaxacaoQuadratica.ipynb` and `lamps.ipynb`).
 - The computational homework is basically to solve optimization problems by using optimization packages.
 - The slides is the same as the Stephen Boyd slides, which can be found in Google Drive in the path `Mathematics - Optmization theory/Stephen Boyd - slides`
 - `additional-exercises/` is a git submodule for the a [repository][20] from Stanford University containing a huge set of exercises. Some of them have computational part, and the repo contain the code solution (in `matlab`, `R`, `julia`, and `python`).
 
-## Important links
+## Theoretical references
+- Main:
+    - [Boyd, S. and Vandenberghe, L., 2004. Convex optimization. Cambridge university press][23].
+    - [Dattorro, J., 2010. Convex optimization & Euclidean distance geometry. Lulu. com.][24]
+- Others:
+    - [Stanford Engineering Everywhere - EE364A - Convex Optimization I][22]: Taught by Stephen Boyd.
+    - [EE364b - Convex Optimization II][25]
 
-1. [Optimization cheatsheet][17]
 
-1. Solvers (used by the CVX packages)
-    1. [GLPK (GNU Linear Programming Kit)][1]
-    1. [ADMM - Alternating Direction Method of Multipliers][2]
-    1. [MOSEK (commercial solver)][3]
-    1. [ECOS - Embedded Conic Solver][4]
-    1. [SCS - Splitting Conic Solver][5]
-    1. [Gurobi (commercial solver)][6]
-    1. [Mosek ApS (proprietary)][7]
+## Technical references
 
 1. CVX-derived packages (a CVX package uses many solvers)
     1. [CVX (Matlab, the main)][8]
         1. [CVX Users’ Guide][12]
-    1. [CVXR (R)][9]
-    1. [CVXPY (Python)][10]
-    1. [Convex.jl (Julia)][11]
-  
-1. [`ncvx`][18]: A `python` package for modeling and solving problems with convex objectives and decision variables from a nonconvex set (from the Stanford University Convex Optimization Group, cvxgrp).
-
-1. [Optimization Problem Types][16]
-
-1. [JuMP.jl][21]: Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear). 
-
-1. [What is DCP(disciplined convex programming)][13]
-
-1. [Auxiliary variables and extended formulation][14]
-
-1. [DCP Analyzer][15]
-
-1. A short [`cvxpy` course][19] from the Stanford University Convex Optimization Group (cvxgrp). It contains a lot of computational exercises
+    2. [CVXR (R)][9]
+    3. [CVXPY (Python)][10]
+    4. [Convex.jl (Julia)][11]
+2. Solvers (used by the CVX packages)
+    1. [GLPK (GNU Linear Programming Kit)][1]
+    2. [ADMM - Alternating Direction Method of Multipliers][2]
+    3. [MOSEK (commercial solver)][3]
+    4. [ECOS - Embedded Conic Solver][4]
+    5. [SCS - Splitting Conic Solver][5]
+    6. [Gurobi (commercial solver)][6]
+    7. [Mosek ApS (proprietary)][7]
+3. [`ncvx`][18]: A `python` package for modeling and solving problems with convex objectives and decision variables from a nonconvex set (from the Stanford University Convex Optimization Group, cvxgrp).
+4. [Optimization Problem Types][16]
+5. [JuMP.jl][21]: Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear). 
+6. [What is DCP(disciplined convex programming)][13]
+7. [Auxiliary variables and extended formulation][14]
+8. [DCP Analyzer][15]
+9. A short [`cvxpy` course][19] from the Stanford University Convex Optimization Group (cvxgrp). It contains a lot of computational exercises
 
 [1]: https://www.gnu.org/software/glpk/
 [2]: https://stanford.edu/~boyd/admm.html
@@ -57,8 +57,11 @@ This directory contains:
 [14]: https://jump.dev/Convex.jl/stable/#Extended-formulations-and-the-DCP-ruleset
 [15]: https://dcp.stanford.edu/analyzer
 [16]: https://neos-guide.org/guide/types/
-[17]: https://tapyu.github.io/notes/posts/opt_cheatsheet/index.html
 [18]: https://github.com/cvxgrp/ncvx
 [19]: https://github.com/cvxgrp/cvx_short_course/
 [20]: https://github.com/cvxgrp/cvxbook_additional_exercises/
 [21]: https://github.com/jump-dev/JuMP.jl
+[22]: https://see.stanford.edu/Course/EE364A
+[23]: https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf
+[24]: https://www.convexoptimization.com/TOOLS/0976401304_v2011.04.25.pdf
+[25]: https://web.stanford.edu/class/ee364b/

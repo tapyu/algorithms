@@ -10,8 +10,8 @@ This directory contains:
     - [Boyd, S. and Vandenberghe, L., 2004. Convex optimization. Cambridge university press][23].
     - [Dattorro, J., 2010. Convex optimization & Euclidean distance geometry. Lulu. com.][24]
 - Others:
-    - [Stanford Engineering Everywhere - EE364A - Convex Optimization I][22]: Taught by Stephen Boyd.
-    - [EE364b - Convex Optimization II][25]
+    - [Stanford Engineering Everywhere - EE364A - Convex Optimization I][22]: Taught by Stephen Boyd. This course is the main reference and is mostly based on his book. 
+    - [EE364b - Convex Optimization II][25]: This course is a continuation of EE364A.
 
 
 ## Technical references

@@ -13,9 +13,9 @@ This directory contains:
         - [EE364A Lecture slides (updated summer 2023)][27]: Newest version of the slides.
         - [EE364A Original lecture slides][28]: First version of the slides.
         - [EE364A Additional lecture slides][29]. You can also find a few slides from EE364B, which is used as additional content in EE364A.
-        - [CVX* tutorial slides][29]
-        - [Additional exercises][21]: Data files in Python, Julia, and Matlab for Stanford EE364A, Convex Optimization, that do not appear in the book Convex Optimization (see [`./additional-exercises/`](./additional-exercises)).
-        - [EE364A Lecture slides][31].
+        - [EE364A CVX* tutorial slides][29]
+        - [EE364A Additional exercises][21]: Data files in Python, Julia, and Matlab for Stanford EE364A, Convex Optimization, that do not appear in the book Convex Optimization (see [`./ee364a_additional_exercises/`](./ee364a_additional_exercises)).
+        - [EE364B Lecture slides][31].
 - Others:
     - [Dattorro, J., 2010. Convex optimization & Euclidean distance geometry.][24]
 

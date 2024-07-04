@@ -2,7 +2,7 @@
 
 Here, you will find:
 - [x] Information about the courses, workshops, webinars, etc from where these algorithms were developed.
-- [x] Algorithms implemented by me during such events. If the such algorithms come from a computational homework slide, it is also made available.
+- [x] Algorithms implemented by me during such events. If such algorithms come from a computational homework slide, it is also made available.
 - [x] Algorithms implemented by others, possibly during the same event where I've built mine. Such references will be in public [git submodules].
   - Such submodules are within the `other_solutions/` directory, with the name of the code author.
   - These submodules reference my fork of the original author repo. This ensure that we don't lose the reference if the original author deletes their repo.

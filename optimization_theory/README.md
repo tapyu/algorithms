@@ -12,7 +12,7 @@ This directory contains:
         - [EE364A Lecture slides (updated summer 2023)][27]: Newest version of the slides.
         - [EE364A Original lecture slides][28]: First version of the slides.
         - [Additional exercises][21]: Data files in Python, Julia, and Matlab for Stanford EE364a, Convex Optimization, that do not appear in the book Convex Optimization (see [`./additional-exercises/`](./additional-exercises)).
-    - [Dattorro, J., 2010. Convex optimization & Euclidean distance geometry. Lulu. com.][24]
+    - [Dattorro, J., 2010. Convex optimization & Euclidean distance geometry.][24]
 - Others:
     - [Stanford Engineering Everywhere - EE364A - Convex Optimization I][22]: Taught by Stephen Boyd. This course is the main reference and is mostly based on his book. 
     - [EE364b - Convex Optimization II][25]: This course is a continuation of EE364A.

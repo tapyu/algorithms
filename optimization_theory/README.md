@@ -7,7 +7,11 @@ This directory contains:
 
 ## Theoretical references
 - Main:
-    - [Boyd, S. and Vandenberghe, L., 2004. Convex optimization. Cambridge university press][23].
+    - [Boyd, S. and Vandenberghe, L., 2004. Convex optimization. Cambridge university press][26].
+        - [Book][23]
+        - [EE364A Lecture slides (updated summer 2023)][27]: Newest version of the slides.
+        - [EE364A Original lecture slides][28]: First version of the slides.
+        - [Additional exercises][21]: Data files in Python, Julia, and Matlab for Stanford EE364a, Convex Optimization, that do not appear in the book Convex Optimization (see [`./additional-exercises/`](./additional-exercises)).
     - [Dattorro, J., 2010. Convex optimization & Euclidean distance geometry. Lulu. com.][24]
 - Others:
     - [Stanford Engineering Everywhere - EE364A - Convex Optimization I][22]: Taught by Stephen Boyd. This course is the main reference and is mostly based on his book. 
@@ -30,6 +34,9 @@ This directory contains:
     5. [SCS - Splitting Conic Solver][5]
     6. [Gurobi (commercial solver)][6]
     7. [Mosek ApS (proprietary)][7]
+
+## Extra references
+
 3. [`ncvx`][18]: A `python` package for modeling and solving problems with convex objectives and decision variables from a nonconvex set (from the Stanford University Convex Optimization Group, cvxgrp).
 4. [Optimization Problem Types][16]
 5. [JuMP.jl][21]: Modeling language for Mathematical Optimization (linear, mixed-integer, conic, semidefinite, nonlinear). 
@@ -62,3 +69,6 @@ This directory contains:
 [23]: https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf
 [24]: https://www.convexoptimization.com/TOOLS/0976401304_v2011.04.25.pdf
 [25]: https://web.stanford.edu/class/ee364b/
+[26]: https://web.stanford.edu/~boyd/cvxbook/
+[27]: https://web.stanford.edu/~boyd/cvxbook/bv_cvxslides.pdf
+[28]: https://web.stanford.edu/~boyd/cvxbook/bv_cvxslides_original.pdf

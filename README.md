@@ -2,7 +2,7 @@
 
 Here, you will find:
 - [x] Information about the courses, workshops, webinars, etc from where these algorithms were developed.
-- [x] Algorithms implemented by me during such events.
+- [x] Algorithms implemented by me during such events. If the such algorithms come from a computational homework slide, it is also made available.
 - [x] Algorithms implemented by others, possibly during the same event where I've built mine. Such references will be in public [git submodules].
   - Such submodules are within the `other_solutions/` directory, with the name of the code author.
   - These submodules reference my fork of the original author repo. This ensure that we don't lose the reference if the original author deletes their repo.
@@ -12,10 +12,9 @@ Here, you will find:
 - [x] Code solution of book's computational exercises. Such books are usually used as reference.
 - [x] External theoretical references (books, videos, online courses, etc) for further study of each algorithm.
 - [x] External technical references (software, packages that implement such algorithms, tools, etc) that are important for each topic.
-- [x] Laboratory or computational homework slides, if the implemented algorithms come from such materials.
 
 Here, you won't find:
-- [ ] Book PDFs or theoretical lectures slides.
+- [ ] Books or theoretical lectures slides.
 - [ ] Software
 
 ----

@@ -2,20 +2,22 @@
 
 This directory contains:
 - [`./tip8300_nonlinear_opt_sist/`](./tip8300_nonlinear_opt_sist): Computational homeworks from my PhD. course "TIP8300 - Otimização não-linear de sistemas", taught by Yuri Carvalho Barbosa Silva and Tarcisio Ferreira Maciel at UFC.
-- [`./additional-exercises/`](./additional-exercises) is a git submodule for the a [repository][20] from Stanford University containing a huge set of exercises. Some of them have computational part, and the repo contain the code solution (in `matlab`, `R`, `julia`, and `python`).
+- [`./additional-exercises/`](./ee364a_additional_exercises) is a git submodule for the a [repository][20] from Stanford University containing a huge set of exercises. Some of them have computational part, and the repo contain the code solution (in `matlab`, `R`, `julia`, and `python`).
 - [Optimization theory cheat sheet](./opt_cheatsheet) - A cheat sheet of the main concepts about optmization theory. This optimization was initially created during the course taught by Yuri Carvalho Barbosa Silva and Tarcísio Ferreira Maciel. However, the cheat sheet is mainly linked to the core conceps in the main theoretical references.
 
 ## Theoretical references
 - Main:
-    - [Boyd, S. and Vandenberghe, L., 2004. Convex optimization. Cambridge university press][26].
-        - [Book][23]
+    - [EE364A - Convex Optimization I][30] and [EE364B - Convex Optimization II][25] courses taught by Stephen Boyd, Stanford University.
+        - **Course**: [Stanford Engineering Everywhere - EE364A - Convex Optimization I][22].
+        - **Book**: [Boyd, S. and Vandenberghe, L., 2004. Convex optimization. Cambridge university press][23]
         - [EE364A Lecture slides (updated summer 2023)][27]: Newest version of the slides.
         - [EE364A Original lecture slides][28]: First version of the slides.
-        - [Additional exercises][21]: Data files in Python, Julia, and Matlab for Stanford EE364a, Convex Optimization, that do not appear in the book Convex Optimization (see [`./additional-exercises/`](./additional-exercises)).
-    - [Dattorro, J., 2010. Convex optimization & Euclidean distance geometry.][24]
+        - [EE364A Additional lecture slides][29]. You can also find a few slides from EE364B, which is used as additional content in EE364A.
+        - [CVX* tutorial slides][29]
+        - [Additional exercises][21]: Data files in Python, Julia, and Matlab for Stanford EE364A, Convex Optimization, that do not appear in the book Convex Optimization (see [`./additional-exercises/`](./additional-exercises)).
+        - [EE364A Lecture slides][31].
 - Others:
-    - [Stanford Engineering Everywhere - EE364A - Convex Optimization I][22]: Taught by Stephen Boyd. This course is the main reference and is mostly based on his book. 
-    - [EE364b - Convex Optimization II][25]: This course is a continuation of EE364A.
+    - [Dattorro, J., 2010. Convex optimization & Euclidean distance geometry.][24]
 
 
 ## Technical references
@@ -68,7 +70,10 @@ This directory contains:
 [22]: https://see.stanford.edu/Course/EE364A
 [23]: https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf
 [24]: https://www.convexoptimization.com/TOOLS/0976401304_v2011.04.25.pdf
-[25]: https://web.stanford.edu/class/ee364b/
+[25]: https://web.stanford.edu/class/ee364b
 [26]: https://web.stanford.edu/~boyd/cvxbook/
 [27]: https://web.stanford.edu/~boyd/cvxbook/bv_cvxslides.pdf
 [28]: https://web.stanford.edu/~boyd/cvxbook/bv_cvxslides_original.pdf
+[29]: https://web.stanford.edu/class/ee364a/lectures.html
+[30]: https://web.stanford.edu/class/ee364a
+[31]: https://web.stanford.edu/class/ee364b/lectures.html

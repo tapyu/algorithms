@@ -1,0 +1,10 @@
+Matlab codes for branch and bound
+EE364b, Convex Optimization II, S. Boyd
+
+written by Jacob Mattingley 2007-03
+
+bb30.py - 30 variable cardinality problem
+output - python output from running 30 variable cardinality problem
+fig1.png - plot of upper and lower bounds versus iteration
+fig2.png - plot showing portion of non-pruned values remaining
+fig3.png - plot showing the number of active leaves on the tree

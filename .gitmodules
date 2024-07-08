@@ -79,3 +79,6 @@
 	path = statistical_signal_processing/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TI0124-PROCESSAMENTO_ESTATISTICO_DE_SINAIS
+[submodule "optimization_theory/ee364b_code_solution/optimization_theory/ee364b_code_solution/proximal_and_operator_splitting_methods/proximal"]
+	path = optimization_theory/ee364b_code_solution/optimization_theory/ee364b_code_solution/proximal_and_operator_splitting_methods/proximal
+	url = https://github.com/cvxgrp/proximal

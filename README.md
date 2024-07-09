@@ -26,7 +26,7 @@ Here, you will find:
 
 If such content is a subdirectory with other directories, we can prefix the dir name with `./book_` and the author name. For instance, under `./artificial_intelligence`, we can have `book_simon_haykin/`, which contains algorithms implementation discussed in the book "Neural Networks and Learning Machines", by Simon Haykin.
 
-There you will find:
+Here you will find:
 - [x] Code solution of book's computational exercises. Such books are usually used as reference in the events.
 - [x] Algorithms implemented by others and make available on Github. Such references will be in public [git submodules].
   - Such submodules are within the `other_solutions/` directory, with the name of the code author.

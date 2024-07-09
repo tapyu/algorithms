@@ -83,3 +83,6 @@
 	path = statistical_signal_processing/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TI0124-PROCESSAMENTO_ESTATISTICO_DE_SINAIS
+[submodule "artificial_intelligence/book_simon_haykin/official_matlab_code_sol"]
+	path = artificial_intelligence/book_simon_haykin/official_matlab_code_sol
+	url = https://github.com/tapyu/haykin-neural-networks-and-learning-machines

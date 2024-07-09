@@ -1,4 +1,4 @@
-# Artificial Ineeelligence
+# Artificial Intelligence
 
 This is an umbrella directory which contains all sort of algorithms related to Artificial Intelligence (AI). Each subdirectory contains:
 - Algorithms implemented in a event (courses, workshops, webinars, etc) with their respective theoretical and technical references, these directory's `README.md` file contains:

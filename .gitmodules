@@ -2,8 +2,8 @@
 	path = optimization_theory/tip8300_nonlinear_opt_sist/computational_homeworks/ref
 	url = https://github.com/tapyu/algorithms_private
 	branch = opt
-[submodule "optimization_theory/additional_exercises"]
-	path = optimization_theory/additional_exercises
+[submodule "optimization_theory/ee364a_additional_exercises"]
+	path = optimization_theory/ee364a_additional_exercises
 	url = https://github.com/cvxgrp/cvxbook_additional_exercises
 [submodule "optimization_theory/ee364b_code_solution/proximal_and_operator_splitting_methods/proximal"]
 	path = optimization_theory/ee364b_code_solution/proximal_and_operator_splitting_methods/proximal

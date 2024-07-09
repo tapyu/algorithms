@@ -8,7 +8,7 @@ The **directory structure is organized by field of knowledge**, and depending on
 
 ## Algorithms implementations during an event (courses, workshops, webinars, etc.)
 
-If such content is a subdirectory with other directories, we can prefix the dir name with the event code. For instance, `tip7077_computational_intelligence/` contains the code developed during the course "Computational Intelligence", whose course code is TIP7077. If the event is a conference or similar, we can used the event initials as prefix.
+If such content is a subdirectory with other directories, we can prefix the dir name with the event code. For instance, `tip7077_computational_intelligence/` contains the code developed during the course "Computational Intelligence", whose course code is TIP7077. If the event is a conference or something similar, we can used the event initials as prefix.
 
 Here, you will find:
 - [x] Information about the courses, workshops, webinars, etc from where these algorithms were developed.

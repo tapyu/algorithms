@@ -4,7 +4,7 @@ This directory contains:
 - [`./tip8300_nonlinear_opt_sist/`](./tip8300_nonlinear_opt_sist): Computational homeworks from my PhD. course "TIP8300 - Otimização não-linear de sistemas", taught by Yuri Carvalho Barbosa Silva and Tarcisio Ferreira Maciel at UFC.
 - [`./additional-exercises/`](./ee364a_additional_exercises) is a git submodule for the a [repository][20] from Stanford University containing a huge set of exercises. Some of them have computational part, and the repo contain the code solution (in `matlab`, `R`, `julia`, and `python`).
 - [Optimization theory cheat sheet](./opt_cheatsheet) - A cheat sheet of the main concepts about optmization theory. This optimization was initially created during the course taught by Yuri Carvalho Barbosa Silva and Tarcísio Ferreira Maciel. However, the cheat sheet is mainly linked to the core conceps in the main theoretical references.
-- [`stephen_boyd_code_sol`](./stephen_boyd_code_sol) - Code solution of the main computation exercises of the book "Convex Optimization", by Stephen Boyd.
+- [`stephen_boyd_code_sol`](./stephen_boyd_code_sol) - Code solution of the main computation exercises of the book "Convex Optimization", by Stephen Boyd. These code solutions come frem the [CVXR's example library][32].
 
 ## Theoretical references
 - Main:
@@ -78,3 +78,4 @@ This directory contains:
 [29]: https://web.stanford.edu/class/ee364a/lectures.html
 [30]: https://web.stanford.edu/class/ee364a
 [31]: https://web.stanford.edu/class/ee364b/lectures.html
+[32]: https://cvxr.com/cvx/examples/

@@ -23,9 +23,6 @@
 	path = communication_systems/gnss/gnss_data_processing/gLAB
 	url = https://github.com/tapyu/glab
 
-[submodule "artificial_intelligence/pattern_recognition/other_solutions/KennethBenicio"]
-	path = artificial_intelligence/pattern_recognition/other_solutions/KennethBenicio
-	url = https://github.com/tapyu/ref-MSc-Reconhecimento-de-Padroes
 [submodule "adaptive_filtering/other_solutions/KennethBenicio"]
 	path = adaptive_filtering/other_solutions/KennethBenicio
 	url = https://github.com/tapyu/ref-Msc-Filtragem-Adaptativa
@@ -34,6 +31,9 @@
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TIP7188-FILTRAGEM_ADAPTATIVA
 
+[submodule "artificial_intelligence/tip8311_pattern_recognition/other_solutions/KennethBenicio"]
+	path = artificial_intelligence/tip8311_pattern_recognition/other_solutions/KennethBenicio
+	url = https://github.com/tapyu/ref-MSc-Reconhecimento-de-Padroes
 [submodule "artificial_intelligence/tip7077_computational_intelligence/other_solutions/Kayannsoarez"]
 	path = artificial_intelligence/tip7077_computational_intelligence/other_solutions/Kayannsoarez
 	url = https://github.com/tapyu/ref-Inteligencia_Computacional

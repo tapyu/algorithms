@@ -33,17 +33,18 @@
 	path = adaptive_filtering/other_solutions/lucasabdalah
 	url = https://github.com/tapyu/ref-Courses-HWs
 	branch = TIP7188-FILTRAGEM_ADAPTATIVA
-[submodule "artificial_intelligence/computational_intelligence/other_solutions/Kayannsoarez"]
-	path = artificial_intelligence/computational_intelligence/other_solutions/Kayannsoarez
+
+[submodule "artificial_intelligence/tip7077_computational_intelligence/other_solutions/Kayannsoarez"]
+	path = artificial_intelligence/tip7077_computational_intelligence/other_solutions/Kayannsoarez
 	url = https://github.com/tapyu/ref-Inteligencia_Computacional
-[submodule "artificial_intelligence/computational_intelligence/other_solutions/LauraMMelo"]
-	path = artificial_intelligence/computational_intelligence/other_solutions/LauraMMelo
+[submodule "artificial_intelligence/tip7077_computational_intelligence/other_solutions/LauraMMelo"]
+	path = artificial_intelligence/tip7077_computational_intelligence/other_solutions/LauraMMelo
 	url = https://github.com/tapyu/ref-comp_intelligence_couse
-[submodule "artificial_intelligence/computational_intelligence/other_solutions/ezequiasjunior"]
-	path = artificial_intelligence/computational_intelligence/other_solutions/ezequiasjunior
+[submodule "artificial_intelligence/tip7077_computational_intelligence/other_solutions/ezequiasjunior"]
+	path = artificial_intelligence/tip7077_computational_intelligence/other_solutions/ezequiasjunior
 	url = https://github.com/tapyu/ref-ica2019.2
-[submodule "artificial_intelligence/computational_intelligence/other_solutions/filipepfarias"]
-	path = artificial_intelligence/computational_intelligence/other_solutions/filipepfarias
+[submodule "artificial_intelligence/tip7077_computational_intelligence/other_solutions/filipepfarias"]
+	path = artificial_intelligence/tip7077_computational_intelligence/other_solutions/filipepfarias
 	url = https://github.com/tapyu/ref-Applied-Computational-Intelligence-2021.1
 	branch = main
 

@@ -1,9 +1,12 @@
-# Artificial Intelligence
+# Artificial Ineeelligence
 
-This is an umbrella directory which contains all sort of algorithms related to Artificial Intelligence (AI). While each subdirectory contains algorithms implemented in a event (courses, workshops, webinars, etc) with their respective theoretical and technical references, this directory's `README.md` file contains:
+This is an umbrella directory which contains all sort of algorithms related to Artificial Intelligence (AI). Each subdirectory contains:
+- Algorithms implemented in a event (courses, workshops, webinars, etc) with their respective theoretical and technical references, these directory's `README.md` file contains:
+  - Technical references (software, packages, frameworks, datasets) which might be common to all courses.
+  - Extra references about the Data Science career and MLOps tools.
+- Some code implementation of books from the AI field.
 
-- Technical references (software, packages, frameworks, datasets) which might be common to all courses.
-- Extra references about the Data Science career and MLOps tools.
+This `README.md` file contains general information which is common to all topics in AI.
 
 ## Technical references
 
@@ -83,4 +86,3 @@ Natural Language Processing:
   - [Developer](https://aws.amazon.com/certification/certified-developer-associate/)
   - [Data Engineer](https://aws.amazon.com/certification/certified-data-engineer-associate/)
   - [Machine Learning - Specialty](https://aws.amazon.com/certification/certified-machine-learning-specialty/)
-

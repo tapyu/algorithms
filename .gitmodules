@@ -86,3 +86,12 @@
 [submodule "artificial_intelligence/book_simon_haykin/official_matlab_code_sol"]
 	path = artificial_intelligence/book_simon_haykin/official_matlab_code_sol
 	url = https://github.com/tapyu/haykin-neural-networks-and-learning-machines
+[submodule "artificial_intelligence/book_simon_haykin/other_solutions/ocimakamboj"]
+	path = artificial_intelligence/book_simon_haykin/other_solutions/ocimakamboj
+	url = https://github.com/ocimakamboj/NNLS
+[submodule "artificial_intelligence/book_simon_haykin/other_solutions/ppotoc"]
+	path = artificial_intelligence/book_simon_haykin/other_solutions/ppotoc
+	url = https://github.com/ppotoc/Fundamentals-of-Neural-Networks
+[submodule "artificial_intelligence/book_simon_haykin/other_solutions/irustandi"]
+	path = artificial_intelligence/book_simon_haykin/other_solutions/irustandi
+	url = https://github.com/irustandi/Neural-Networks-and-Learning-Machines-Haykin

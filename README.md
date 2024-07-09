@@ -6,7 +6,7 @@ Here, you will find code implentation from two main (and possibly distict) sourc
 
 The **directory structure is organized by field of knowledge**, and depending on the directory's complexity, you can have a nested structure.
 
-## Algorithms implementations during an event (courses, workshops, webinars, etc.)
+## Algorithm implementations during an event (courses, workshops, webinars, etc.)
 
 If such content is a subdirectory with other directories, we can prefix the dir name with the event code. For instance, `tip7077_computational_intelligence/` contains the code developed during the course "Computational Intelligence", whose course code is TIP7077. If the event is a conference or something similar, we can used the event initials as prefix.
 
@@ -22,7 +22,7 @@ Here, you will find:
 - [x] External theoretical references (books, videos, online courses, etc) for further study of each algorithm.
 - [x] External technical references (software, packages that implement such algorithms, tools, etc) that are important for each topic.
 
-## Algorithms implementations of book's computational exercises.
+## Algorithm implementations of book's computational exercises.
 
 If such content is a subdirectory with other directories, we can prefix the dir name with `./book_` and the author name. For instance, under `./artificial_intelligence`, we can have `book_simon_haykin/`, which contains algorithms implementation discussed in the book "Neural Networks and Learning Machines", by Simon Haykin.
 

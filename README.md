@@ -34,7 +34,7 @@ There you will find:
 
 ---
 
-Here, you won't find:
+In this repository, you won't find:
 - [ ] Books or theoretical lectures slides.
 - [ ] Software
 

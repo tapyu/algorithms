@@ -1,6 +1,6 @@
 # Algorithms implemented throughout my academic life
 
-Here, you will find code implentation from two main (and possibly distict) sources:
+This repository contains code implentation from two main (and possibly distict) sources:
 - Algorithms implementations during an event (courses, workshops, webinars, etc.).
 - Algorithms implementations of book's computational exercises.
 

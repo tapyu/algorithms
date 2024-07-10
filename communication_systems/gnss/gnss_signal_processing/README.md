@@ -1,18 +1,16 @@
 # GNSS Signal Processing
 
 This directory contains algorithm solutions for computational exercises on GNSS Signal Processing.
-- These algorithms were developed during two events:
-  - [Galileo Masterclass Brazil] (GMB) 2022.
-  - The course "GNSS Signal Processing", taught by Prof. Dr. [Felix Antreich], at Aeronautics Institute of Technology, ITA, Brazil.
-- The algorithms cover the following topics:
-  - Code and correlation.
-  - Signal Acquisition.
-  - Parameter tracking.
+
+These algorithms were developed during the [Galileo Masterclass Brazil (GMB) 2022][2] (see files [here][1]), in the GNSS Signal Processing lectures, taught by Prof. Dr. [Felix Antreich]. The algorithms cover the following topics:
+- Code and correlation.
+- Signal Acquisition.
+- Parameter tracking.
 
 ## References
 
-- Felix's course slides on "GNSS Signal Processing"
-- GMB 2022 slides.
+- Felix's course slides on "GNSS Signal Processing" (private).
+- [GMB 2022 lectures][2].
 
 ## Extra material
 
@@ -20,5 +18,6 @@ This directory contains algorithm solutions for computational exercises on GNSS 
   - [SiGOG]
 
 [Felix Antreich]: https://ieeexplore.ieee.org/author/37394570200
-[Galileo Masterclass Brazil]: https://server.gage.upc.edu/TEACHING_MATERIAL/GMB2022/SOFTWARE/
+[1]: https://server.gage.upc.edu/TEACHING_MATERIAL/GMB2022/SOFTWARE/
+[2]: https://gage.upc.edu/en/learning-materials/library/gnss-webinars/gic-masterclass-brazil-2022
 [SiGOG]: https://geodesy.noaa.gov/gps-toolbox/Mohino.htm

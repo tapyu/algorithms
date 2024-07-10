@@ -22,12 +22,15 @@ This directory contains:
 
 
 ---
-## Main resource:
+## Theoretical references:
+
+#### Main
+
 1. **System Identification: Theory for the User: Ljung, Lennart** - The System Identification bible.
 2. **Ljung, L., 1995. System identification toolbox: User's guide. Natick, MA, USA: MathWorks Incorporated** - The practical implementation aspects for System Identification using Matlab & Simulink.
 1. **Aguirre, L.A., 2004. Introdução à identificação de sistemas–Técnicas lineares e não-lineares aplicadas a sistemas reais. Editora UFMG.** - The Luis Antonio Aguirre's Book.
 
-## Other resources:
+#### Others
 1. **Ingle, V.K. and Proakis, J.G., 1999. Digital signal processing using MATLAB. Brooks/Cole Publishing Co..** - Contains a good explanation on Linear predictive coding.
 - [Matlab identification system toolbox](https://www.mathworks.com/videos/lennart-ljung-on-system-identification-toolbox-advice-for-beginners-96988.html) (developed by Lennart Ljung)
     - It uses [1] extensively
@@ -40,4 +43,8 @@ This directory contains:
 1. [In-depth analysis of the regularized least-squares algorithm over the empirical risk minimization](https://towardsdatascience.com/in-depth-analysis-of-the-regularized-least-squares-algorithm-over-the-empirical-risk-minimization-729a1433447f)
 1. [Derivation of Least Squares Regressor and Classifier](https://towardsdatascience.com/derivation-of-least-squares-regressor-and-classifier-708be1358fe9?gi=e125c07c46de)
 1. [Least squares for classification](https://notesonai.com/Least+squares+for+classification)
+
+## Extra references
+
 - Another System identification [course](http://mocha-java.uccs.edu/ECE5560/index.html), from Colorado University and taught by Gregory Plett. It seems a much more organized course than Guilherme's course.
+- [`course`](https://www.mathworks.com/videos/series/system-identification.html) [`video`](https://www.mathworks.com/videos/introduction-to-system-identification-81796.html) - MathWorks course on System Identification, taught by Lennart Ljung, Linköping University.

@@ -47,4 +47,4 @@ This directory contains:
 ## Extra references
 
 - Another System identification [course](http://mocha-java.uccs.edu/ECE5560/index.html), from Colorado University and taught by Gregory Plett. It seems a much more organized course than Guilherme's course.
-- [`course`](https://www.mathworks.com/videos/series/system-identification.html) [`video`](https://www.mathworks.com/videos/introduction-to-system-identification-81796.html) - MathWorks course on System Identification, taught by Lennart Ljung, Linköping University.
+- [`course`](https://www.mathworks.com/videos/series/system-identification.html) [`video`](https://www.mathworks.com/videos/introduction-to-system-identification-81796.html) **MathWorks course on System Identification** - Taught by Lennart Ljung, Linköping University.

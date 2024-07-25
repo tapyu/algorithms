@@ -17,12 +17,12 @@ Others:
 ## Summary
 
 - [Root-finding problems](#root-finding-problems-part-ii-on-chapra-chapter-6-and-7-chapter-6-dahlquist-chapter-3-on-hoffman)
-- [ODE- and PDE-based problems](https://github.com/tapyu/courses/tree/main/numerical-methods#linear-systems-problems-part-iii-on-chapra)
-- [Linear systems problems](https://github.com/tapyu/courses/tree/main/numerical-methods#linear-systems-problems-part-iii-on-chapra)
-- [Curve-fitting problems](https://github.com/tapyu/courses/tree/main/numerical-methods#curve-fitting-problems-interpolation-extrapolation-regression-approximation)
-- [Numerical differentiation](https://github.com/tapyu/courses/tree/main/numerical-methods#numerical-differentiation-part-v-on-chapra)
-- [Numerical integration](https://github.com/tapyu/courses/tree/main/numerical-methods#numerical-integration-chapter-19-and-20-on-chapra)
-- [Optimization problems](https://github.com/tapyu/courses/tree/main/numerical-methods#optimization-problems-chap-7-on-chapra)
+- [ODE- and PDE-based problems](#linear-systems-problems-part-iii-on-chapra)
+- [Linear systems problems](#linear-systems-problems-part-iii-on-chapra)
+- [Curve-fitting problems](#curve-fitting-problems-interpolation-extrapolation-regression-approximation)
+- [Numerical differentiation](#numerical-differentiation-part-v-on-chapra)
+- [Numerical integration](#numerical-integration-chapter-19-and-20-on-chapra)
+- [Optimization problems](#optimization-problems-chap-7-on-chapra)
 
 ---
 

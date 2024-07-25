@@ -48,7 +48,7 @@ Determines the values of $x$ at which the nonlinear function $f(x)$ is zero, tha
 
 ---
 
-### [ODE-, PDE-, or SDE-based problems][31] (part VI on Chapra; Oksendal):
+### [ODE-, PDE-, or SDE-based problems][31] (part VI on Chapra for ODE; Hoffman for ODE; Oksendal for SDE):
 
 Given a ODE/PDE/SDE, how to solve it. The solutions to ordinary differential equations (ODEs) can be broadly categorized into two main types: analytical solutions and numerical solutions.
 - **Analytical/closed-form solution**: Exact mathematical expressions that represent the closed-form solution to the differential equation. Examples include $x(t) = \cos(t)$ for $x + x' = 0$. Analytical solutions often involve systematic methods and techniques such as separation of variables, integrating factors, variation of parameters, Laplace transforms, and others. For a more in-depth solution review, see Erwin Kreyszig, part A and C.
@@ -65,8 +65,11 @@ The key factor that determines which solution one should follow is the problem c
         - Heun: the improved/modified Euler method (see section 22.3.1 on Chapra).
         - Forward Euler method: a first-order Runge-Kutta method, often referred to as RK1 (see section 22.2 on Chapra).
         - Multistep Methods: Unlike single-step methods like the Euler and Runge-Kutta methods, which only use information from the current step to compute the next step, multistep methods use information from multiple previous steps (see section 23.2 on Chapra).
-            - Explicit Multistep Methods: These methods use known information from previous steps to compute the next step. Example: Adams-Bashforth methods.
-            - Implicit Multistep Methods: These methods involve solving an equation that includes the unknown future value. Example: Adams-Moulton methods.
+            - Explicit Multistep Methods: These methods use known information from previous steps to compute the next step. Example: Adams-Bashforth methods (see Hoffman).
+            - Implicit Multistep Methods: These methods involve solving an equation that includes the unknown future value. Example: Adams-Moulton methods (see Hoffman).
+    - SDE:
+        - Itô method: a fundamental approach in stochastic calculus used to handle stochastic differential equations (SDEs) (See Oksendal).
+        - Stratonovich method: Another approach in stochastic calculus, used to handle stochastic differential equations (SDEs). It is an alternative to the Ito method, and it has its own distinct interpretation of stochastic integrals (See Oksendal).
 
 ---
 

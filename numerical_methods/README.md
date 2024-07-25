@@ -10,14 +10,15 @@ Others:
 - **Kreyszig, E., Stroud, K. and Stephenson, G., 2008. Advanced engineering mathematics** - For analytical solutions of ODEs (Part A, chap 1-6) and PDE (chapter 12).
 - **Hoffman, J.D. and Frankel, S., 2018. Numerical methods for engineers and scientists. CRC press** - It seems to be a more advanced book, with a special focus on algorithms for ODEs and PDEs problems. More advanced algorithms that aren't found on Chapra might be found here.
 - **Press, W.H., 2007. Numerical recipes 3rd edition: The art of scientific computing. Cambridge university press** - A good reference for implementation of Numerical Methods in C. It is also a good reference for the theoretical aspects.
-- **Kochenderfer, M.J. and Wheeler, T.A., 2019. Algorithms for optimization. Mit Press** - A good reference for code implementations in Julia. It also contains a brief introduction to Automatic Differentiation
+- **Kochenderfer, M.J. and Wheeler, T.A., 2019. Algorithms for optimization. Mit Press** - A good reference for code implementations in Julia. It also contains a brief introduction to Automatic Differentiation.
+- **Oksendal, B., 2013. Stochastic differential equations: an introduction with applications. Springer Science & Business Media.** - A book tailored to SDE. My way-to-go when dealing with it. Most of SDE Solvers in the discussed in `DifferentialEquations.jl` can be found in here.
 
 ---
 
 ## Summary
 
 - [Root-finding problems](#root-finding-problems-part-ii-on-chapra-chapter-6-and-7-chapter-6-dahlquist-chapter-3-on-hoffman)
-- [ODE- and PDE-based problems](#linear-systems-problems-part-iii-on-chapra)
+- [ODE- PDE-, and SDE-based problems](#linear-systems-problems-part-iii-on-chapra)
 - [Linear systems problems](#linear-systems-problems-part-iii-on-chapra)
 - [Curve-fitting problems](#curve-fitting-problems-interpolation-extrapolation-regression-approximation)
 - [Numerical differentiation](#numerical-differentiation-part-v-on-chapra)
@@ -47,22 +48,25 @@ Determines the values of $x$ at which the nonlinear function $f(x)$ is zero, tha
 
 ---
 
-### [ODE- and PDE-based problems][31] (part VI on Chapra):
+### [ODE-, PDE-, or SDE-based problems][31] (part VI on Chapra; Oksendal):
 
-Given a ODE/PDE, how to solve it. The solutions to ordinary differential equations (ODEs) can be broadly categorized into two main types: analytical solutions and numerical solutions.
-- **Analytical/closed-form solution**: Exact mathematical expressions that represent the solution to the differential equation. Examples include $x(t) = \cos(t)$ for $x + x' = 0$. Analytical solutions often involve systematic methods and techniques such as separation of variables, integrating factors, variation of parameters, Laplace transforms, and others. For a more in-depth solution review, see Erwin Kreyszig, part A and C.
+Given a ODE/PDE/SDE, how to solve it. The solutions to ordinary differential equations (ODEs) can be broadly categorized into two main types: analytical solutions and numerical solutions.
+- **Analytical/closed-form solution**: Exact mathematical expressions that represent the closed-form solution to the differential equation. Examples include $x(t) = \cos(t)$ for $x + x' = 0$. Analytical solutions often involve systematic methods and techniques such as separation of variables, integrating factors, variation of parameters, Laplace transforms, and others. For a more in-depth solution review, see Erwin Kreyszig, part A and C.
 - **Numerical solution**: Provide an approximation to the solution by discretizing the domain and using iterative methods. Examples include Euler's method, Runge-Kutta methods, and finite difference methods. The algorithms shown here falls in this approach.
 
 The key factor that determines which solution one should follow is the problem complexity. If the problem is simple and fall into certain class of ODE problems (e.g., separable ODEs, exact ODEs, linear ODEs, homogeneous and inhomogeneous ODEs, etc), we may solve it analytically. However, **differential equations such as those used to solve real-life problems may not necessarily be directly solvable, i.e. do not have closed form solutions. Instead, solutions can be approximated using Numerical Methods.**
 
 #### Packages
 
-- [`DifferentialEquations.jl`][1]: Numerically solving differential equations written in `julia`. See [all ODE solvers][8]; [recommendation for each situation][9]
-    - Runge-Kutta Methods (see 22.4 on Chapra and [wiki][19])
-    - Midpoint (see section 22.3.2 on Chapra)
-    - Heun (see section 22.3.1 on Chapra)
-    - Forward Euler method (see section 22.2 on Chapra)
-    - Multistep Methods (see section 23.2 on Chapra)
+- [`DifferentialEquations.jl`][1]: Numerically solving differential equations written in `julia`. See [all solvers][8]; [recommendation for each situation][9]
+    - ODE:
+        - Runge-Kutta Methods (see 22.4 on Chapra and [wiki][19])
+        - Midpoint: a second-order Runge-Kutta method (see section 22.3.2 on Chapra).
+        - Heun: the improved/modified Euler method (see section 22.3.1 on Chapra).
+        - Forward Euler method: a first-order Runge-Kutta method, often referred to as RK1 (see section 22.2 on Chapra).
+        - Multistep Methods: Unlike single-step methods like the Euler and Runge-Kutta methods, which only use information from the current step to compute the next step, multistep methods use information from multiple previous steps (see section 23.2 on Chapra).
+            - Explicit Multistep Methods: These methods use known information from previous steps to compute the next step. Example: Adams-Bashforth methods.
+            - Implicit Multistep Methods: These methods involve solving an equation that includes the unknown future value. Example: Adams-Moulton methods.
 
 ---
 

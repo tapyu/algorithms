@@ -16,7 +16,7 @@ Others:
 
 ## Summary
 
-- [Root-finding problems](https://github.com/tapyu/courses/tree/main/numerical-methods#root-finding-problems-part-ii-on-chapra-chapter-6-and-7-chapter-6-dahlquist-chapter-3-on-hoffman)
+- [Root-finding problems](#root-finding-problems-part-ii-on-chapra-chapter-6-and-7-chapter-6-dahlquist-chapter-3-on-hoffman)
 - [ODE- and PDE-based problems](https://github.com/tapyu/courses/tree/main/numerical-methods#linear-systems-problems-part-iii-on-chapra)
 - [Linear systems problems](https://github.com/tapyu/courses/tree/main/numerical-methods#linear-systems-problems-part-iii-on-chapra)
 - [Curve-fitting problems](https://github.com/tapyu/courses/tree/main/numerical-methods#curve-fitting-problems-interpolation-extrapolation-regression-approximation)

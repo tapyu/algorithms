@@ -27,7 +27,7 @@ Here, you will find:
 If a given subdirectory contains algorithms from a book, it is prefixed with `./book_` followed by the author name. For instance, under `./artificial_intelligence`, we can have `book_simon_haykin/`, which contains algorithms implementation discussed in the book "Neural Networks and Learning Machines", by Simon Haykin.
 
 Here you will find:
-- [x] Code solution of book's computational exercises. Such books are usually used as reference in the events. This code solution should preferably be the official code solution, which is provided by the author or by the book publisher
+- [x] Code solution of book's computational exercises. This code solution should preferably be the official code solution, which is provided by the author or by the book publisher
 - [x] Algorithms implemented by others and make available on Github. Such references will be in public [git submodules].
   - Such submodules are within the `other_solutions/` directory, with the name of the code author. If there is no official code solution and only the algorithms implemented by others are available, the `other_solutions/` directory prefix is ommited.
   - These materials might be written in a language other than English.

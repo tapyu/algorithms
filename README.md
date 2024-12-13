@@ -24,7 +24,7 @@ Here, you will find:
 
 ## Algorithm implementations of book's computational exercises.
 
-If such content is a subdirectory with other directories, we can prefix the dir name with `./book_` and the author name. For instance, under `./artificial_intelligence`, we can have `book_simon_haykin/`, which contains algorithms implementation discussed in the book "Neural Networks and Learning Machines", by Simon Haykin.
+If a given subdirectory contains algorithms from a book, it is prefixed with `./book_` followed by the author name. For instance, under `./artificial_intelligence`, we can have `book_simon_haykin/`, which contains algorithms implementation discussed in the book "Neural Networks and Learning Machines", by Simon Haykin.
 
 Here you will find:
 - [x] Code solution of book's computational exercises. Such books are usually used as reference in the events. This code solution should preferably be the official code solution, which is provided by the author or by the book publisher

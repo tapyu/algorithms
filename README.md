@@ -4,11 +4,11 @@ This repository contains code implentation from two main (and possibly distict) 
 - Algorithms implementations during an event (courses, workshops, webinars, etc.).
 - Algorithms implementations of book's computational exercises.
 
-The **directory structure is organized by field of knowledge**, and depending on the directory's complexity, you can have a nested structure.
+The **directory structure is organized by field of knowledge**. Each field of knowledge may contain many subdirectories.
 
 ## Algorithm implementations during an event (courses, workshops, webinars, etc.)
 
-If such content is a subdirectory with other directories, we can prefix the dir name with the event code. For instance, under `artificial_intelligence/`, you will fild the directory `tip7077_computational_intelligence/` containing the code developed during the course "Computational Intelligence", whose course code is TIP7077. If the event is a conference or something similar, the event initials can be used as prefix.
+If a given subdirectory contains algorithms implemented during an event, this subdir is prefixed with its event code. For instance, under `artificial_intelligence/`, you will fild the directory `tip7077_computational_intelligence/` containing the code developed during the course "Computational Intelligence", whose course code is TIP7077. If the event is a conference or something similar, the event initials can be used as prefix.
 
 Here, you will find:
 - [x] Information about the courses, workshops, webinars, etc from where these algorithms were developed.
